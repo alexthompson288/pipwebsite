@@ -1,369 +1,57 @@
 <div class="container text-center">
-            <div class="homepage-banner"></div>
-            <div class="homepage-banner-small">
-                <img src="assets/homepage_banner_small.png">
-            </div>
-            <h1 class="text-center">Great apps to learn while you play</h1>
-            <div class="moving-cloud"></div>
-            <div class="moving-cloud-small"></div>
+    <div class="homepage-banner"></div>
+        <div class="homepage-banner-small">
+            <img src="assets/homepage_banner_small.png">
+        </div>
+        <h1 class="text-center">Great apps to learn while you play</h1>
+        <div class="moving-cloud"></div>
+        <div class="moving-cloud-small"></div>
             
-            <div class="row">
-                <div class="span8 offset2" id='homepage-central'>
-                    <div class="body-padding">
-                        <a href="#apps" class='btn btn-warning btn-large btn-enormous'>Try them out!</a>
-                    </div>
-                    <h2>or let us tell you all about them...</h2>
-                    <div class="ipad-container">
-                        <iframe src="http://player.vimeo.com/video/79302164" width="534" height="402" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                    </div>
+        <div class="row">
+            <div class="span8 offset2" id='homepage-central'>
+                <div class="body-padding">
+                    <a href="#apps" class='btn btn-warning btn-large btn-enormous'>Try them out!</a>
                 </div>
-                <div class="clearfix"></div>
-                <div class="homepage-bottom-graphics">
+                <h2>or let us tell you all about them...</h2>
+                <div class="ipad-container">
+                    <iframe src="http://player.vimeo.com/video/79302164" width="534" height="402" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="homepage-bottom-graphics">
                     <a href="#more-info">
                         <h1 class="no-margin dot-more-info">See more</h1>
                     </a>
-                </div>
-                <div class="clearfix"></div>
             </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
 
-        <!-- End of container for homepage -->
+    <!-- End of container for homepage -->
 
-        <div class="green-background">
-            <div class="container body-padding">
-                <h1 class="more-info-banner"><a name="more-info"><%= image_tag("more_info_banner.png") %></a></h1>
-                <div class="row">
-                    <div class="col-md-6 body-padding">
-                        
-                        <h1>Filled with fun!</h1>
-                        <p>We play something a lot when it is fun and practise is the best way of getting better. So our apps and games have been carefully designed by teachers to help you and your child have fun while they learn.</p>
-                    </div>
-                    <div class="col-md-5 offset1 body-padding text-center">
-                        <img src="assets/kids_fun.png">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-5 body-padding text-center">
-                        <img src="assets/splat_fun.png">
-                    </div>
-                    <div class="col-md-6 offset1 pull-right body-padding">
-                        <h1 class="pull-right">Packed with phonics</h1>
-                        <p class="pull-right">All our learning products are designed by teachers to complement what is being taught in classrooms across the country.  Our reading products follow the Systematic Synthetic Phonics approach used in the National Curriculum.</p>
-                    </div>
-                    <div class="clearfix"></div>
+    <%= render :partial => "shared/extrainfo" %>
 
-                    <div class="col-md-6 body-padding">
-                        <h1>Approved by teachers</h1>
-                        <p>Our mission is to help children continue learning beyond the classroom through a combination of regular practise and high-quality teaching. Our teachers make sure all our games and products are always helping your child learn the right thing the right way.</p>
-                    </div>
-                    <div class="col-md-5 offset1 body-padding text-center">
-                        <img src="assets/phonics_reading_pad.png">
-                    </div>
-                    <div class="clearfix"></div>
-                    
-                </div>
-            </div>
+    <!-- End of extra info container -->
+    <!-- Start of app info container -->
+
+    <div class="container body-padding">
+        <div class="text-center">
+            <a name="apps">
+                <img src="assets/our_apps_website.png">
+            </a>
+            <h1>Choose your child's reading level:</h1>
+            <ul class="nav nav-tabs">
+                  <li class="active"><a href="#reception" data-toggle="tab">Reception</a></li>
+                  <li><a href="#year1" data-toggle="tab">Year 1</a></li>
+                  <!-- <li><a href="#year2" data-toggle="tab">Year 2</a></li>
+                  <li><a href="#teachers" data-toggle="tab">Teachers</a></li> -->
+            </ul>
+
+            <%= render :partial => "shared/receptionproducts" %>
+            <%= render :partial => "shared/yearoneproducts" %>
+            <%= render :partial => "shared/yeartwoproducts" %>
+            <%= render :partial => "shared/teacherproducts" %>
         </div>
-
-        <!-- End of extra info container -->
-        <!-- Start of app info container -->
-
-        <div class="container body-padding">
-            <div class="text-center">
-                <a name="apps">
-                    <img src="assets/our_apps_website.png">
-                </a>
-                <h1>Choose your child's reading level:</h1>
-                <ul class="nav nav-tabs">
-                      <li class="active"><a href="#reception" data-toggle="tab">Reception</a></li>
-                      <li><a href="#year1" data-toggle="tab">Year 1</a></li>
-                      <!-- <li><a href="#year2" data-toggle="tab">Year 2</a></li>
-                      <li><a href="#teachers" data-toggle="tab">Teachers</a></li> -->
-                </ul>
-
-                <div class="tab-content">
-                  <div class="tab-pane active fade in" id="reception">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>This is your portable bookshelf you can take anywhere.  All the stories have been carefully structured by teachers with Reception-level children in mind. Each story follows the phonic reading system, used by schools across the country, which helps your child to learn the correspondence between letters and their sounds. Not sure you’re teaching the correct phonic sounds? The phonic reading pad allows you and your child to focus on enjoying the story, whilst leaving the teaching to us.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20 coming-soon">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a> -->
-                                <!-- <h2>Free to download</h2> -->
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>Free to download</h2>
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                            </div>
-                        </div>
-                        <hr />
-                    
-                        <div class="row">
-                            <div class="col-md-6 coming-soon">
-                                <h1><img src="assets/practise_letters_with_pip_banner.png"></h1>
-                                <p>This phonics app has been designed by teachers to help your child collect and practise the letters of the alphabet and the sounds most commonly associated with those letters.  Your child can unlock letters, add them to their collection and practise the games either alone or with someone else.</p>
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'></a>
-                                <h2>£1.99</h2> -->
-                            </div>
-                            <div class="col-md-3">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>£1.49</h2>
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                            </div>
-                        </div>
-                        <hr />
-                    
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/practise_words_with_pip_banner.png"></h1>
-                                <p>The reading words app for Reception level helps a child practise the key blending skills they need to bring sounds together to form words.  Dot the Detective and Pip will help your child add simple words to their Word Bank and Collection room, as well as play fun games alone or together.</p>
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'></a>
-                                <h2>£1.99</h2> -->
-                            </div>
-                            <div class="col-md-3">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>£1.49</h2>
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                            </div>
-                        </div>
-                        <hr >
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/alphabet_poster_with_pip_banner.png"></h1>
-                                <p>Introduce your child to Pip's magical world of letters with this bright and colourful A1 poster.  Available with and without unique stickers.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="http://learn-with-pip.myshopify.com/" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£20</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>
-
-                        <hr >
-
-                        <!-- <div class="row">
-                            <div class="col-md-6">
-                                <h1>Letters wall poster and sticker pack</h1>
-                                <p>This is a full-sized wall poster either for your home or classroom designed to help your child interact with and learn the first 26 sounds of the letters of the alphabet.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="#" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£15</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>
-
-                        <hr >
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1>Letters sticker book and sticker pack</h1>
-                                <p>Your child's own personal collection book where they can store their letters and sounds.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="#" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£20</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>
-
-                        <hr >
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1>Words sticker book and sticker pack</h1>
-                                <p>Your child's own personal collection book where they can store their first words.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="#" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£20</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>
-
-                        <hr >
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1>Play reading games with Pip</h1>
-                                <p>Designed to practise and improve a variety of different reading skills, Play reading games with Pip is a series of reading games for a parent or teacher to play with their children. </p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="#" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£30</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>    -->
-                    </div>
-
-                    <div class="tab-pane fade" id="year1">
-                   
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>This is your portable bookshelf you can take anywhere.  All the stories have been carefully structured by teachers with Year 1 level children in mind. The stories are a little more complex in terms of words and storylines as new sounds have been discovered. Not sure you’re teaching the correct phonic sounds? The phonic reading pad allows you and your child to focus on enjoying the story, whilst leaving the teaching to us.
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'></a> -->
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>£1.49</h2>
-                            </div>
-                        </div>
-                        <hr />
-                    
-                       <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/practise_letters_with_pip_banner.png"></h1>
-                                <p>This phonics app has been designed by teachers to help your child collect and practise the new letter and sound combinations they must master to become confident readers.  Your child can unlock these new letters and sounds, add them to their collection and practise the games either alone or with someone else.</p>
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'></a> -->
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>£1.49</h2>
-                            </div>
-                        </div>
-                        <hr />
-                    
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/practise_words_with_pip_banner.png"></h1>
-                                <p>The reading words app for Year 1 level helps a child practise blending more complicated sounds together to form words.  Dot the Detective and Pip will help your child add more sophisticated words to their Word Bank and Collection room, as well as play fun games alone or together.
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'></a> -->
-                            </div>
-                            <div class="col-md-3">
-                                <!-- <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store_coming_soon.png'>
-                                </a>
-                                <h2>£1.49</h2>
-                            </div>
-                        </div>
-
-                        <hr >
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/alphabet_poster_with_pip_banner.png"></h1>
-                                <p>Introduce your child to Pip's magical world of letters with this bright and colourful A1 poster.  Available with and without unique stickers.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="http://learn-with-pip.myshopify.com/" target="_blank" class="btn btn-success btn-lg">Buy now
-                                </a>
-                                <h2>£20</h2>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <img src='assets/full_colour_poster_web.jpg'>
-                            </div>
-                        </div>
-
-                        <hr >
-                    </div>
-                  
-                    <!-- <div class="tab-pane fade" id="year2">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>For Year 2 we recommend reading the classics.  With this, you and your child can enjoy your favourite titles from Goldilocks to the Hare and the Tortoise on iPad and iPhone, safe in the knowledge the Phonics Reading Pad will help your child correctly decode any word in the whole story.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store.png'></a>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/practise_words_with_pip_banner.png"></h1>
-                                <p>The reading words app for Year 2 level helps a child build their vocabulary and practise the harder letters and sounds.</p>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store.png'></a>
-                            </div>
-                            <div class="col-md-3">
-                                <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        </div>
-                        <hr />
-                    </div> -->
-
-                    <!-- <div class="tab-pane fade" id="teachers">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>This app has been designed to help teachers with Reception classes as a fun and useful resource they can use as they teach phonics.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store.png'></a>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>This app has been designed to help teachers with Year 1 classes as a fun and useful resource they can use as they teach phonics.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store.png'></a>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h1><img src="assets/collect_stories_with_pip_title.png"></h1>
-                                <p>This app has been designed to help teachers with Year 2 classes as a fun and useful resource they can use as they teach phonics.</p>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <a href="coming.html" target="_blank"><img src='assets/available_app_store.png'></a>
-                            </div>
-                            <div class="col-md-3 padding-top-20">
-                                <iframe src="http://player.vimeo.com/video/70019832" width="333" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        </div>
-                    </div> -->
-
-                </div>
-            </div>
-        </div>
+	</div>
+</div>
