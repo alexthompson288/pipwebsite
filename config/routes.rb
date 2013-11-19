@@ -1,7 +1,12 @@
 Pipwebsite::Application.routes.draw do
-  get "pages/home"
-  get "pages/about"
-  get "pages/coming"
+  
+
+  get '/home', :to => 'pages#home', :as => 'home'
+  get '/about', :to => 'pages#about', :as => 'about'
+  get '/coming', :to => 'pages#coming', :as => 'coming'
+  get '/privacy', :to => 'pages#privacy', :as => 'privacy'
+  get '/terms', :to => 'pages#terms', :as => 'terms'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
