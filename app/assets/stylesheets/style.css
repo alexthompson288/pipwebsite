@@ -1,35 +1,31 @@
 /*General styles
 */
 body{
-	padding: 130px 0 50px;
+	padding: 60px 0 50px;
 	background-color: #6cdec4;
 	font-size: 20px;
 	/* light blue background */
 }
 
 h1{
-	font-size: 38px;
+	font-size: 26px;
 }
 
 h2{
-	font-size: 28px;
+	font-size: 20px;
 }
 
 h3{
-	font-size: 24px;
+	font-size: 18px;
 }
 
-
-h3{
-	font-size: 22px;
-}
 
 .green-background{
 	background-color: #FEFFE8;
 }
 
 .body-padding{
-	padding: 50px 0;
+	padding: 10px 0;
 }
 
 .no-margin{
@@ -70,14 +66,14 @@ h3{
 
 /*Homepage elements*/
 .homepage-banner{
-	width: 931px;
+	width: 559px;
 	margin: 0px auto;
-	height: 297px;
+	height: 188px;
 	background: url('../assets/learntoreadwithpip_logo_text_sprite.png') 0px 0px;
 }
 
 .homepage-banner:hover{
-	background: url('../assets/learntoreadwithpip_logo_text_sprite.png') 2px 306px;
+	background: url('../assets/learntoreadwithpip_logo_text_sprite.png') 2px 194px;
 }
 
 .homepage-banner-small{
@@ -109,8 +105,8 @@ h3{
 }
 
 .btn-enormous{
-	padding: 25px 125px;
-	font-size: 46px;
+	padding: 19px 62px;
+	font-size: 26px;
 	line-height: 1.2;
 	box-shadow: 5px 5px 3px #888888;	
 }
