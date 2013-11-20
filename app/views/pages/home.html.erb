@@ -1,54 +1,57 @@
 <div class="container text-center">
     <div class="homepage-banner"></div>
-        <h1 class="text-center">Great apps to learn while you play</h1>
-        <div class="moving-cloud"></div>
-        <div class="moving-cloud-small"></div>
-            
-        <div class="row">
-            <div class="span8 offset2" id='homepage-central'>
-                <div class="body-padding">
-                    <a href="#apps" class='btn btn-warning btn-large btn-enormous'>Try them out!</a>
-                </div>
-                <h2>or let us tell you all about them...</h2>
-                <div class="ipad-container">
-                    <iframe src="http://player.vimeo.com/video/79302164" width="534" height="402" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                </div>
+    <h1 class="text-center">Great apps to learn while you play</h1>
+    <div class="moving-cloud"></div>
+    <div class="moving-cloud-small"></div>
+        
+    <div class="row">
+        <div class="span8 offset2" id='homepage-central'>
+            <div class="body-padding">
+                <a href="#apps" class='btn btn-warning btn-large btn-enormous'>Try them out!</a>
             </div>
-            <div class="clearfix"></div>
-            <div class="homepage-bottom-graphics">
-                    <a href="#more-info">
-                        <h1 class="no-margin dot-more-info">See more</h1>
-                    </a>
+            <h2>or let us tell you all about them...</h2>
+            <div class="ipad-container">
+                <iframe src="http://player.vimeo.com/video/79302164" width="534" height="402" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             </div>
-            <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
+        <div class="homepage-bottom-graphics">
+            <a href="#more-info">
+                <h1 class="no-margin dot-more-info">See more</h1>
+            </a>
+            <div class="homepage-animated-tree"></div>
+            
+            <div class="homepage-animated-grass"></div>
+        </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
 
     <!-- End of container for homepage -->
 
-    <%= render :partial => "shared/extrainfo" %>
+<%= render :partial => "shared/extrainfo" %>
 
     <!-- End of extra info container -->
     <!-- Start of app info container -->
 
-    <div class="container body-padding">
-        <div class="text-center">
-            <a name="apps">
-                <img src="assets/our_apps_website.png">
-            </a>
-            <h1>Choose your child's reading level:</h1>
-            <ul class="nav nav-tabs">
-                  <li class="active"><a href="#reception" data-toggle="tab">Reception</a></li>
-                  <li><a href="#year1" data-toggle="tab">Year 1</a></li>
-                  <!-- <li><a href="#year2" data-toggle="tab">Year 2</a></li>
-                  <li><a href="#teachers" data-toggle="tab">Teachers</a></li> -->
-            </ul>
+<div class="container body-padding">
+    <div class="text-center">
+        <a name="apps">
+            <img src="assets/our_apps_website.png">
+        </a>
+        <h1>Choose your child's reading level:</h1>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#reception" data-toggle="tab">Reception</a></li>
+          <li><a href="#year1" data-toggle="tab">Year 1</a></li>
+          <!-- <li><a href="#year2" data-toggle="tab">Year 2</a></li>
+          <li><a href="#teachers" data-toggle="tab">Teachers</a></li> -->
+        </ul>
 
-            <%= render :partial => "shared/receptionproducts" %>
-            <%= render :partial => "shared/yearoneproducts" %>
-            <%= render :partial => "shared/yeartwoproducts" %>
-            <%= render :partial => "shared/teacherproducts" %>
-        </div>
-	</div>
+        <%= render :partial => "shared/receptionproducts" %>
+        <%= render :partial => "shared/yearoneproducts" %>
+        <%= render :partial => "shared/yeartwoproducts" %>
+        <%= render :partial => "shared/teacherproducts" %>
+    </div>
 </div>
+

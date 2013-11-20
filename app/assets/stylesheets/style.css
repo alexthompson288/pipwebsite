@@ -130,6 +130,32 @@ h3{
 	background: url(../assets/website_sprite_sheet_1.png) -390px -482px;
 }
 
+.homepage-animated-tree{
+	position: absolute;
+	bottom: 0px;
+	left: 40px;
+	height: 240px;
+	width: 242px;
+	background: url(../assets/tree_animated.png) 0px 0px;
+}
+
+.homepage-animated-small-tree{
+	position: absolute;
+	bottom: 20px;
+	left: 340px;
+	height: 240px;
+	width: 200px;
+	background: url(../assets/tree_animated.png) 0px -237px;
+}
+
+.homepage-animated-grass{
+	position: absolute;
+	bottom: 0px;
+	height: 73px;
+	width: 100%;
+	background: url(../assets/website_sprite_sheet.png) -1079px 139px;
+}
+
 
 
 
