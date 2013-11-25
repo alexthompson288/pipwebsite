@@ -223,5 +223,10 @@ h3{
 
 /*About us elements*/
 
+.genesis-image img{
+	width: 100%;
+	border: 2px solid #FFD737;
+}
+
 
 
