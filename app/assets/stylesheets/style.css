@@ -19,6 +19,10 @@ h3{
 	font-size: 18px;
 }
 
+img{
+	max-width: 100%;
+}
+
 
 .green-background{
 	background-color: #FEFFE8;
