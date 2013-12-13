@@ -227,7 +227,11 @@ img{
 
 /*App info elements*/
 
+/*Lettersounds page*/
 
+.lettersounds img:hover{
+	background-color: rgba(255, 215, 55,0.8);
+}
 
 /*About us elements*/
 
