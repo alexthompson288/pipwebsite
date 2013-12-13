@@ -5,6 +5,9 @@ Pipwebsite::Application.routes.draw do
   get '/about', :to => 'pages#about', :as => 'about'
   get '/coming', :to => 'pages#coming', :as => 'coming'
   get '/info', :to => 'pages#info', :as => 'info'
+  get '/videos', :to => 'pages#videos', :as => 'videos'
+  get '/learninggames', :to => 'pages#learninggames', :as => 'learninggames'
+  get '/lettersounds', :to => 'pages#lettersounds', :as => 'lettersounds'
   get '/privacy', :to => 'pages#privacy', :as => 'privacy'
   get '/terms', :to => 'pages#terms', :as => 'terms'
   
