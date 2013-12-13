@@ -1,12 +1,123 @@
 <div class="container">
-	<h1 class="text-center">Check the letter sounds</h1>
-	<div class="col-md-12">
-		<h1>List of phonemes</h1>
-		
+	<h1 class="text-center">Click a letter to check the right sound</h1>
+	<div class="row">
+		<div class="alphabeticphonemes">
+			<h1>Phonemes listed alphabetically</h1>
 			<% @alphabeticphonemes.each do |p| %>
-				<%= p.phoneme %>
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+	      
+	    
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
 			<% end %>
-		
+		</div>
 	</div>
+		<div class="clearfix"></div>
+		<br />
+		<br />
+		<br />
+
+
+
+	<div class="setnumberphonemes">
+		<h1>Phonemes listed by set</h1>
+		<h1>Set 1</h1>
+		<% @setonephonemes.each do |p| %>
+			<div class="set1">
+
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+	      
+	    
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 2</h1>
+		<% @settwophonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 3</h1>
+		<% @setthreephonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 4</h1>
+		<% @setfourphonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 5</h1>
+		<% @setfivephonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 6</h1>
+		<% @setsixphonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+		<h1>Set 7</h1>
+		<% @setsevenphonemes.each do |p| %>
+			<div class="set2">
+				<div class="col-md-3">
+					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
+					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
+					</span>
+				</div>
+			</div>
+		<% end %>
+		<div class="clearfix"></div>
+		<br />
+
+	</div>
+	
 </div>
 <hr />

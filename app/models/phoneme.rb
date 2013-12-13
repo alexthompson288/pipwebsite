@@ -6,7 +6,17 @@ class Phoneme < ActiveRecord::Base
 
 
   	def totalname
+  		self.mneumonic.replace(" ","_")
 		[self.phoneme,self.grapheme,self.mneumonic].join"_"
 	end
 
+	def imagename
+		[self.grapheme,self.phoneme].join"_"
+	end
+
+	def mnemonicname
+		self.mneumonic.gsub(" ","_")
+	end
+
+	
 end
