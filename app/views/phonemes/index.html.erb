@@ -1,25 +1,42 @@
-<h1>Listing phonemes</h1>
 
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
 <table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <tr>
+    <th>Grapheme</th>
+    <th>Phoneme</th>
+    <th>Mnemonic</th>
+    <th>Set number</th>
+    <th>Phoneme order</th>
+    <th>Status</th>
+    
 
-  <tbody>
-    <% @phonemes.each do |phoneme| %>
-      <tr>
-        <td><%= link_to 'Show', phoneme %></td>
-        <td><%= link_to 'Edit', edit_phoneme_path(phoneme) %></td>
-        <td><%= link_to 'Destroy', phoneme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <th></th>
+    <th></th>
+    <th></th>
+</tr>
+
+<% @phonemes.each do |phoneme| %>
+  <tr>
+    <td><%= phoneme.phoneme %></td>
+    <td><%= phoneme.grapheme %></td>
+    <td><%= phoneme.mneumonic %></td>
+    <td><%= phoneme.setnumber %></td>
+    <td><%= phoneme.phonemeorder %></td>
+    <td><% if phoneme.completed %><span style="color:green;">DONE</span><% else %><span style="color:red;">NOT COMPLETE</span><% end %></td>
+    
+   
+    <td><%= link_to 'Show', phoneme, class: 'button' %></td>
+    <td><%= link_to 'Edit', edit_phoneme_path(phoneme) %></td>
+    <td><%= link_to 'Destroy', phoneme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
 
-<br>
+<br />
 
-<%= link_to 'New Phoneme', new_phoneme_path %>
+<%= link_to 'New Phoneme', new_phoneme_path, class: 'button' %>

@@ -1,4 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_phoneme_path(@phoneme) %> |
-<%= link_to 'Back', phonemes_path %>
+
+  <h4>Grapheme: <%= @phoneme.phoneme %></h4>
+  <hr>
+  <h4>Phoneme: <%= @phoneme.grapheme %></h4>
+  <hr>
+
+  <h4>Set number: <%= @phoneme.setnumber %></h4>
+  <h4>Phoneme order: <%= @phoneme.phonemeorder %></h4>
+  <hr>
+
+  <% if @phoneme.imagepossible %><h4>An image is possible!</h4><% end %>
+  <% if @phoneme.mneumonic %><h4>The mnemonic is <%= @phoneme.mneumonic %></h4><% end %>
+  <% if @phoneme.mneumonic_two %><h4>The mnemonic_two is <%= @phoneme.mneumonic_two %></h4><% end %>
+
+  <% if @phoneme.completed %><h4>DONE!</h4><% else %><h4>Not done</h4><% end %>
+  
+
+
+
+
+
+<%= link_to 'Edit', edit_phoneme_path(@phoneme), class: 'button' %> |
+<%= link_to 'Back', phonemes_path, class: 'button' %>
