@@ -41,6 +41,7 @@ gem 'kaminari'
 gem 'protected_attributes'
 
 gem 'metamagic'
+gem 'yaml_db'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

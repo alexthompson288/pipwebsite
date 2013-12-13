@@ -1,6 +1,8 @@
 Pipwebsite::Application.routes.draw do
   
 
+  resources :phonemes
+
   get '/home', :to => 'pages#home', :as => 'home'
   get '/about', :to => 'pages#about', :as => 'about'
   get '/coming', :to => 'pages#coming', :as => 'coming'
