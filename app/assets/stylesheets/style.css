@@ -240,5 +240,15 @@ img{
 	border: 2px solid #FFD737;
 }
 
+/*Curriculum page*/
+
+.curriculum-img{
+	text-align: center;
+}
+
+.curriculum-img img{
+	width: 90%;
+}
+
 
 

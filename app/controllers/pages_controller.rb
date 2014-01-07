@@ -17,6 +17,9 @@ class PagesController < ApplicationController
   def learninggames
   end
 
+  def curriculum
+  end
+
   def lettersounds
     
     @alphabeticphonemes = Phoneme.where("setnumber < 8").order(:phoneme)
