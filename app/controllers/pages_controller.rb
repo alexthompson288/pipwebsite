@@ -20,6 +20,41 @@ class PagesController < ApplicationController
   def curriculum
   end
 
+  def payment
+    
+  end
+
+  def payment1
+    Stripe.api_key = "sk_live_2Fe6QTbfXocPYYcCLcEMUFCr"
+
+    # Get the credit card details submitted by the form
+    token = params[:stripeToken]
+    email = params[:stripeEmail]
+
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => 50, # amount in cents, again
+        :currency => "gbp",
+        :card => token,
+        :description => email
+      )
+
+      # Create new user in the database
+      user = User.create(
+        :email => email,
+        :payment_received => true
+        )
+
+    rescue Stripe::CardError => e
+      redirect_to errors_url
+    end
+
+  end
+
+  def errors
+  end
+
   def lettersounds
     
     @alphabeticphonemes = Phoneme.where("setnumber < 8").order(:phoneme)

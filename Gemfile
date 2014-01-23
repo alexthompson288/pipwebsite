@@ -6,6 +6,8 @@ gem 'rails', '4.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+gem 'devise'
+
 # Use SCSS for stylesheets
 
 
@@ -20,6 +22,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

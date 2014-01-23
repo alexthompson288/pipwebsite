@@ -1,7 +1,9 @@
 Pipwebsite::Application.routes.draw do
   
 
+  devise_for :users
   resources :phonemes
+  resources :users
 
   get '/home', :to => 'pages#home', :as => 'home'
   get '/about', :to => 'pages#about', :as => 'about'
@@ -13,6 +15,8 @@ Pipwebsite::Application.routes.draw do
   get '/lettersounds', :to => 'pages#lettersounds', :as => 'lettersounds'
   get '/privacy', :to => 'pages#privacy', :as => 'privacy'
   get '/terms', :to => 'pages#terms', :as => 'terms'
+  get '/payment', :to => 'pages#payment', :as => 'payment'
+  post '/payment1', :to => 'pages#payment1', :as => 'payment1'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
