@@ -1,5 +1,13 @@
 <script>
-    $('a').click(function(){
+    $('.homepage-container a').click(function(){
+    $('html, body').animate({
+        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+    }, 500);
+    return false;
+    });
+</script>
+<script>
+    $('.learninggames-links-div a').click(function(){
     $('html, body').animate({
         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
     }, 500);

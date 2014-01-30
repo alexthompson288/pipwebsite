@@ -1,0 +1,2 @@
+module LearninggamesHelper
+end

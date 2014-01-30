@@ -1,0 +1,39 @@
+<div class="container learninggames-container">
+  <h1>Learning games</h1>
+  <h2>A bank of fun games you can play at home to help learning</h2>
+  <div class="learninggames-links-div">
+    <% @stages.each do |stage| %>
+      <% classstring = 'btn btn-success ' %>
+      <a href='#linkto<%= stage.id %>' class="btn btn-success"><%= stage.age %></a>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+  <a href="#" id="test-click">test</a>
+  <hr>
+  <% @stages.each do |stage| %>
+    <div class="stage-container">
+      <h1 name="linkto<%= stage.id %>"><%= stage.age %></h1>
+      <h2>Overview</h2>
+      <p class="stage-description"><%= stage.description %></p>
+      <% if stage.learninggames.any? %>
+        <% stage.learninggames.each do |game| %>
+          <div class="game-div">
+            <h2><%= game.name %> :  <p><%= game.skill %></p></h2>
+            <h4><%= game.learningobjective %></h4>
+            <% if game.video.present? %><%= raw(game.video) %><% end %></h4>
+            <p><%= game.instructions %></p>
+            <h4><a href="#" class="btn btn-success show-more-text">See full instructions</a></h4>
+            <div class="hidden-text">
+            <p><%= game.resources %></p>
+            <p><%= game.extension %></p>
+            </div>
+          </div>  
+        <% end %>
+      <% end %>
+    <hr>
+    </div>
+  <% end %>
+  
+
+  <br>
+</div>

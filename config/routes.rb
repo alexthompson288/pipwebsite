@@ -1,6 +1,10 @@
 Pipwebsite::Application.routes.draw do
   
 
+  resources :stages
+
+  resources :learninggames
+
   devise_for :users
   resources :phonemes
   resources :users
@@ -11,12 +15,13 @@ Pipwebsite::Application.routes.draw do
   get '/info', :to => 'pages#info', :as => 'info'
   get '/curriculum', :to => 'pages#curriculum', :as => 'curriculum'
   get '/videos', :to => 'pages#videos', :as => 'videos'
-  get '/learninggames', :to => 'pages#learninggames', :as => 'learninggames'
+  # get '/learninggames', :to => 'pages#learninggames', :as => 'learninggames'
   get '/lettersounds', :to => 'pages#lettersounds', :as => 'lettersounds'
   get '/privacy', :to => 'pages#privacy', :as => 'privacy'
   get '/terms', :to => 'pages#terms', :as => 'terms'
   get '/payment', :to => 'pages#payment', :as => 'payment'
   post '/payment1', :to => 'pages#payment1', :as => 'payment1'
+  get '/allgames', :to => 'pages#allgames', :as => 'allgames'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

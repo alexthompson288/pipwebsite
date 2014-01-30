@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @stage.number %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @stage.age %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stage.description %>
+</p>
+
+<p>
+	<% if !@stage.learninggames.count == 0 %>
+		<% @stage.learnininggames.each do |learninggame| %>
+			<%= learninggame.game %>
+
+		<% end %>
+	<% else %>
+	
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_stage_path(@stage) %> |
+<%= link_to 'Back', stages_path %>
