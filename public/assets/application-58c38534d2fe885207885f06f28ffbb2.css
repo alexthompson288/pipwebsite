@@ -6200,5 +6200,40 @@ img{
 	display: none;
 }
 
+.btn-yellow{
+	background-color: rgba(255, 215, 55, .9);
+	padding: 15px 20px;
+	width: 40%;
+	margin: 5px auto;
+
+}
+
+.btn-yellow:hover{
+	background-color: rgba(255, 215, 55, 1);
+	padding: 15px 20px;
+	text-decoration: none;
+
+}
+
+.btn-yellow a:hover{
+	text-decoration: none;
+}
+
+.clear{
+	clear: both;
+}
+
+.game-name-title{
+	font-size: 1.4em;
+}
+
+.game-skill-title{
+	font-size: 0.7em;
+}
+
+.learninggames-links-div{
+	margin-top: 30px;
+}
+
 
 
