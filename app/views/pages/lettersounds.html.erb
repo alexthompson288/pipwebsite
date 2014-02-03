@@ -1,13 +1,17 @@
 <div class="container lettersounds">
-	<h1 class="text-center">Click a letter to check the right sound</h1>
+	<h1 class="text-center">Click a letter and hear its sound</h1>
 	<div class="row">
 		<div class="alphabeticphonemes">
-			<h1>Phonemes listed alphabetically</h1>
+			<h1>Phonics</h1>
+			<p>In English letters can make more than one sound and the same sound can be made using more than one combination of letters.  For example, the letter 'a' makes a different sound in 'angry ant' and 'lady Amy' and the sound 'ee' can be made with 'ee' as in 'green teeth', 'y' as in 'hairy fairy', 'ea' as in 'screaming teacher', 'ey' as in 'donkey' or 'i' as in 'chic'.</p>
+			<p>This is part of what makes English so hard to learn.</p>
+
+			<h1>Phase 2 letters and sounds</h1>
+			<p>These are the first set of letters and sounds a child normally learns.  They are the most commmon sounds associated with the letters of the alphabet.  In later phases, a child will learn sounds made of two and three letters, as well as the less common combinations of letters and sounds.</p>
+
 			<% @alphabeticphonemes.each do |p| %>
 				<div class="col-md-3">
 					<span id="dummy" onclick="playSound(this, 'assets/<%= p.phoneme %>_<%= p.mnemonicname %>.mp3');">
-	      
-	    
 					<img src="assets/<%= p.imagename %>_<%= p.mnemonicname %>.png">
 					</span>
 				</div>
@@ -19,10 +23,9 @@
 		<br />
 		<br />
 
-
-
 	<div class="setnumberphonemes">
-		<h1>Phonemes listed by set</h1>
+		<h1>Set 1 letters and their sounds listed by set</h1>
+		<p>This is the order that a child normally learns the letters of the alphabet and their most common sounds.</p>
 		<h1>Set 1</h1>
 		<% @setonephonemes.each do |p| %>
 			<div class="set1">
