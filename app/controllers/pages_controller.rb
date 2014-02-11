@@ -21,7 +21,9 @@ class PagesController < ApplicationController
   end
 
   def payment
-    
+  end
+
+  def jobs
   end
 
   def payment1
