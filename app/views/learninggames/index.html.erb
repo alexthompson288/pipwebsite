@@ -1,39 +1,23 @@
-<div class="container learninggames-container">
-  <h1>Games : Learn while you play</h1>
-  <h2>Choose a level:</h2>
-  <div class="learninggames-links-div">
-    <% @stages.each do |stage| %>
-      
-      <a href='#linkto<%= stage.id %>' class="btn-yellow"><%= stage.age %></a>
-    <% end %>
-  </div>
-  <div class="clear"></div>
-  
-  <hr>
-  <% @stages.each do |stage| %>
-    <div class="stage-container">
-      <h1 name="linkto<%= stage.id %>"><%= stage.age %></h1>
-      <h2>Overview</h2>
-      <p class="stage-description"><%= stage.description %></p>
-      <% if stage.learninggames.any? %>
-        <% stage.learninggames.each do |game| %>
-          <div class="game-div">
-            <h3 class="game-name-title"><%= game.name %> :  <span class="game-skill-title"><%= game.skill %></span></h3>
-            <h4><%= raw(game.learningobjective) %></h4>
-            <% if game.video.present? %><%= raw(game.video) %><% end %></h4>
-            <p><%= raw(game.instructions) %></p>
-            <h4><a href="#" class="btn btn-success show-more-text">See full instructions</a></h4>
-            <div class="hidden-text">
-            <p><%= raw(game.resources) %></p>
-            <p><%= raw(game.extension) %></p>
-            </div>
-          </div>  
+<div class="container">
+    <h1>Learning games</h1>
+        <% @learninggames.each do |learninggame| %>
+          <div>
+            <h2><%= learninggame.name %></h2>
+            <p><%= learninggame.learningobjective %></p>
+            <p><%= learninggame.instructions %></p>
+            <p><%= learninggame.extension %></p>
+            <%= raw(learninggame.video) %>
+            <p><% if learninggame.skill %>Skill: <%= link_to learninggame.skill.name, skill_path(learninggame.skill) %><% end %></p>
+            <br >
+            <td><%= link_to 'Show', learninggame %></td>
+            <td><%= link_to 'Edit', edit_learninggame_path(learninggame) %></td>
+            <td><%= link_to 'Destroy', learninggame, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+        <hr >
         <% end %>
-      <% end %>
-    <hr>
-    </div>
-  <% end %>
-  
 
-  <br>
+
+    <br>
+
+    <%= link_to 'New Learning game', new_learninggame_path, class: 'btn btn-success' %>
 </div>

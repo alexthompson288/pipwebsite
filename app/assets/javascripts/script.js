@@ -35,6 +35,11 @@ $(document).ready(function(){
 		$(this).parent().parent().parent().find('.whole-learninggames-show-container-box').toggle();
 	});
 
+	$('.show-homepage-video').on('click',function(e){
+		e.preventDefault();
+		$('.homepage-see-video').toggle();
+	});
+
 	// $('#wrapper').dotdotdot();
 
 });

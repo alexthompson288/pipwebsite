@@ -15,7 +15,7 @@
 
 
 body{
-	padding: 60px 0 50px;
+	padding: 60px 0 0px;
 	background-color: #6cdec4;
 	font-size: 16px;
 	/* light blue background */
@@ -98,7 +98,30 @@ img{
 
 /*Footer elements*/
 
+footer{
+	background-color: rgba(255, 215, 55, 0.9);
+	color: white;
+	height: 130px;
+	padding: 20px;
+}
 
+footer a{
+	color: white;
+	
+
+}
+
+footer ul{
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+footer li{
+	display: inline;
+	list-style: none;
+	padding: 10px 30px;
+}
 
 /*Homepage elements*/
 .homepage-banner{
@@ -238,6 +261,49 @@ img{
 	z-index: -10;
 	animation: cloudMoveTwo 200s;
 	-webkit-animation: cloudMoveTwo 200s;
+}
+
+@keyframes letteraMove{
+	0% {left: 0%;}
+	
+	100% {left: 100%;}
+}
+
+@-webkit-keyframes letteraMove{
+	0% {left: 0%;}
+	100% {left: 100%;}
+}
+
+@keyframes letterbMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@-webkit-keyframes letterbMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+.moving-letter-a{
+	width: 50px;
+	height: 50px;
+	background: url(../assets/letter_o_small.png) no-repeat;
+	position: absolute;	
+	top: 70px;
+	z-index: -10;
+	animation: letteraMove 150s;
+	-webkit-animation: letteraMove 150s;
+}
+
+.moving-letter-b{
+	width: 78px;
+	height: 50px;
+	background: url(../assets/letter_b.png) no-repeat;
+	position: absolute;	
+	top: 210px;
+	z-index: -10;
+	animation: letterbMove 200s;
+	-webkit-animation: letterbMove 200s;
 }
 
 
@@ -396,6 +462,25 @@ textarea{
 
 .whole-learninggames-show-container-box{
 	display: none;
+}
+
+.website-home-art-bg{
+	background: url(../assets/website_bg_art_2.png) no-repeat bottom;
+	height: 440px;
+}
+
+.homepage-see-video{
+	display: none;
+}
+
+.pip-button{
+	padding: 10px 25px;
+	background-color: rgba(255, 215, 55, 0.9);
+	border-radius: 10px;
+	text-decoration: none;
+}
+.pip-button:hover{
+	text-decoration: none;
 }
 
 

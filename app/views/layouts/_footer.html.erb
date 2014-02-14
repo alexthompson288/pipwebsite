@@ -1,25 +1,13 @@
 <footer id="footer">        
     <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <h5><a href="index.html">Home</a></h5>
-            </div>
-           
-             <div class="col-md-2">
-                <h5><a href="apps.html">Apps</a></h5>
-            </div>
-            <div class="col-md-2">
-                <h5><a href="about.html">About</a></h5>
-            </div>
-
-             <div class="col-md-2">
-                <h5><a href="privacy.pdf">Privacy</a></h5>
-            </div>
-
-             <div class="col-md-2">
-                <h5><a href="terms.pdf">Terms</a></h5>
-            </div>
-        </div>
+        <ul class="pull-right nav navbar-nav">
+            <li><%= link_to 'HOME', home1_path %></li>
+            <li><%= link_to 'APPS', apps_path %></li>            
+            <li><%= link_to 'ABOUT', about_path %></li>
+            <li><%= link_to 'PARENT INFO', info_path %></li>
+            <li><%= link_to 'JOBS', jobs_path %></li>
+            
+        </ul>
     </div>
     <div class="container text-center">
             © 2013 Altitude Education Ltd.
