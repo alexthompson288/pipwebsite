@@ -6,6 +6,7 @@
       <th>Number</th>
       <th>Age</th>
       <th>Description</th>
+      <th>Video</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +19,7 @@
         <td><%= stage.number %></td>
         <td><%= stage.age %></td>
         <td><%= stage.description %></td>
+        <td><%= stage.video %></td>
         <td><%= link_to 'Show', stage %></td>
         <td><%= link_to 'Edit', edit_stage_path(stage) %></td>
         <td><%= link_to 'Destroy', stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>

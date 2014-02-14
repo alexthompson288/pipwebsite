@@ -70,6 +70,6 @@ class LearninggamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learninggame_params
-      params.require(:learninggame).permit(:name, :skill, :learningobjective, :instructions, :resources, :extension, :video, :stage_id)
+      params.require(:learninggame).permit(:name, :skillstrings, :learningobjective, :instructions, :resources, :extension, :video, :stage_id, :skill_id)
     end
 end

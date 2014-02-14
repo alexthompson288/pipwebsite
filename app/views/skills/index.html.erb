@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Listing skills</h1>
+        <% @skills.each do |skill| %>
+          <div>
+            <h2><%= skill.name %></h2>
+            <p><%= skill.description %></p>
+            <%= raw(skill.video) %>
+            <br >
+            <td><%= link_to 'Show', skill %></td>
+            <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+            <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
+        <br >
+        <% end %>
+
+
+    <br>
+
+    <%= link_to 'New Skill', new_skill_path %>
+</div>

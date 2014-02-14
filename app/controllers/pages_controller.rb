@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   def home
   end
 
+  def home1
+    @stages = Stage.order(:number)
+    @products = Product.all
+    
+  end
+
   def about
   end
 

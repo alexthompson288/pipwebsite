@@ -1,5 +1,19 @@
 /*General styles
 */
+
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('LANENAR_-webfont.eot');
+    src: url('LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('LANENAR_-webfont.woff') format('woff'),
+         url('LANENAR_-webfont.ttf') format('truetype'),
+         url('LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 body{
 	padding: 60px 0 50px;
 	background-color: #6cdec4;
@@ -21,6 +35,11 @@ h3{
 
 img{
 	max-width: 100%;
+}
+
+.homepage-title-text{
+	font-family: 'lane_-_narrowregular';
+	margin-bottom: 50px;
 }
 
 
@@ -250,13 +269,6 @@ img{
 	width: 90%;
 }
 
-.game-div{
-	background-color: rgba(255, 215, 55, 0.9);
-	border-radius: 20px;
-	padding: 30px;
-	margin-top: 20px;
-}
-
 .hidden-text{
 	display: none;
 }
@@ -294,6 +306,84 @@ img{
 
 .learninggames-links-div{
 	margin-top: 30px;
+}
+
+input{
+	width: 50%;
+}
+
+textarea{
+	width: 50%;
+	height: 200px;
+}
+
+
+.skills-container-box{
+	background-color: rgba(255, 15, 55, 0.3);
+	width: 96%;
+	margin: 20px auto;
+	border-radius: 20px;
+	padding: 30px;
+
+}
+
+.stage-container-box{
+	background-color: rgba(255, 215, 155, 0.6);
+	width: 96%;
+	margin: 20px auto;
+	border-radius: 20px;
+	padding: 30px;
+}
+
+.learninggame-container-box{
+	width: 96%;
+	margin: 20px auto 10px;
+	background-color: rgba(255, 215, 55, 0.6);
+	border-radius: 20px;
+	padding: 30px;
+	
+}
+
+.individual-product-box img{
+	width: 100px;
+	height: 100px;
+}
+
+.app-store-link img{
+	width: inherit;
+	height: 33px;
+}
+
+.app-store-link-large img{
+	width: inherit;
+	height: 60px;
+}
+
+.margin-two-px{
+	margin: 2px 0;
+}
+
+.product-show-image-box{
+	text-align: center;
+}
+
+.product-show-image-box img{
+	width: 256px;
+}
+
+.round-black-border{
+	border: 1px solid black;
+	border-radius: 20px;
+}
+
+.skill-list-ul{
+	text-decoration: none;
+	text-align: center;
+	list-style-type: none;
+}
+
+.skill-list-ul li{
+	padding: 10px 5px;
 }
 
 

@@ -1,6 +1,10 @@
 Pipwebsite::Application.routes.draw do
   
 
+  resources :skills
+
+  resources :products
+
   resources :stages
 
   resources :learninggames
@@ -23,6 +27,7 @@ Pipwebsite::Application.routes.draw do
   post '/payment1', :to => 'pages#payment1', :as => 'payment1'
   get '/allgames', :to => 'pages#allgames', :as => 'allgames'
   get '/jobs', :to => 'pages#jobs', :as => 'jobs'
+  get '/home1', :to => 'pages#home1', :as => 'home1'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-6 product-show-image-box">
+      <h1>
+        <%= @product.name %>
+      </h1>
+      <%= image_tag(@product.image) %>
+      <br />
+      <%= raw(@product.video) %>
+    </div>
+
+    <div class="col-md-6">
+      <h1>Overview</h1>
+      <p><%= @product.description %></p>
+      <br >
+      <p><%= @product.price %></p>
+
+      <a href="<%= @product.link %>" target="_blank" class="app-store-link-large">
+        <%= image_tag('available_app_store_150.png') %>
+      </a>
+      <br />
+      <br />
+      <% if @product.stages.any? %>
+        <h4>Appropriate for these age groups:</h4>
+        <ul class="skill-list-ul">
+        <% @product.stages.each do |stage| %>
+          <li class="round-black-border"><%= stage.age %></li>
+          <br >
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+    <div class="clearfix"></div>
+    <%= render :partial => "shared/productsindex" %>
+
+  
+
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %>
+</div>
+</div>

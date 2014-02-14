@@ -11,22 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128181616) do
+ActiveRecord::Schema.define(version: 20140214123100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "learninggames", force: true do |t|
     t.string   "name"
-    t.string   "skill"
+    t.string   "skillstring"
     t.string   "learningobjective"
     t.text     "instructions"
     t.text     "resources"
     t.text     "extension"
-    t.string   "video"
+    t.text     "video"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "stage_id"
+    t.integer  "skill_id"
+    t.integer  "emptycolumn"
   end
 
   create_table "learninggames_stages", id: false, force: true do |t|
@@ -50,12 +52,42 @@ ActiveRecord::Schema.define(version: 20140128181616) do
     t.integer  "phonemeorder"
   end
 
+  create_table "products", force: true do |t|
+    t.string   "price"
+    t.string   "link"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "video"
+    t.boolean  "comingsoon"
+  end
+
+  create_table "products_stages", id: false, force: true do |t|
+    t.integer "product_id"
+    t.integer "stage_id"
+  end
+
+  add_index "products_stages", ["product_id"], name: "index_products_stages_on_product_id", using: :btree
+  add_index "products_stages", ["stage_id"], name: "index_products_stages_on_stage_id", using: :btree
+
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "video"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "stage_id"
+  end
+
   create_table "stages", force: true do |t|
     t.integer  "number"
     t.string   "age"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "video"
   end
 
   create_table "users", force: true do |t|

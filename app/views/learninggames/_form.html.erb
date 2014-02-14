@@ -42,10 +42,13 @@
     <%= f.text_field :video %>
   </div>
   <div class="field">
-      
-      <%= f.label :stage_id %>
-      <%= f.select :stage_id, options_for_select(Stage.all.map { |r| [r.age, r.id] }, selected: @learninggame.stage_id),:prompt => 'Choose a stage' %>
-    </div>
+    <%= f.label :stage_id %>
+    <%= f.select :stage_id, options_for_select(Stage.all.map { |r| [r.age, r.id] }, selected: @learninggame.stage_id),:prompt => 'Choose a stage' %>
+  </div>
+  <div class="field">
+    <%= f.label :skill_id %>
+    <%= f.select :skill_id, options_for_select(Skill.all.map { |r| [r.name, r.id] }, selected: @learninggame.skill_id),:prompt => 'Choose a skill' %>
+  </div>
     <br />
   <div class="actions">
     <%= f.submit %>
