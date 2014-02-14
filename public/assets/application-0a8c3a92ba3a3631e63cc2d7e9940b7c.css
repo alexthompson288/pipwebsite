@@ -6099,7 +6099,8 @@ img{
 
 .homepage-bottom-graphics{
 	height:200px;
-	position: relative
+	position: relative;
+	margin-top: 120px;
 }
 
 .dot-more-info{
@@ -6172,7 +6173,7 @@ img{
 	height: 85px;
 	background: url(../assets/website_sprite_sheet.png) no-repeat -116px -900px;
 	position: absolute;	
-	top: 90px;
+	top: 70px;
 	z-index: -10;
 	animation: cloudMove 150s;
 	-webkit-animation: cloudMove 150s;
@@ -6183,7 +6184,7 @@ img{
 	height: 50px;
 	background: url(../assets/website_sprite_sheet.png) no-repeat -22px -914px;
 	position: absolute;	
-	top: 190px;
+	top: 210px;
 	z-index: -10;
 	animation: cloudMoveTwo 200s;
 	-webkit-animation: cloudMoveTwo 200s;
@@ -6277,13 +6278,7 @@ textarea{
 
 }
 
-.stage-container-box{
-	background-color: rgba(255, 215, 155, 0.6);
-	width: 96%;
-	margin: 20px auto;
-	border-radius: 20px;
-	padding: 30px;
-}
+
 
 .learninggame-container-box{
 	width: 96%;
@@ -6336,5 +6331,21 @@ textarea{
 	padding: 10px 5px;
 }
 
+/*Stage container display on homepage*/
+
+.stage-container-box{
+	background-color: rgba(255, 215, 155, 0.6);
+	width: 96%;
+	margin: 20px auto;
+	border-radius: 20px;
+	padding: 30px;
+	display: none;
+}
+
+/*Learning games whole box on homepage*/
+
+.whole-learninggames-show-container-box{
+	display: none;
+}
 
 

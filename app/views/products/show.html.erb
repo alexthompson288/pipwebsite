@@ -16,9 +16,15 @@
       <br >
       <p><%= @product.price %></p>
 
-      <a href="<%= @product.link %>" target="_blank" class="app-store-link-large">
-        <%= image_tag('available_app_store_150.png') %>
-      </a>
+      <% if @product.comingsoon %>
+        <a href="<%= @product.link %>" target="_blank" class="app-store-link-large">
+          <%= image_tag('available_app_store_100_comingsoon.png') %>
+        </a>
+      <% else %>
+        <a href="<%= @product.link %>" target="_blank" class="app-store-link-large">
+          <%= image_tag('available_app_store_150.png') %>
+        </a>
+      <% end %>
       <br />
       <br />
       <% if @product.stages.any? %>

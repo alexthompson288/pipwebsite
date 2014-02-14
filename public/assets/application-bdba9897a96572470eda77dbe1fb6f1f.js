@@ -12687,6 +12687,18 @@ $(document).ready(function(){
 		$(body).css("background-color","yellow");
 	});
 
+	$('.reveal-stage-info').on('click', function(e){
+		e.preventDefault();
+		var stagestring = $(this).data('stage');
+		$('.stage-container-box').hide();
+		$('#'+stagestring).show();
+	});
+
+	$('.show-all-games').on('click',function(e){
+		e.preventDefault();
+		$(this).parent().parent().parent().find('.whole-learninggames-show-container-box').toggle();
+	});
+
 	// $('#wrapper').dotdotdot();
 
 });

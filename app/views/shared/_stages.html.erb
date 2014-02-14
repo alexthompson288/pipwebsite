@@ -1,8 +1,9 @@
-<div class="container learninggames-container">
+
+<div class="learninggames-container">
   <h2>Select your child's level:</h2>
   <div class="learninggames-links-div">
     <% @stages.each do |stage| %>
-      <a href='#linkto<%= stage.id %>' class="btn-yellow"><%= stage.age %></a>
+      <a href='#' data-stage="stage-container-id-<%= stage.id %>" class="btn-yellow reveal-stage-info"><%= stage.age %></a>
     <% end %>
   </div>
   <div class="clear"></div>
@@ -10,50 +11,65 @@
   <hr>
 
   <% @stages.each do |stage| %>
-    <div class="stage-container-box">
+    <div class="stage-container-box" id="stage-container-id-<%=stage.id %>">
       <h1 name="linkto<%= stage.id %>"><%= stage.age %></h1>
       <div class="row">
-      <div class="col-md-6">
-        <%= raw(stage.video) %>
-      </div>
-      <div class="col-md-5">
-        <h2>Overview</h2>
-        <p class="stage-description"><%= stage.description %></p>
-      </div>
-      <div class="clearfix"></div>
-      <div class="stage-relevant-products">
-        <% @products = stage.products %>
-        <%= render :partial => "shared/productsindex" %>
-      </div>
-      <% if stage.skills.any? %>
-        <% stage.skills.each do |skill| %>
-        <div class="skills-container-box">
-          <h3><%= skill.name %></h3>
-          <p><%= skill.description %></p>
-
-          <% if skill.learninggames.any? %>
-
-            <h2>Games</h2>
-            <% skill.learninggames.each do |game| %>
-              <div class="learninggame-container-box">
-                <h3 class="game-name-title"><%= game.name %> :  <span class="game-skill-title"><%= game.skill.name %></span></h3>
-                <h4><%= raw(game.learningobjective) %></h4>
-                <% if game.video.present? %><%= raw(game.video) %><% end %></h4>
-                <p><%= raw(game.instructions) %></p>
-                <h4><a href="#" class="btn btn-success show-more-text">See full instructions</a></h4>
-                <div class="hidden-text">
-                  <p><%= raw(game.resources) %></p>
-                  <p><%= raw(game.extension) %></p>
-                </div>
-              </div>  
-              <br >
-            <% end %>
-          <% end %>
-            </div>
-          <br >
+        <div class="col-md-6">
+          <%= raw(stage.video) %>
         </div>
+        <div class="col-md-5">
+          <h2>Overview</h2>
+          <p class="stage-description"><%= stage.description %></p>
+        </div>
+        <div class="clearfix"></div>
+        <div class="stage-relevant-products">
+          <% @products = stage.products %>
+          <%= render :partial => "shared/productsindex" %>
+        </div>
+        <% if stage.skills.any? %>
+          <% stage.skills.each do |skill| %>
+          <div class="skills-container-box">
+            <h3><%= skill.name %></h3>
+            <div class="row">
+              <div class="col-md-5">
+                <%= raw(skill.video) %>
+              </div>
+              <div class="col-md-5">
+                <p><%= skill.description %></p>
+                <a href="#" class="show-all-games btn btn-success">Show all games</a>
+              </div>
+            </div>
+
+            <% if skill.learninggames.any? %>
+              <div class="whole-learninggames-show-container-box">
+                <h2>Games</h2>
+                <% skill.learninggames.each do |game| %>
+                  <div class="learninggame-container-box">
+                    <h3 class="game-name-title"><%= game.name %> :  <span class="game-skill-title"><%= game.skill.name %></span></h3>
+                    <div class="col-md-5">
+                      <h4><%= raw(game.learningobjective) %></h4>
+                    </div>
+                    <div class="clearfix"></div>
+                    <% if game.video.present? %>
+                      <%= raw(game.video) %>
+                    <% end %></h4>
+                    <p><%= raw(game.instructions) %></p>
+                    <h4><a href="#" class="btn btn-success show-more-text">See full instructions</a></h4>
+                    <div class="hidden-text">
+                      <p><%= raw(game.resources) %></p>
+                      <p><%= raw(game.extension) %></p>
+                    </div>
+                  </div> <!-- end of learning game div  -->
+                  <br >
+                <% end %>
+              </div>
+            <% end %>
+          </div> <!-- end of skills container box -->
+          <br >
+        
         <% end %>
       <% end %>
-    <hr>
-    </div>
+      </div> <!-- end of row div -->
+    </div> <!-- end of stage div -->
   <% end %>
+</div> <!-- end of learninggames container -->

@@ -38,6 +38,12 @@
     <%= f.text_field :image %>
   </div>
 
+  <div class="field two columns left">
+    <%= f.label 'Coming soon' %><br />
+    <%= f.check_box :comingsoon %>
+  </div>
+  <hr>
+
   <% for stage in Stage.all %>
   <div class="field two columns left">
       <label class="checkbox inline">

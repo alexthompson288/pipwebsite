@@ -14,6 +14,10 @@ class PagesController < ApplicationController
   def coming
   end
 
+  def apps
+    @products = Product.all
+  end
+
   def info
   end
 

@@ -6,10 +6,16 @@
 		<%= link_to image_tag(product.image), product_path(product) %>
 		<br />
 		<p class="margin-two-px"><%= product.price %></p>
-		
-		<a href="<%= product.link %>" target="_blank" class="app-store-link">
-			<%= image_tag('available_app_store_100.png') %>
+
+		<% if product.comingsoon %>
+			<a href="<%= product.link %>" target="_blank" class="app-store-link">
+			<%= image_tag('available_app_store_100_comingsoon.png') %>
 		</a>
+		<% else %>
+			<a href="<%= product.link %>" target="_blank" class="app-store-link">
+				<%= image_tag('available_app_store_100.png') %>
+			</a>
+		<% end %>
 	</div>
 <% end %>
 </div>

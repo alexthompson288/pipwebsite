@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<%= metamagic %>
-  	<%= metamagic :title => 'Learn to read with Pip - Helping children learn to read', :description => 'Learn to read with Pip is an education company creating the highest quality products to help children improve their reading skills with apps that encourage them to continue learning and practising phonics beyond the classroom', :keywords => %w(phonics education learning reading pip learn literacy) %>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= csrf_meta_tags %>
-  	<meta name="google-site-verification" content="c9jatNTAMqFVxUZZlUCersnXTPNZRuPmShK2yInP-eA" />
-  	<script type="text/javascript">
-          function playSound(el,soundfile) {
-              if (el.mp3) {
-                  if(el.mp3.paused) el.mp3.play();
-                  else el.mp3.pause();
-              } else {
-                  el.mp3 = new Audio(soundfile);
-                  el.mp3.play();
-              }
-          }
-      </script>
-</head>
-<body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-	<%= render :partial => "shared/header" %>
-	<%= yield %>
-	<%= render :partial => "shared/footer" %>
-	<%= render :partial => "shared/scrolljavascript" %>
-	<%= render :partial => "shared/googleanalytics" %>
+  <head>
+  	<%= metamagic %>
+    	<%= metamagic :title => 'Learn to read with Pip - Helping children learn to read', :description => 'Learn to read with Pip is an education company creating the highest quality products to help children improve their reading skills with apps that encourage them to continue learning and practising phonics beyond the classroom', :keywords => %w(phonics education learning reading pip learn literacy) %>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    	<%= csrf_meta_tags %>
+    	<meta name="google-site-verification" content="c9jatNTAMqFVxUZZlUCersnXTPNZRuPmShK2yInP-eA" />
+    	<script type="text/javascript">
+            function playSound(el,soundfile) {
+                if (el.mp3) {
+                    if(el.mp3.paused) el.mp3.play();
+                    else el.mp3.pause();
+                } else {
+                    el.mp3 = new Audio(soundfile);
+                    el.mp3.play();
+                }
+            }
+        </script>
+  </head>
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  	<%= render :partial => "shared/header" %>
+  	<%= yield %>
+  	<%= render :partial => "shared/footer" %>
+  	<%= render :partial => "shared/scrolljavascript" %>
+  	<%= render :partial => "shared/googleanalytics" %>
 
-</body>
+  </body>
 </html>
