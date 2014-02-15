@@ -2,9 +2,11 @@
 <div class="learninggames-container">
   <h2>Select your child's level:</h2>
   <div class="learninggames-links-div">
+    <ul class="select-age-ul">
     <% @stages.each do |stage| %>
-      <a href='#' data-stage="stage-container-id-<%= stage.id %>" class="btn-yellow reveal-stage-info"><%= stage.age %></a>
+      <li><a href='#' data-stage="stage-container-id-<%= stage.id %>" class="btn-yellow reveal-stage-info"><%= stage.age %></a></li>
     <% end %>
+    <ul>
   </div>
   <div class="clear"></div>
   
@@ -22,11 +24,14 @@
           <p class="stage-description"><%= stage.description %></p>
         </div>
         <div class="clearfix"></div>
+        <hr >
         <div class="stage-relevant-products">
           <% @products = stage.products %>
+          <h2>Our apps relevant for <%= stage.age %></h2>
           <%= render :partial => "shared/productsindex" %>
         </div>
         <% if stage.skills.any? %>
+          <h2>Skills developed during <%= stage.age %></h2>
           <% stage.skills.each do |skill| %>
           <div class="skills-container-box">
             <h3><%= skill.name %></h3>
@@ -41,8 +46,10 @@
             </div>
 
             <% if skill.learninggames.any? %>
+              <hr>
               <div class="whole-learninggames-show-container-box">
                 <h2>Games</h2>
+
                 <% skill.learninggames.each do |game| %>
                   <div class="learninggame-container-box">
                     <h3 class="game-name-title"><%= game.name %> :  <span class="game-skill-title"><%= game.skill.name %></span></h3>
@@ -61,6 +68,7 @@
                     </div>
                   </div> <!-- end of learning game div  -->
                   <br >
+                  <hr>
                 <% end %>
               </div>
             <% end %>

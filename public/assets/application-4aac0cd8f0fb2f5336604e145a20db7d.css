@@ -6213,47 +6213,152 @@ footer li{
 	-webkit-animation: cloudMoveTwo 200s;
 }
 
-@keyframes letteraMove{
+@keyframes letteroMove{
 	0% {left: 0%;}
 	
 	100% {left: 100%;}
 }
 
-@-webkit-keyframes letteraMove{
+@-webkit-keyframes letteroMove{
 	0% {left: 0%;}
 	100% {left: 100%;}
 }
 
-@keyframes letterbMove{
+@keyframes letterrMove{
 	0% {left: 30%;}
 	100% {left: 100%;}
+}
+
+@-webkit-keyframes letterrMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@keyframes letteraMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@-webkit-keyframes letteraMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@keyframes letterbMove{
+	0% {right: 30%;}
+	100% {right: 100%;}
 }
 
 @-webkit-keyframes letterbMove{
+	0% {right: 30%;}
+	100% {right: 100%;}
+}
+
+@keyframes letteriMove{
 	0% {left: 30%;}
 	100% {left: 100%;}
 }
 
-.moving-letter-a{
-	width: 50px;
-	height: 50px;
+@-webkit-keyframes letteriMove{
+	0% {right: 10%;}
+	100% {right: 100%;}
+}
+
+@keyframes letternMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@-webkit-keyframes letternMove{
+	0% {left: 30%;}
+	100% {left: 100%;}
+}
+
+@keyframes lettertMove{
+	0% {left: 50%;}
+	100% {left: 100%;}
+}
+
+@-webkit-keyframes lettertMove{
+	0% {left: 50%;}
+	100% {left: 100%;}
+}
+
+.moving-letter-o{
+	width: 150px;
+	height: 150px;
 	background: url(../assets/letter_o_small.png) no-repeat;
 	position: absolute;	
-	top: 70px;
+	top: 370px;
 	z-index: -10;
-	animation: letteraMove 150s;
-	-webkit-animation: letteraMove 150s;
+	animation: letteroMove 150s;
+	-webkit-animation: letteroMove 150s;
+}
+
+.moving-letter-r{
+	width: 150	px;
+	height: 150px;
+	background: url(../assets/letter_r_small.png) no-repeat;
+	position: absolute;	
+	top: 380px;
+	z-index: 10;
+	animation: letterrMove 200s;
+	-webkit-animation: letterrMove 200s;
+}
+
+.moving-letter-a{
+	width: 78px;
+	height: 50px;
+	background: url(../assets/letter_r_small.png) no-repeat;
+	position: absolute;	
+	top: 310px;
+	z-index: 10;
+	animation: letteraMove 200s;
+	-webkit-animation: letteraMove 200s;
 }
 
 .moving-letter-b{
-	width: 78px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	background: url(../assets/letter_b.png) no-repeat;
 	position: absolute;	
-	top: 210px;
-	z-index: -10;
+	top: 490px;
+	z-index: 10;
 	animation: letterbMove 200s;
 	-webkit-animation: letterbMove 200s;
+}
+
+.moving-letter-i{
+	width: 150px;
+	height: 150px;
+	background: url(../assets/letter_i.png) no-repeat;
+	position: absolute;	
+	top: 230px;
+	z-index: -10;
+	animation: letteriMove 200s;
+	-webkit-animation: letteriMove 200s;
+}
+
+.moving-letter-n{
+	width: 150px;
+	height: 150px;
+	background: url(../assets/letter_n.png) no-repeat;
+	position: absolute;	
+	top: 410px;
+	z-index: 10;
+	animation: letternMove 200s;
+	-webkit-animation: letternMove 200s;
+}
+
+.moving-letter-t{
+	width: 75px;
+	height: 75px;
+	background: url(../assets/letter_t.png) no-repeat;
+	position: absolute;	
+	top: 410px;
+	z-index: 10;
+	animation: lettertMove 200s;
+	-webkit-animation: lettertMove 200s;
 }
 
 
@@ -6336,22 +6441,28 @@ textarea{
 
 
 .skills-container-box{
-	background-color: rgba(255, 15, 55, 0.3);
+	background-color: rgba(255, 215, 55, 0.4);
 	width: 96%;
-	margin: 20px auto;
+	margin: 0px auto;
 	border-radius: 20px;
 	padding: 30px;
 
 }
 
+.select-age-ul{
+	display: block;
+}
 
+.select-age-ul li{
+	display: inline;
+}
 
 .learninggame-container-box{
 	width: 96%;
 	margin: 20px auto 10px;
-	background-color: rgba(255, 215, 55, 0.6);
-	border-radius: 20px;
-	padding: 30px;
+	/*background-color: rgba(255, 215, 55, 0.6);
+	border-radius: 20px;*/
+	padding: 10px;
 	
 }
 
@@ -6400,7 +6511,7 @@ textarea{
 /*Stage container display on homepage*/
 
 .stage-container-box{
-	background-color: rgba(255, 215, 155, 0.6);
+	background-color: white;
 	width: 96%;
 	margin: 20px auto;
 	border-radius: 20px;
