@@ -7,12 +7,14 @@
       </h1>
       <%= image_tag(@product.image) %>
       <br />
+      <br />
+      <br />
       <%= raw(@product.video) %>
     </div>
 
     <div class="col-md-6">
       <h1>Overview</h1>
-      <p><%= @product.description %></p>
+      <p><%= raw(@product.description) %></p>
       <br >
       <p><%= @product.price %></p>
 
@@ -40,9 +42,6 @@
     <div class="clearfix"></div>
     <%= render :partial => "shared/productsindex" %>
 
-  
 
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
 </div>
 </div>
