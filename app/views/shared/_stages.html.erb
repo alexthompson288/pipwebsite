@@ -1,10 +1,10 @@
 
 <div class="learninggames-container">
   <h2>Select your child's level:</h2>
-  <div class="learninggames-links-div">
+  <div class="learninggames-links-div row">
     <ul class="select-age-ul">
     <% @stages.each do |stage| %>
-      <li><a href='#' data-stage="stage-container-id-<%= stage.id %>" class="btn-yellow reveal-stage-info"><%= stage.age %></a></li>
+      <div class="col-md-3 child-age-button"<li><a href='#' data-stage="stage-container-id-<%= stage.id %>" class="btn-yellow reveal-stage-info"><%= stage.age %></a></li></div>
     <% end %>
     <ul>
   </div>
