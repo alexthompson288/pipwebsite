@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @glossaryterm.term %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @glossaryterm.description %>
+</p>
+
+<%= link_to 'Edit', edit_glossaryterm_path(@glossaryterm) %> |
+<%= link_to 'Back', glossaryterms_path %>

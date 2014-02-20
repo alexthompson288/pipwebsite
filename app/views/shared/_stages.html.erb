@@ -52,20 +52,22 @@
 
                 <% skill.learninggames.each do |game| %>
                   <div class="learninggame-container-box">
-                    <h3 class="game-name-title"><%= game.name %> :  <span class="game-skill-title"><%= game.skill.name %></span></h3>
-                    <div class="col-md-5">
-                      <h4><%= raw(game.learningobjective) %></h4>
+                    <h3 class="game-name-title"><%= game.name %></h3>
+                    <div class="">
+                      <h4>What skill are we practising?</h4>
+                      <p><%= raw(game.learningobjective) %></p>
                     </div>
                     <div class="clearfix"></div>
                     <% if game.video.present? %>
                       <%= raw(game.video) %>
-                    <% end %></h4>
+                    <% end %>
+                    <h4>How do we play?</h4>
                     <p><%= raw(game.instructions) %></p>
-                    <h4><a href="#" class="btn btn-success show-more-text">See full instructions</a></h4>
-                    <div class="hidden-text">
-                      <p><%= raw(game.resources) %></p>
-                      <p><%= raw(game.extension) %></p>
-                    </div>
+                    <h4>What things do I need to play?</h4>
+                    <p><%= raw(game.resources) %></p>
+                    <h4>How can I extend the game?</h4>
+                    <p><%= raw(game.extension) %></p>
+                    
                   </div> <!-- end of learning game div  -->
                   <br >
                   <hr>

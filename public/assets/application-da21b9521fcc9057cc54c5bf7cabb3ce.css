@@ -5947,9 +5947,13 @@ td.visible-print {
   They will automatically be included in application.css.
 */
 
-/*General styles
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
 */
 
+game-name-title/*General styles
+*/
 
 @font-face {
     font-family: 'lane_-_narrowregular';
@@ -6419,7 +6423,7 @@ footer li{
 }
 
 .game-name-title{
-	font-size: 1.4em;
+	font-size: 1.8em;
 }
 
 .game-skill-title{

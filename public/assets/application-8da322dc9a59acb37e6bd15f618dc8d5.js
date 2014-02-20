@@ -11999,6 +11999,10 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 
 
 }).call(this);
+(function() {
+
+
+}).call(this);
 /*
  *	jQuery dotdotdot 1.6.12
  *

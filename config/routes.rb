@@ -1,6 +1,8 @@
 Pipwebsite::Application.routes.draw do
   
 
+  resources :glossaryterms
+
   devise_for :admins
   resources :skills
 
@@ -30,6 +32,7 @@ Pipwebsite::Application.routes.draw do
   get '/jobs', :to => 'pages#jobs', :as => 'jobs'
   get '/home1', :to => 'pages#home1', :as => 'home1'
   get '/apps', :to => 'pages#apps', :as => 'apps'
+  get '/glossary', :to => 'pages#glossary', :as => 'glossary'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -24,6 +24,10 @@ class PagesController < ApplicationController
   def videos
   end
 
+  def glossary
+    @glossaryterms = Glossaryterm.all
+  end
+  
   def learninggames
   end
 

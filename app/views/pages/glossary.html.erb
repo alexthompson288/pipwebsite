@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>Glossary of words and jargon</h1>
+	<% @glossaryterms.each do |term| %>
+		<div class="glossary-term-div">
+			<h2><%= term.term %> : <span><%= term.description %></span></h2>
+		</div>	
+	<% end %>
+</div>
