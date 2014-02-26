@@ -24,6 +24,9 @@ class PagesController < ApplicationController
   def videos
   end
 
+  def partnershipprogramme
+  end
+
   def glossary
     @glossaryterms = Glossaryterm.all
   end
