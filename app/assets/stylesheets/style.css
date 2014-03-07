@@ -39,7 +39,7 @@ img{
 
 .homepage-title-text{
 	/*font-family: 'lane_-_narrowregular';*/
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 
@@ -577,7 +577,7 @@ textarea{
 
 .website-home-art-bg{
 	background: url(../assets/website_bg_art_2.png) no-repeat bottom;
-	height: 440px;
+	height: 540px;
 }
 
 .homepage-see-video{
@@ -596,6 +596,33 @@ textarea{
 
 .child-age-button{
 	height: 60px;
+}
+
+.pip-pad img{
+	width: 100%;
+	border: 2px solid rgb(255, 215, 55);
+}
+
+#mc-embedded-subscribe{
+	width: 35%;
+	float: right;
+
+}
+
+#mce-EMAIL{
+	width: 60%;
+	float: left;
+	height: 40px;
+}
+
+.email{
+	width: 100%;
+}
+
+#mc_embed_signup{
+	width: 40%;
+	margin: 0 auto;
+	z-index: -1;
 }
 
 

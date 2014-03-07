@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def pippad  
+  end
+
   def coming
   end
 
