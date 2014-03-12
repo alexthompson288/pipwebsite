@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def pippad  
   end
 
+  def fullappdownload 
+  end
+
   def coming
   end
 
@@ -81,8 +84,7 @@ class PagesController < ApplicationController
     @learninggames = Learninggame.all
   end
 
-  def lettersounds
-    
+  def lettersounds 
     @alphabeticphonemes = Phoneme.where("setnumber < 8").order(:phoneme)
     @setonephonemes = Phoneme.where(:setnumber => '1').order(:phonemeorder)
     @settwophonemes = Phoneme.where(:setnumber => '2').order(:phonemeorder)
@@ -91,7 +93,12 @@ class PagesController < ApplicationController
     @setfivephonemes = Phoneme.where(:setnumber => '5').order(:phonemeorder)
     @setsixphonemes = Phoneme.where(:setnumber => '6').order(:phonemeorder)
     @setsevenphonemes = Phoneme.where(:setnumber => '7').order(:phonemeorder)
-
   end
+
+  def teacherdownload
+  
+  end
+
+  
 
 end

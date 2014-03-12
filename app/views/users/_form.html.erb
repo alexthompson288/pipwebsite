@@ -1,3 +1,4 @@
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +12,48 @@
     </div>
   <% end %>
 <div class="clear"></div>
-  <div class="field four columns">
-    <%= f.label 'Email' %><br />
-    <%= f.text_field :email %>
-  </div>
+  <div class="row">
+    <div class="field col-md-6 span6">
+      <%= f.label 'Email' %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'First Name' %><br />
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'Last Name' %><br />
+      <%= f.text_field :second_name %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'School Name' %><br />
+      <%= f.text_field :school %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'School postcode' %><br />
+      <%= f.text_field :postcode %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'School website' %><br />
+      <%= f.text_field :website %>
+    </div>
+
+    <div class="field col-md-6 span6">
+      <%= f.label 'Role in school' %><br />
+      <%= f.text_field :yeargroup %>
+    </div>
   
-  <div class="actions">
-    <%= f.submit %>
+    <div class="clear"></div>
+    <br />
+    <div class="actions col-md-4">
+      <%= f.submit %>
+    </div>
   </div>
+  <br />
+  <br />
 <% end %>

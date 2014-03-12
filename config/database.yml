@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: pipwebsite10
+  database: pipwebsite11
   host: localhost
   pool: 5
   timeout: 5000

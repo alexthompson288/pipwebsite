@@ -36,6 +36,10 @@ Pipwebsite::Application.routes.draw do
   get '/literaturereview', :to => 'pages#literaturereview', :as => 'literaturereview'
   get '/partnershipprogramme', :to => 'pages#partnershipprogramme', :as => 'partnershipprogramme'
   get '/pippad', :to => 'pages#pippad', :as => 'pippad'
+  get '/teacherdownload', :to => 'pages#teacherdownload', :as => 'teacherdownload'
+  get '/fullappdownload', :to => 'pages#fullappdownload', :as => 'fullappdownload'
+
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

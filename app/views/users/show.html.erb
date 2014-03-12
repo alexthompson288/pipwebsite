@@ -1,13 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-
-  <h4>Grapheme: <%= @user.email %></h4>
+<div class="container">
+	<h4>Many thanks <%= @user.first_name %> <%= @user.second_name %>!</h4>
+	<p>We will send an email with a link to download the full programme for your computer shortly to <%= @user.email %>.</p>
+ </div>
   
-  
-
-
-
-
-
-<%= link_to 'Edit', edit_user_path(@user), class: 'button' %> |
-<%= link_to 'Back', users_path, class: 'button' %>
+ 
