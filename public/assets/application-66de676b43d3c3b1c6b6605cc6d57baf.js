@@ -12708,6 +12708,67 @@ $(document).ready(function(){
 		$('.homepage-see-video').toggle();
 	});
 
+	$('a#check-price').click(function(e){
+		e.preventDefault();
+		$('#show-price').fadeOut();
+		var numPipPads = $('#number-pippads').val();
+		console.log(numPipPads);
+		var numSoftware = $('#number-pipsoftware').val();
+		var numStudents = $('#number-students').val();
+		console.log('number of students: ' + numStudents);
+		
+		if(numPipPads < 10){
+			var pipPadUnit = 100;
+		}
+		else if(numPipPads >= 10 && numPipPads < 50){
+			var pipPadUnit = 100;
+		}
+		else if(numPipPads >= 50){
+			var pipPadUnit = 100;
+		}
+
+
+		if(numSoftware < 10){
+			var pipSoftware = 30;
+		}
+		else if(numSoftware >= 10 && numPipPads < 50){
+			var pipSoftware = 25;
+		}
+		else if(numSoftware >= 50){
+			
+			var pipSoftware = 20;
+		}
+
+
+		if(numStudents < 10){
+			var pipStudent = 30;
+		}
+		else if(numPipPads >= 10 && numPipPads< 50){
+			var pipStudent = 25;
+		}
+		else if(numPipPads >= 50){
+			var pipStudent = 20;
+		}
+
+		var pricePipPad = pipPadUnit * numPipPads;
+		var pricePipSoftware = pipSoftware * numSoftware;
+		var pricePipStudent = pipStudent * numStudents; 
+		var totalToday = pricePipPad + pricePipSoftware + pricePipStudent;
+		var totalYear1 = pricePipStudent;
+
+
+		$('#pippad-unit').html(pipPadUnit);
+		$('#pippad-total').html(pricePipPad);
+		$('#software-unit').html(pipSoftware);
+		$('#software-total').html(pricePipSoftware);
+		$('#learner-unit').html(pipStudent);
+		$('#learner-total').html(pricePipStudent);
+		$('#total-today').html(totalToday);
+		$('#total-year1').html(totalYear1);
+
+		$('#show-price').fadeIn();
+	});
+
 	// $('#wrapper').dotdotdot();
 
 });

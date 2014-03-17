@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def pippad  
   end
 
+  def pricing 
+  end
+
   def fullappdownload 
   end
 

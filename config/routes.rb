@@ -17,6 +17,7 @@ Pipwebsite::Application.routes.draw do
   resources :users
 
   get '/home', :to => 'pages#home', :as => 'home'
+  get '/pricing', :to => 'pages#pricing', :as => 'pricing'
   get '/about', :to => 'pages#about', :as => 'about'
   get '/coming', :to => 'pages#coming', :as => 'coming'
   get '/info', :to => 'pages#info', :as => 'info'

@@ -6579,4 +6579,28 @@ textarea{
 	z-index: -1;
 }
 
+#show-price{
+	display:none;
+}
+
+.marginauto{
+	margin: 0 auto;
+}
+
+.price-table table{
+	width: 100%;
+}
+
+.price-table table th{
+	text-align: center;
+}
+
+#total-today{
+	font-weight: bold;
+}
+
+#total-year1{
+	font-weight: bold;
+}
+
 
