@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311083141) do
+ActiveRecord::Schema.define(version: 20140319181528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.string   "account_username"
+    t.string   "child_name"
+    t.integer  "has_completed"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "core_skill"
+    t.string   "session_identifier"
+    t.string   "scene"
+    t.integer  "set_num"
+    t.integer  "section_id"
+    t.integer  "num_answers"
+    t.string   "phoneme_ids"
+    t.string   "incorrect_phoneme_ids"
+    t.string   "word_ids"
+    t.string   "incorrect_word_ids"
+    t.integer  "story_id"
+    t.string   "pip_pad_calls"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -96,6 +118,28 @@ ActiveRecord::Schema.define(version: 20140311083141) do
 
   add_index "products_stages", ["product_id"], name: "index_products_stages_on_product_id", using: :btree
   add_index "products_stages", ["stage_id"], name: "index_products_stages_on_stage_id", using: :btree
+
+  create_table "sessions", force: true do |t|
+    t.string   "account_username"
+    t.string   "child_name"
+    t.integer  "has_completed"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "session_identifier"
+    t.string   "session_name"
+    t.integer  "session_id"
+    t.integer  "session_number"
+    t.string   "session_type"
+    t.string   "scenes"
+    t.string   "phoneme_ids"
+    t.integer  "target_phoneme_id"
+    t.string   "word_ids"
+    t.integer  "target_word_id"
+    t.string   "keyword_ids"
+    t.integer  "target_keyword_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "skills", force: true do |t|
     t.string   "name"

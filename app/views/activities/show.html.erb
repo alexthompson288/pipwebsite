@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account username:</strong>
+  <%= @activity.account_username %>
+</p>
+
+<p>
+  <strong>Child name:</strong>
+  <%= @activity.child_name %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

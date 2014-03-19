@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_username: MyString
+  child_name: MyString
+  has_completed: 1
+  start: 2014-03-19 17:54:41
+  end: 2014-03-19 17:54:41
+  session_identifier: MyString
+  session_name: MyString
+  session_id: 1
+  session_number: 1
+  session_type: MyString
+  scenes: MyString
+  phoneme_ids: MyString
+  target_phoneme_id: 1
+  word_ids: MyString
+  target_word_id: 1
+  keyword_ids: MyString
+  target_keyword_id: 1
+
+two:
+  account_username: MyString
+  child_name: MyString
+  has_completed: 1
+  start: 2014-03-19 17:54:41
+  end: 2014-03-19 17:54:41
+  session_identifier: MyString
+  session_name: MyString
+  session_id: 1
+  session_number: 1
+  session_type: MyString
+  scenes: MyString
+  phoneme_ids: MyString
+  target_phoneme_id: 1
+  word_ids: MyString
+  target_word_id: 1
+  keyword_ids: MyString
+  target_keyword_id: 1

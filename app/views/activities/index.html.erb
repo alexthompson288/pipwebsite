@@ -1,0 +1,39 @@
+<h1>Listing activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account username</th>
+      <th>Child name</th>
+      <th>Completed?</th>
+      <th>Session ID</th>
+      <th>Scene</th>
+      <th>Set num</th>
+      <th>Section ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.account_username %></td>
+        <td><%= activity.child_name %></td>
+        <td><%= activity.has_completed %></td>
+        <td><%= activity.session_identifier %></td>
+        <td><%= activity.scene %></td>
+        <td><%= activity.set_num %></td>
+        <td><%= activity.section_id %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>

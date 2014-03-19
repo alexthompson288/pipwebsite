@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account username:</strong>
+  <%= @session.account_username %>
+</p>
+
+<p>
+  <strong>Child name:</strong>
+  <%= @session.child_name %>
+</p>
+
+<p>
+  <strong>Has completed:</strong>
+  <%= @session.has_completed %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @session.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @session.end %>
+</p>
+
+<p>
+  <strong>Session identifier:</strong>
+  <%= @session.session_identifier %>
+</p>
+
+<p>
+  <strong>Session name:</strong>
+  <%= @session.session_name %>
+</p>
+
+<p>
+  <strong>Session:</strong>
+  <%= @session.session_id %>
+</p>
+
+<p>
+  <strong>Session number:</strong>
+  <%= @session.session_number %>
+</p>
+
+<p>
+  <strong>Session type:</strong>
+  <%= @session.session_type %>
+</p>
+
+<p>
+  <strong>Scenes:</strong>
+  <%= @session.scenes %>
+</p>
+
+<p>
+  <strong>Phoneme ids:</strong>
+  <%= @session.phoneme_ids %>
+</p>
+
+<p>
+  <strong>Target phoneme:</strong>
+  <%= @session.target_phoneme_id %>
+</p>
+
+<p>
+  <strong>Word ids:</strong>
+  <%= @session.word_ids %>
+</p>
+
+<p>
+  <strong>Target word:</strong>
+  <%= @session.target_word_id %>
+</p>
+
+<p>
+  <strong>Keyword ids:</strong>
+  <%= @session.keyword_ids %>
+</p>
+
+<p>
+  <strong>Target keyword:</strong>
+  <%= @session.target_keyword_id %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

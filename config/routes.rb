@@ -1,6 +1,10 @@
 Pipwebsite::Application.routes.draw do
   
 
+  resources :activities
+
+  resources :sessions
+
   resources :glossaryterms
 
   devise_for :admins
