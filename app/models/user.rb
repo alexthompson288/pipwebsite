@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
   :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, 
   :current_sign_in_ip, :last_sign_in_ip, :first_name, :second_name, :authenticationcode, 
   :payment_received, :created_at, :updated_at, :website, :school, :postcode, :yeargroup,
-  :account_username, :child_usernames, :ip_address, :platform, :user_type
+  :account_username, :child_usernames, :ip_address, :platform, :user_type, :country, :school_address,
+  :invite_received, :program_requested
 
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable

@@ -8,6 +8,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'country_select'
+
 # Use SCSS for stylesheets
 
 

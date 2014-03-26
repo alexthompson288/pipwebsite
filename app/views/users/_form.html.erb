@@ -1,4 +1,4 @@
-
+<div id="teacher-form">
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -12,48 +12,87 @@
     </div>
   <% end %>
 <div class="clear"></div>
-  <div class="row">
-    <div class="field col-md-6 span6">
-      <%= f.label 'Email' %><br />
+  
+    <div class="field  ">
+      <%= f.label 'Email' %>
       <%= f.text_field :email %>
     </div>
 
-    <div class="field col-md-6 span6">
-      <%= f.label 'First Name' %><br />
+    <div class="field ">
+      <%= f.label 'Name' %>
       <%= f.text_field :first_name %>
     </div>
 
-    <div class="field col-md-6 span6">
-      <%= f.label 'Last Name' %><br />
-      <%= f.text_field :second_name %>
-    </div>
-
-    <div class="field col-md-6 span6">
-      <%= f.label 'School Name' %><br />
+    <div class="field ">
+      <%= f.label 'School Name' %>
       <%= f.text_field :school %>
     </div>
 
-    <div class="field col-md-6 span6">
-      <%= f.label 'School postcode' %><br />
+    <div class="field ">
+      <%= f.label 'School postcode' %>
       <%= f.text_field :postcode %>
     </div>
 
-    <div class="field col-md-6 span6">
+    <div class="field ">
       <%= f.label 'School website' %><br />
       <%= f.text_field :website %>
     </div>
 
-    <div class="field col-md-6 span6">
+    <div class="field ">
       <%= f.label 'Role in school' %><br />
       <%= f.text_field :yeargroup %>
     </div>
-  
+      <%= f.hidden_field :user_type, :value => 'teacher' %>
+      <%= f.hidden_field :invite_received, :value => false %>
+      <%= f.hidden_field :program_requested, :value => true %>
     <div class="clear"></div>
     <br />
     <div class="actions col-md-4">
       <%= f.submit %>
     </div>
-  </div>
   <br />
   <br />
 <% end %>
+</div>
+
+<div id="parent-form">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="clear"></div>
+    <div class="field  ">
+      <%= f.label 'Email' %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field  ">
+      <%= f.label 'Name' %>
+      <%= f.text_field :first_name %>
+    </div>
+
+    <div class="field  ">
+      <%= f.label 'Country' %>
+      <%= f.country_select("country", [ "United Kingdom", "US", "India" ]) %>
+    </div>
+    <%= f.hidden_field :user_type, :value => 'parent' %>
+    <%= f.hidden_field :invite_received, :value => false %>
+    <%= f.hidden_field :program_requested, :value => true %>
+
+    <div class="clear"></div>
+    <br />
+    <div class="actions col-md-4">
+      <%= f.submit %>
+    </div>
+  <br />
+  <br />
+<% end %>
+</div>

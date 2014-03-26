@@ -5,7 +5,17 @@ $(document).ready(function(){
   		$(this).tab('show')
 	});
 
-	
+	$('#parent-choice-button').on('click',function(e){
+		e.preventDefault();
+		$('#parent-form').toggle();
+		$('#teacher-form').hide();
+	});
+
+	$('#teacher-choice-button').on('click',function(e){
+		e.preventDefault();
+		$('#teacher-form').toggle();
+		$('#parent-form').hide();
+	});
 
 	$('.show-more-text').on('click', function(e){
 		console.log('click');
