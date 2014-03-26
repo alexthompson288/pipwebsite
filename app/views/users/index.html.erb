@@ -1,6 +1,12 @@
 <h1>Users</h1>
 <% @users.each do |user| %>
-	<%= user.email %>
-	<%= user.payment_received %>
+	<p>Email: <%= user.email %></p>
+	<p>Payment received: <%= user.payment_received %></p>
+	<p>Account username: <%= user.account_username %></p>
+	<p>Child usernames: <%= user.child_usernames %></p>
+	<p>Ip address: <%= user.ip_address %></p>
+	<p>Platform: <%= user.platform %></p>
+	<p>User type: <%= user.user_type %></p>
+	<hr />
 	<br />
 <% end %>

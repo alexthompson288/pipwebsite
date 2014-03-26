@@ -3,7 +3,7 @@ Pipwebsite::Application.routes.draw do
 
   resources :activities
 
-  resources :sessions
+  resources :learningsessions
 
   resources :glossaryterms
 
