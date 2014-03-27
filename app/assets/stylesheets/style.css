@@ -1,4 +1,4 @@
-game-name-title/*General styles
+/*General styles
 */
 
 @font-face {
@@ -10,7 +10,12 @@ game-name-title/*General styles
          url('LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
+}
+@font-face {
+    font-family: 'nunito';
+    src: url('Nunito-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
@@ -19,6 +24,10 @@ body{
 	background-color: #6cdec4;
 	font-size: 16px;
 	/* light blue background */
+}
+
+h1,h2,h3,h4{
+	font-family: 'nunito';
 }
 
 h1{
@@ -448,7 +457,7 @@ footer li{
 .btn-yellow{
 	background-color: rgba(255, 215, 55, .9);
 	padding: 15px 20px;
-	width: 40%;
+	
 	margin: 5px auto;
 
 }
@@ -577,7 +586,7 @@ textarea{
 
 .website-home-art-bg{
 	background: url(../assets/website_bg_art_2.png) no-repeat bottom;
-	height: 540px;
+	height: 590px;
 }
 
 .homepage-see-video{
@@ -657,4 +666,12 @@ textarea{
 	display: none;
 }
 
+.teacher-parent-form{
+	padding: 30px 60px;
+	border: 2px solid rgba(255, 215, 55, 1);
+}
+
+.btn-main-homepage{
+	font-size: 20px;
+}
 

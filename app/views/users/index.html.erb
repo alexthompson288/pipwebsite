@@ -1,15 +1,40 @@
-<h1>Users</h1>
-<% @users.each do |user| %>
-	<p>Email: <%= user.email %></p>
-	<p>Payment received: <%= user.payment_received %></p>
-	<p>Account username: <%= user.account_username %></p>
-	<p>Child usernames: <%= user.child_usernames %></p>
-	<p>Ip address: <%= user.ip_address %></p>
-	<p>Platform: <%= user.platform %></p>
-	<p>User type: <%= user.user_type %></p>
-	<p>Country: <%= user.country %></p>
-	<p>Request from web: <%= user.program_requested %></p>
-	<p>Invite sent: <%= user.invite_received %></p>
-	<hr />
-	<br />
-<% end %>
+<div class="container">
+	<h1>Users</h1>
+	
+	<table>
+	  <thead>
+	    <tr>
+	      <th>Email</th>
+	      <th>Username</th>
+	      <th>IP</th>
+	      <th>Platform</th>
+	      <th>User type</th>
+	      <th>Country</th>
+	      <th>Request from web</th>
+	      <th>Invite sent</th>
+	      <th>Created at</th>
+	      <th>Updated at</th>
+	      <th></th>
+	      <th></th>
+	      <th></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @users.each do |user| %>
+	      <tr>
+	        <td><%= user.email %></td>
+	        <td><%= user.account_username %></td>
+	        <td><%= user.ip_address %></td>
+	        <td><%= user.platform %></td>
+	        <td><%= user.user_type %></td>
+	        <td><%= user.country %></td>
+	        <td><%= user.program_requested %></td>
+	        <td><%= user.invite_received %></td>
+	        <td><%= user.created_at %></td>
+	        <td><%= user.updated_at %></td>
+	        
+	      </tr>
+	    <% end %>
+	  </tbody>
+	  </table>
+  </div>

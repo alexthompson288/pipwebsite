@@ -1,6 +1,12 @@
-<div class="container">
+<div class="container text-center">
 	<h4>Many thanks <%= @user.first_name %> <%= @user.second_name %>!</h4>
 	<p>We will send an email with a link to download the full programme for your computer shortly to <%= @user.email %>.</p>
+	<br >
+	<p>Go back to the main website <a href="/">here</a>.</p>
+	<div class="text-center">
+		<a href="/curriculum.pdf" class="btn btn-yellow"><h2>See the curriculum</h2></a>
+	</div>
+	<%= image_tag('website_bg_art_2.png') %>
  </div>
   
  

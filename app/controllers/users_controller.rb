@@ -26,9 +26,23 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    account_name = Time.now.to_s + '_' + @user.first_name
+    @user.update_attributes(:account_username => account_name)
 
     respond_to do |format|
       if @user.save
+        if @user.program_requested
+          if @user.user_type == 'teacher'
+            UserMailer.send_teacher_link(@user).deliver
+            @user.invite_received = true
+            @user.save
+          elsif @user.user_type == 'parent'
+            UserMailer.send_parent_link(@user).deliver
+            @user.invite_received = true
+            @user.save
+          end
+        end
+
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
