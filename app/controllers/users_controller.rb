@@ -34,10 +34,12 @@ class UsersController < ApplicationController
         if @user.program_requested
           if @user.user_type == 'teacher'
             UserMailer.send_teacher_link(@user).deliver
+            UserMailer.new_user_update(@user).deliver
             @user.invite_received = true
             @user.save
           elsif @user.user_type == 'parent'
             UserMailer.send_parent_link(@user).deliver
+            UserMailer.new_user_update(@user).deliver
             @user.invite_received = true
             @user.save
           end

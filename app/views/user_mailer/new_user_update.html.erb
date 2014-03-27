@@ -1,0 +1,4 @@
+<body style='background-color: rgba(255, 215, 55, 0.9); padding: 20px'>
+	<h1>New <% if @user.user_type == 'parent' %>Parent<% else %>Teacher <% end %>
+	<p><%= @user.first_name %> from <%= @user.country %> with email: <%= @user.email %></p>
+</body>

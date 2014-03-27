@@ -11,4 +11,9 @@ class UserMailer < ActionMailer::Base
   	 mail(:to => user.email, :subject => "Your Pip Programme download link")
   end
 
+  def new_user_update(user) 
+  		@user = user 	
+  	 mail(:to => 'alex@alexjbthompson.com', :subject => "New Pip Programme download link request")
+  end
+
 end
