@@ -1,6 +1,6 @@
 class LearningsessionsController < ApplicationController
   before_action :set_learningsession, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, only: [:index, :show]
   
   # GET /sessions
   # GET /sessions.json
