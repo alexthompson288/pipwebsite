@@ -584,10 +584,10 @@ textarea{
 	display: none;
 }
 
-.website-home-art-bg{
+/*.website-home-art-bg{
 	background: url(../assets/website_bg_art_2.png) no-repeat bottom;
-	height: 590px;
-}
+	height: 920px;
+}*/
 
 .homepage-see-video{
 	display: none;
@@ -659,7 +659,7 @@ textarea{
 }
 
 #parent-form{
-	display: none;
+	display: ;
 }
 
 #teacher-form{
@@ -673,5 +673,10 @@ textarea{
 
 .btn-main-homepage{
 	font-size: 20px;
+}
+
+.yellow-border{
+	border: 5px solid rgba(255, 215, 55, 1);
+	border-radius: 2px;
 }
 

@@ -1,10 +1,21 @@
 <div class="container text-center">
 	<h4>Many thanks <%= @user.first_name %> <%= @user.second_name %>!</h4>
-	<p>We will send an email with a link to download the full programme for your computer shortly to <%= @user.email %>.</p>
+	<p>Now you can click on one of the links below to download programme for free.</p>
 	<br >
-	<p>Go back to the main website <a href="/">here</a>.</p>
+	<div class="text-center row">
+		<div class="col-md-4">
+			<a href="https://itunes.apple.com/gb/app/pip/id840979467?mt=12"  target="_blank" class="btn btn-yellow"><h2>Download for Mac</h2></a>
+		</div>
+		<div class="col-md-4">
+			<a href="https://itunes.apple.com/gb/app/learn-to-read-with-pip/id808850530?mt=8" target="_blank" class="btn btn-yellow"><h2>Download for iPad</h2></a>
+		</div>
+		<div class="col-md-4">
+			<a href="https://dl.dropboxusercontent.com/u/106028084/pippcbuild/pippchome.exe"  target="_blank" class="btn btn-yellow"><h2>Download for Windows PC</h2></a>
+		</div>
+	</div>
+	<br />
 	<div class="text-center">
-		<a href="/curriculum.pdf" class="btn btn-yellow"><h2>See the curriculum</h2></a>
+		<a href="/curriculum.pdf"  target="_blank" class="btn btn-yellow"><h2>See the curriculum</h2></a>
 	</div>
 	<%= image_tag('website_bg_art_2.png') %>
  </div>

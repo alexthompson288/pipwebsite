@@ -1,4 +1,21 @@
-<div class="container">
-	<h1>Our apps and programmes</h1>
-	<%= render :partial => "shared/productsindex" %>
+<div class="container text-center">
+	<h1>Our programme and other apps</h1>
+	<br />
+	<h3>Learn to read with Pip</h3>
+	<%= render :partial => "shared/mainapp" %>
+	<hr />
+	<h3>Flashcards with Pip</h3>
+	<div class="col-md-4 col-md-offset-4">
+        <%= image_tag('ipad_container_flashcards.png') %>
+        <h3><%= link_to 'iPad download - Free', 'https://itunes.apple.com/gb/app/flashcards-with-pip/id823803507?mt=8', class: 'btn btn-yellow btn-main-homepage' %></h3>
+    </div>
+    <div class="clear"></div>
+    <hr />
+
+	<h3>Splat fruit with Pip</h3>
+	<div class="col-md-4 col-md-offset-4">
+        <%= image_tag('ipad_container_fruit.png') %>
+        <h3><%= link_to 'iPad download - Free', 'https://itunes.apple.com/gb/app/pip-fruit/id821038463?mt=8', class: 'btn btn-yellow btn-main-homepage' %></h3>
+    </div>
+    <div class="clear"></div>
 </div>
