@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326160553) do
+ActiveRecord::Schema.define(version: 20140513174413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,9 +56,69 @@ ActiveRecord::Schema.define(version: 20140326160553) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "datasentences", force: true do |t|
+    t.text     "question"
+    t.string   "correctanswer"
+    t.string   "dummyanswer1"
+    t.string   "dummyanswer2"
+    t.string   "good_sentence"
+    t.string   "bad_sentence1"
+    t.string   "bad_sentence2"
+    t.string   "bad_sentence3"
+    t.integer  "pipisode_id"
+    t.integer  "programsession_id"
+    t.integer  "story_id"
+    t.integer  "programmodule_id"
+    t.string   "correct_image_name"
+    t.string   "correct_image_url"
+    t.string   "dummy_image1_name"
+    t.string   "dummy_image1_url"
+    t.string   "dummy_image2_name"
+    t.string   "dummy_image2_url"
+    t.boolean  "correctsentence"
+    t.boolean  "correctword"
+    t.boolean  "correctimage"
+    t.boolean  "quiz"
+    t.text     "question_french"
+    t.text     "question_spanish"
+    t.text     "question_mandarin"
+    t.string   "correct_answer_french"
+    t.string   "dummyanswer1_french"
+    t.string   "dummyanswer2_french"
+    t.string   "correct_answer_spanish"
+    t.string   "dummyanswer1_spanish"
+    t.string   "dummyanswer2_spanish"
+    t.string   "correct_answer_mandarin"
+    t.string   "dummyanswer1_mandarin"
+    t.string   "dummyanswer2_mandarin"
+    t.string   "good_sentence_french"
+    t.string   "bad_sentence1_french"
+    t.string   "bad_sentence2_french"
+    t.string   "bad_sentence3_french"
+    t.string   "good_sentence_spanish"
+    t.string   "bad_sentence1_spanish"
+    t.string   "bad_sentence2_spanish"
+    t.string   "bad_sentence3_spanish"
+    t.string   "good_sentence_mandarin"
+    t.string   "bad_sentence1_mandarin"
+    t.string   "bad_sentenece2_mandarin"
+    t.string   "bad_sentence3_mandarin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "glossaryterms", force: true do |t|
     t.string   "term"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "importantvocabs", force: true do |t|
+    t.integer  "pipisode_id"
+    t.integer  "story_id"
+    t.integer  "word_id"
+    t.integer  "sentence_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,6 +179,71 @@ ActiveRecord::Schema.define(version: 20140326160553) do
     t.string   "grapheme"
     t.integer  "setnumber"
     t.integer  "phonemeorder"
+    t.integer  "cms_id"
+  end
+
+  create_table "pipisodes", force: true do |t|
+    t.string   "video_filename"
+    t.string   "image_filename"
+    t.integer  "order_number"
+    t.boolean  "interactive_video"
+    t.text     "pipisode_overview"
+    t.integer  "programmodule_id"
+    t.integer  "phonicsset_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pipisode_title"
+    t.string   "label_text"
+    t.boolean  "publishable"
+    t.text     "transcript_english"
+    t.text     "transcript_french"
+    t.text     "transcript_spanish"
+    t.text     "transcript_mandarin"
+    t.text     "pipisode_overview_french"
+    t.text     "pipisode_overview_spanish"
+    t.text     "pipisode_overview_mandarin"
+    t.string   "pipisode_title_french"
+    t.string   "pipisode_title_spanish"
+    t.string   "pipisode_title_mandarin"
+    t.string   "video_filename_french"
+    t.string   "video_filename_spanish"
+    t.string   "video_filename_mandarin"
+    t.text     "extra_activities"
+    t.text     "extra_activities_french"
+    t.text     "extra_activities_spanish"
+    t.text     "extra_activities_mandarin"
+    t.integer  "cms_id"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.text     "video_url"
+    t.string   "image_url"
+    t.text     "body_text"
+    t.string   "posttype"
+    t.boolean  "subject_reading"
+    t.boolean  "subject_maths"
+    t.boolean  "subject_world"
+    t.boolean  "subject_english"
+    t.integer  "priority_level"
+    t.boolean  "lilac"
+    t.boolean  "pink"
+    t.boolean  "red"
+    t.boolean  "yellow"
+    t.boolean  "blue"
+    t.boolean  "green"
+    t.boolean  "orange"
+    t.string   "linklabel"
+    t.boolean  "publishable"
+    t.integer  "order_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "iphone"
+    t.string   "ipad"
+    t.string   "android"
+    t.string   "mac"
+    t.string   "pc"
   end
 
   create_table "products", force: true do |t|
@@ -141,6 +266,48 @@ ActiveRecord::Schema.define(version: 20140326160553) do
   add_index "products_stages", ["product_id"], name: "index_products_stages_on_product_id", using: :btree
   add_index "products_stages", ["stage_id"], name: "index_products_stages_on_stage_id", using: :btree
 
+  create_table "quizquestions", force: true do |t|
+    t.text     "question"
+    t.string   "correctanswer"
+    t.string   "dummyanswer1"
+    t.string   "dummyanswer2"
+    t.integer  "pipisode_id"
+    t.integer  "programsession_id"
+    t.integer  "story_id"
+    t.integer  "porgrammodule_id"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "question_french"
+    t.text     "question_spanish"
+    t.text     "question_mandarin"
+    t.string   "correct_answer_french"
+    t.string   "correct_answer_spanish"
+    t.string   "correct_answer_mandarin"
+    t.string   "dummyanswer1_french"
+    t.string   "dummyanswer1_spanish"
+    t.string   "dummyanswer1_mandarin"
+    t.string   "dummyanswer2_french"
+    t.string   "dummyanswer2_spanish"
+    t.string   "dummyanswer2_mandarin"
+  end
+
+  create_table "sentences", force: true do |t|
+    t.string   "text"
+    t.string   "linking_index"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_target_sentence"
+    t.boolean  "is_dummy_sentence"
+    t.string   "gametype"
+    t.integer  "programsession_id"
+    t.string   "text_french"
+    t.string   "text_spanish"
+    t.string   "text_mandarin"
+    t.integer  "cms_id"
+  end
+
   create_table "skills", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -157,6 +324,8 @@ ActiveRecord::Schema.define(version: 20140326160553) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "video"
+    t.string   "colour"
+    t.string   "test_url"
   end
 
   create_table "users", force: true do |t|
@@ -192,5 +361,37 @@ ActiveRecord::Schema.define(version: 20140326160553) do
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "words", force: true do |t|
+    t.string   "word"
+    t.string   "startingletter"
+    t.boolean  "cvc"
+    t.boolean  "ccvc"
+    t.boolean  "diagraph"
+    t.boolean  "splitdiagraph"
+    t.integer  "numsyllables"
+    t.integer  "numletters"
+    t.integer  "numphonemes"
+    t.string   "image"
+    t.boolean  "nonsense"
+    t.integer  "entrypointmodule"
+    t.integer  "entrypointunit"
+    t.integer  "entrypoint_session"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.boolean  "highfrequencyword"
+    t.boolean  "cvcc"
+    t.boolean  "imagepossible"
+    t.boolean  "imagerequired"
+    t.boolean  "completed"
+    t.boolean  "tricky"
+    t.text     "ordered_phonemes"
+    t.text     "dummyorderedphonemes"
+    t.string   "frenchword"
+    t.string   "spanishword"
+    t.string   "mandarinword"
+    t.string   "germanword"
+    t.integer  "cms_id"
+  end
 
 end

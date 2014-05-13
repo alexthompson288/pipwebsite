@@ -1,5 +1,19 @@
 Pipwebsite::Application.routes.draw do
   
+  resources :datasentences
+
+  resources :posts
+
+  resources :importantvocabs
+
+  resources :sentences
+
+  resources :quizquestions
+
+  resources :pipisodes
+
+  resources :words
+
 
   resources :activities
 
@@ -19,7 +33,10 @@ Pipwebsite::Application.routes.draw do
   devise_for :users
   resources :phonemes
   resources :users
-
+  get '/findwhichstage', :to => 'pages#findwhichstage', :as => 'findwhichstage'
+  get '/programmes', :to => 'pages#programmes', :as => 'programmes'
+  get '/mypage', :to => 'pages#mypage', :as => 'mypage'
+  get '/colourbands', :to => 'pages#colourbands', :as => 'colourbands'
   get '/home', :to => 'pages#home', :as => 'home'
   get '/pricing', :to => 'pages#pricing', :as => 'pricing'
   get '/about', :to => 'pages#about', :as => 'about'
@@ -43,6 +60,18 @@ Pipwebsite::Application.routes.draw do
   get '/pippad', :to => 'pages#pippad', :as => 'pippad'
   get '/teacherdownload', :to => 'pages#teacherdownload', :as => 'teacherdownload'
   get '/fullappdownload', :to => 'pages#fullappdownload', :as => 'fullappdownload'
+  get '/updatewords', :to => 'pages#update_words', :as => 'updatewords'
+  get '/updatephonemes', :to => 'pages#update_phonemes', :as => 'updatephonemes'
+  get '/updatepipisodes', :to => 'pages#update_pipisodes', :as => 'updatepipisodes'
+  get '/updatequizquestions', :to => 'pages#update_quizquestions', :as => 'updatequizquestions'
+  get '/updatesentences', :to => 'pages#update_sentences', :as => 'updatesentences'
+  get '/updateimportantvocabs', :to => 'pages#update_importantvocabs', :as => 'updateimportantvocabs'
+  get '/updatestages', :to => 'pages#update_stages', :as => 'updatestages'
+  get '/updateposts', :to => 'pages#update_posts', :as => 'updateposts'
+  get '/updatedatasentences', :to => 'pages#update_datasentences', :as => 'updatedatasentences'
+
+
+
 
 
   

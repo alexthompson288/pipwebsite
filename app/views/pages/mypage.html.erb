@@ -1,0 +1,14 @@
+<div class="container">
+	<h1>My page</h1>
+	<% @posts.each do |c| %>
+		<div class="colourband-container row">
+			<h1><%= c.title %></h1>
+			<div class="col-md-6">
+				<img src="#">
+			</div>
+			<div class="col-md-6">
+				<h2><%= raw(c.body_text) %></h2>
+			</div>
+		</div>
+	<% end %>
+</div>

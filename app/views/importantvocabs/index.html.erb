@@ -1,0 +1,42 @@
+<h1>Listing importantvocabs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pipisode</th>
+      <th>Story</th>
+      <th>Word</th>
+      <th>Sentence</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @importantvocabs.each do |importantvocab| %>
+      <tr>
+        <td>
+          <% if importantvocab.pipisode_id %>
+            <% p = Pipisode.find_by_cms_id(importantvocab.pipisode_id) %><%= p.pipisode_title %>
+          <% end %>
+        </td>
+        <td><%= importantvocab.story_id %></td>
+        <td>
+          <% if importantvocab.word_id %>
+            <% w = Word.find_by_cms_id(importantvocab.word_id) %>
+            <%= w.word %>
+          <% end %>
+        </td>
+        <td><%= importantvocab.sentence_id %></td>
+        <td><%= link_to 'Show', importantvocab %></td>
+        <td><%= link_to 'Edit', edit_importantvocab_path(importantvocab) %></td>
+        <td><%= link_to 'Destroy', importantvocab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Importantvocab', new_importantvocab_path %>

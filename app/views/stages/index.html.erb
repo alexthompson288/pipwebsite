@@ -1,33 +1,23 @@
-<h1>Listing stages</h1>
+<div class="container">
+  <h1>Progress stages (colour bands)</h1>
+  <% @stages.each do |s| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= raw(s.video) %>
+      </div>
+      <div class="col-md-6">
+        <h2>
+          <a href="<%= s.test_url %>" target="_blank" class="btn btn-yellow <%= s.colour.downcase %>">
+            <%= s.colour %> level test
+          </a>
+        </h2>
+        <p><%= raw(s.description) %></p>
+      </div>
+    </div>
+    <hr>
+    <div class="clear"></div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Age</th>
-      <th>Description</th>
-      <th>Video</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @stages.each do |stage| %>
-      <tr>
-        <td><%= stage.number %></td>
-        <td><%= stage.age %></td>
-        <td><%= stage.description %></td>
-        <td><%= stage.video %></td>
-        <td><%= link_to 'Show', stage %></td>
-        <td><%= link_to 'Edit', edit_stage_path(stage) %></td>
-        <td><%= link_to 'Destroy', stage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Stage', new_stage_path, class: 'btn btn-success' %>

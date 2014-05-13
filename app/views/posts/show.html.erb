@@ -1,0 +1,13 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1><%= @post.title %></h1>
+  <% if @post.url.present? %>
+    <a href="<%= @post.url %>" class="btn btn-yellow"><%= @post.labeltext %></a>
+  <% end %>
+
+  <p><%= raw(@post.video_url) %></p>
+
+  <p><img src="<%= @post.image_url %>"></p>
+
+  <p><%= raw(@post.body_text) %></p>
+</div>

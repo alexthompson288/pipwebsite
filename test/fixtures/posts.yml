@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  url: MyString
+  video_url: MyText
+  image_url: MyString
+  body_text: MyText
+  type: 
+  subject_reading: false
+  subject_maths: false
+  subject_world: false
+  subject_english: false
+  priority_level: 1
+  lilac: false
+  pink: false
+  red: false
+  yellow: false
+  blue: false
+  green: false
+  orange: false
+  linklabel: MyString
+  publishable: false
+  order_number: 1
+
+two:
+  title: MyString
+  url: MyString
+  video_url: MyText
+  image_url: MyString
+  body_text: MyText
+  type: 
+  subject_reading: false
+  subject_maths: false
+  subject_world: false
+  subject_english: false
+  priority_level: 1
+  lilac: false
+  pink: false
+  red: false
+  yellow: false
+  blue: false
+  green: false
+  orange: false
+  linklabel: MyString
+  publishable: false
+  order_number: 1

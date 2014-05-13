@@ -1,11 +1,292 @@
 class PagesController < ApplicationController
+  
+  require 'json'
+  require 'open-uri'
+
   def home
+  end
+
+
+
+  def colourbands
+    @colourposts = Post.where(:posttype => 'stage').order(:priority_level)
+    @userguideposts = Post.where(:posttype => 'userguide').order(:priority_level)
+  end
+
+  def findwhichstage
+    @posts = Post.where(:posttype => 'stagetest')
+  end
+
+  def programmes
+    @posts = Post.where(:posttype => 'programme')
+  end
+
+  def mypage
+    # @user = current_user
+    colour = 'pink'
+    if colour == 'pink'
+      @posts = Post.where(:pink => true)
+    elsif colour == 'red'
+      @posts = Post.where(:red => true)
+    elsif colour == 'yellow'
+      @posts = Post.where(:yellow => true)
+    elsif colour == 'blue'
+      @posts = Post.where(:blue => true)
+    elsif colour == 'green'
+      @posts = Post.where(:green => true)
+    elsif colour == 'orange'
+      @posts = Post.where(:orange => true)
+    end
   end
 
   def home1
     @stages = Stage.order(:number)
     @products = Product.all
-    
+  end
+
+  def update_words
+    Word.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/words.json").read)
+    json_object.each do |w|
+      Word.create!(
+        :id => w['id'],
+        :word => w['word'], 
+        :startingletter => w['startingletter'],
+        :cvc => w['cvc'],
+        :ccvc => w['ccvc'],
+        :diagraph => w['diagraph'],
+        :splitdiagraph => w['splitdiagraph'],
+        :numsyllables => w['numsyllables'],
+        :numletters => w['numletters'],
+        :numphonemes => w['numphonemes'],
+        :image => w['image'],
+        :nonsense => w['nonsense'],
+        :entrypointmodule => w['entrypointmodule'],
+        :entrypointunit => w['entrypointunit'],
+        :entrypoint_session => w['entrypoint_session'],
+        :created_at => w['created_at'],
+        :updated_at => w['updated_at'],
+        :highfrequencyword => w['highfrequencyword'],
+        :cvcc => w['cvcc'],
+        :imagepossible => w['imagepossible'],
+        :imagerequired => w['imagerequired'],
+        :completed => w['completed'],
+        :tricky => w['tricky'],
+        :frenchword => w['frenchword'],
+        :spanishword => w['spanishword'],
+        :mandarinword => w['mandarinword'],
+        :germanword => w['germanword'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_phonemes
+    Phoneme.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/phonemes.json").read)
+    json_object.each do |w|
+      Phoneme.create!(       
+        :phoneme => w['phoneme'], 
+        :startingletter => w['startingletter'],
+        :grapheme => w['grapheme'],
+        :mneumonic => w['mneumonic'],
+        :completed => w['completed'],
+        :grapheme => w['grapheme'],
+        :setnumber => w['setnumber'],
+        :phonemeorder => w['phonemeorder'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_pipisodes
+    Pipisode.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/pipisodes.json").read)
+    json_object.each do |w|
+      Pipisode.create!( 
+        :pipisode_title => w['pipisode_title'],      
+        :video_filename => w['video_filename'], 
+        :image_filename => w['image_filename'],
+        :order_number => w['order_number'],
+        :interactive_video => w['interactive_video'],
+        :pipisode_overview => w['pipisode_overview'],
+        :programmodule_id => w['programmodule_id'],
+        :phonicsset_id => w['phonicsset_id'],
+        :video_filename => w['video_filename'], 
+        :label_text => w['label_text'],
+        :publishable => w['publishable'],
+        :transcript_english => w['transcript_english'],
+        :transcript_french => w['transcript_french'],
+        :transcript_spanish => w['transcript_spanish'],
+        :transcript_mandarin => w['transcript_mandarin'],
+        :pipisode_overview_french => w['pipisode_overview_french'],
+        :pipisode_overview_spanish => w['pipisode_overview_spanish'], 
+        :pipisode_overview_mandarin => w['pipisode_overview_mandarin'],
+        :pipisode_title_french => w['pipisode_title_french'],
+        :pipisode_title_spanish => w['pipisode_title_spanish'],
+        :pipisode_title_mandarin => w['pipisode_title_mandarin'],
+        :video_filename_french => w['video_filename_french'],
+        :video_filename_spanish => w['video_filename_spanish'],
+        :video_filename_mandarin => w['video_filename_mandarin'],
+        :extra_activities => w['extra_activities'],
+        :extra_activities_french => w['extra_activities_french'],
+        :extra_activities_spanish => w['extra_activities_spanish'],
+        :extra_activities_mandarin => w['extra_activities_mandarin'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_quizquestions
+    Quizquestion.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/quizquestions.json").read)
+    json_object.each do |w|
+      Quizquestion.create!( 
+        :question => w['question'],      
+        :correctanswer => w['correctanswer'], 
+        :dummyanswer1 => w['dummyanswer1'],
+        :dummyanswer2 => w['dummyanswer2'],
+        :pipisode_id => w['pipisode_id'],
+        :programsession_id => w['programsession_id'],
+        :programmodule_id => w['programmodule_id'],
+        :image => w['image'],
+        :question_french => w['question_french'], 
+        :question_spanish => w['question_spanish'],
+        :question_mandarin => w['question_mandarin'],
+        :correct_answer_french => w['correct_answer_french'],
+        :correct_answer_spanish => w['correct_answer_spanish'],
+        :correct_answer_mandarin => w['correct_answer_mandarin'],
+        :dummyanswer1_french => w['dummyanswer1_french'],
+        :dummyanswer1_spanish => w['dummyanswer1_spanish'],
+        :dummyanswer1_mandarin => w['dummyanswer1_mandarin'], 
+        :dummyanswer2_french => w['dummyanswer2_french'],
+        :dummyanswer2_spanish => w['dummyanswer2_spanish'],
+        :dummyanswer2_mandarin => w['dummyanswer2_mandarin']
+
+        );
+    end
+  end
+
+  def update_datasentences
+    Datasentence.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/datasentences.json").read)
+    json_object.each do |w|
+      Datasentence.create!( 
+        :question => w['question'],      
+        :correctanswer => w['correctanswer'], 
+        :dummyanswer1 => w['dummyanswer1'],
+        :dummyanswer2 => w['dummyanswer2'],
+        :pipisode_id => w['pipisode_id'],
+        :programsession_id => w['programsession_id'],
+        :programmodule_id => w['programmodule_id'],
+        :correct_image_name => w['correct_image_name'],
+        :correct_image_url => w['correct_image_url'],
+        :question_french => w['question_french'], 
+        :question_spanish => w['question_spanish'],
+        :question_mandarin => w['question_mandarin'],
+        :correct_answer_french => w['correct_answer_french'],
+        :correct_answer_spanish => w['correct_answer_spanish'],
+        :correct_answer_mandarin => w['correct_answer_mandarin'],
+        :dummyanswer1_french => w['dummyanswer1_french'],
+        :dummyanswer1_spanish => w['dummyanswer1_spanish'],
+        :dummyanswer1_mandarin => w['dummyanswer1_mandarin'], 
+        :dummyanswer2_french => w['dummyanswer2_french'],
+        :dummyanswer2_spanish => w['dummyanswer2_spanish'],
+        :dummyanswer2_mandarin => w['dummyanswer2_mandarin'],
+        :story_id => w['story_id'],
+        :good_sentence => w['good_sentence'],
+        :bad_sentence1 => w['bad_sentence1'],
+        :bad_sentence2 => w['bad_sentence2'],
+        :bad_sentence3 => w['bad_sentence3'],
+        :correctsentence => w['correctsentence'],
+        :correctword => w['correctword'],
+        :correctimage => w['correctimage'],
+        :quiz => w['quiz']
+        );
+    end
+  end
+
+  def update_sentences
+    Sentence.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/sentences.json").read)
+    json_object.each do |w|
+      Sentence.create!( 
+        :text => w['text'],      
+        :linking_index => w['linking_index'], 
+        :section_id => w['section_id'],
+        :is_target_sentence => w['is_target_sentence'],
+        :is_dummy_sentence => w['is_dummy_sentence'],
+        :gametype => w['gametype'],
+        :programsession_id => w['programsession_id'],
+        :text_french => w['text_french'],
+        :text_spanish => w['text_spanish'], 
+        :text_mandarin => w['text_mandarin'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_importantvocabs
+    Importantvocab.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/importantvocabs.json").read)
+    json_object.each do |w|
+      Importantvocab.create!( 
+        :pipisode_id => w['pipisode_id'],      
+        :story_id => w['story_id'], 
+        :word_id => w['word_id'],
+        :sentence_id => w['sentence_id']
+        );
+    end
+  end
+
+  def update_stages
+    Stage.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/stages.json").read)
+    json_object.each do |w|
+      Stage.create!( 
+        :number => w['number'],      
+        :age => w['age'], 
+        :description => w['description'],
+        :video => w['video'],
+        :colour => w['colour'],
+        :test_url => w['test_url']
+        );
+    end
+  end
+
+  def update_posts
+    Post.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/posts.json").read)
+    json_object.each do |w|
+      Post.create!( 
+        :title => w['title'],      
+        :url => w['url'], 
+        :video_url => w['video_url'],
+        :image_url => w['image_url'],
+        :posttype => w['posttype'],
+        :subject_reading => w['subject_reading'],
+        :subject_maths => w['subject_maths'],
+        :subject_world => w['subject_world'],
+        :subject_english => w['subject_english'],
+        :priority_level => w['priority_level'],
+        :created_at => w['created_at'],
+        :updated_at => w['updated_at'],
+        :lilac => w['lilac'],
+        :pink => w['pink'],
+        :red => w['red'],
+        :yellow => w['yellow'],
+        :blue => w['blue'],
+        :green => w['green'],
+        :orange => w['orange'],
+        :linklabel => w['linklabel'],
+        :iphone => w['iphone'],
+        :ipad => w['ipad'],
+        :android => w['android'],
+        :mac => w['mac'],
+        :pc => w['pc'],
+        :body_text => w['body_text']
+        );
+    end
   end
 
   def about

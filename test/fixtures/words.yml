@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  word: MyString
+  startingletter: MyString
+  cvc: false
+  ccvc: false
+  diagraph: false
+  splitdiagraph: false
+  numsyllables: 1
+  numletters: 1
+  numphonemes: 1
+  image: MyString
+  nonsense: false
+  entrypointmodule: 1
+  entrypointunit: 1
+  entrypoint_session: 1
+  highfrequencyword: false
+  cvcc: false
+  imagepossible: false
+  imagerequired: false
+  completed: false
+  tricky: false
+  ordered_phonemes: MyText
+  dummyorderedphonemes: MyText
+  frenchword: MyString
+  spanishword: MyString
+  mandarinword: MyString
+  germanword: MyString
+
+two:
+  word: MyString
+  startingletter: MyString
+  cvc: false
+  ccvc: false
+  diagraph: false
+  splitdiagraph: false
+  numsyllables: 1
+  numletters: 1
+  numphonemes: 1
+  image: MyString
+  nonsense: false
+  entrypointmodule: 1
+  entrypointunit: 1
+  entrypoint_session: 1
+  highfrequencyword: false
+  cvcc: false
+  imagepossible: false
+  imagerequired: false
+  completed: false
+  tricky: false
+  ordered_phonemes: MyText
+  dummyorderedphonemes: MyText
+  frenchword: MyString
+  spanishword: MyString
+  mandarinword: MyString
+  germanword: MyString

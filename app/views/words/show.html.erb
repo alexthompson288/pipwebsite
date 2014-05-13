@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @word.word %>
+</p>
+
+<p>
+  <strong>Startingletter:</strong>
+  <%= @word.startingletter %>
+</p>
+
+<p>
+  <strong>Cvc:</strong>
+  <%= @word.cvc %>
+</p>
+
+<p>
+  <strong>Ccvc:</strong>
+  <%= @word.ccvc %>
+</p>
+
+<p>
+  <strong>Diagraph:</strong>
+  <%= @word.diagraph %>
+</p>
+
+<p>
+  <strong>Splitdiagraph:</strong>
+  <%= @word.splitdiagraph %>
+</p>
+
+<p>
+  <strong>Numsyllables:</strong>
+  <%= @word.numsyllables %>
+</p>
+
+<p>
+  <strong>Numletters:</strong>
+  <%= @word.numletters %>
+</p>
+
+<p>
+  <strong>Numphonemes:</strong>
+  <%= @word.numphonemes %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @word.image %>
+</p>
+
+<p>
+  <strong>Nonsense:</strong>
+  <%= @word.nonsense %>
+</p>
+
+<p>
+  <strong>Entrypointmodule:</strong>
+  <%= @word.entrypointmodule %>
+</p>
+
+<p>
+  <strong>Entrypointunit:</strong>
+  <%= @word.entrypointunit %>
+</p>
+
+<p>
+  <strong>Entrypoint session:</strong>
+  <%= @word.entrypoint_session %>
+</p>
+
+<p>
+  <strong>Highfrequencyword:</strong>
+  <%= @word.highfrequencyword %>
+</p>
+
+<p>
+  <strong>Cvcc:</strong>
+  <%= @word.cvcc %>
+</p>
+
+<p>
+  <strong>Imagepossible:</strong>
+  <%= @word.imagepossible %>
+</p>
+
+<p>
+  <strong>Imagerequired:</strong>
+  <%= @word.imagerequired %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @word.completed %>
+</p>
+
+<p>
+  <strong>Tricky:</strong>
+  <%= @word.tricky %>
+</p>
+
+<p>
+  <strong>Ordered phonemes:</strong>
+  <%= @word.ordered_phonemes %>
+</p>
+
+<p>
+  <strong>Dummyorderedphonemes:</strong>
+  <%= @word.dummyorderedphonemes %>
+</p>
+
+<p>
+  <strong>Frenchword:</strong>
+  <%= @word.frenchword %>
+</p>
+
+<p>
+  <strong>Spanishword:</strong>
+  <%= @word.spanishword %>
+</p>
+
+<p>
+  <strong>Mandarinword:</strong>
+  <%= @word.mandarinword %>
+</p>
+
+<p>
+  <strong>Germanword:</strong>
+  <%= @word.germanword %>
+</p>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

@@ -1,0 +1,57 @@
+<%= form_for(@sentence) do |f| %>
+  <% if @sentence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sentence.errors.count, "error") %> prohibited this sentence from being saved:</h2>
+
+      <ul>
+      <% @sentence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :linking_index %><br>
+    <%= f.text_field :linking_index %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id %><br>
+    <%= f.number_field :section_id %>
+  </div>
+  <div class="field">
+    <%= f.label :is_target_sentence %><br>
+    <%= f.check_box :is_target_sentence %>
+  </div>
+  <div class="field">
+    <%= f.label :is_dummy_sentence %><br>
+    <%= f.check_box :is_dummy_sentence %>
+  </div>
+  <div class="field">
+    <%= f.label :gametype %><br>
+    <%= f.text_field :gametype %>
+  </div>
+  <div class="field">
+    <%= f.label :programsession_id %><br>
+    <%= f.number_field :programsession_id %>
+  </div>
+  <div class="field">
+    <%= f.label :text_french %><br>
+    <%= f.text_field :text_french %>
+  </div>
+  <div class="field">
+    <%= f.label :text_spanish %><br>
+    <%= f.text_field :text_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :text_mandarin %><br>
+    <%= f.text_field :text_mandarin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

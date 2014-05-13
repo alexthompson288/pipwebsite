@@ -1,0 +1,37 @@
+<!-- <div class="homepage-container"> -->
+    <img src='/assets/forest_bg.jpg' id="homepage-container" />
+    <div class="container text-center">
+        <div class="website-home-art-bg">
+        
+            <h3 class="text-center">We make tools to help enthusiastic parents have fun learning with their young children at home.</h3>
+            <h3 class="text-center">Learn to read with Pip is designed for children in Reception and Year 1 learning to read and spell with phonics.</h3>
+            <br />
+            <br />
+            <div class="span8 offset2" id='homepage-central'>
+
+                <!-- <a href="#" class="show-homepage-video pip-button">See the video!</a> -->
+                <div class="">
+                    <iframe src="http://player.vimeo.com/video/79302164" width="600" class="yellow-border" height="342" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+            </div>
+            
+            <%= render :partial => "shared/emailform" %>
+            <hr />
+            
+            <%= render :partial => "shared/mainapp" %>
+             <br />
+             <div class="text-center">
+                <h3><a href="/curriculum.pdf" target="_blank" class="btn btn-yellow btn-main-homepage">See the curriculum</a></h3>
+             </div>
+             <br />
+           <% render :partial => "shared/emailsignup" %>
+            
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-12 text-center">
+            <%= image_tag("website_bg_art_2.png") %>
+        </div>
+        
+    </div>
+<!-- </div> -->
+<div class="clearfix"></div>

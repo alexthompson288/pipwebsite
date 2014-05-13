@@ -1,0 +1,28 @@
+rails g scaffold Pipisode video_filename:string image_filename:string order_number:integer interactive_video:boolean pipisode_overview:text programmodule_id:integer phonicsset_id:integer pipisode_title:string label_text:string publishable:boolean transcript_english:text transcript_french:text transcript_spanish:text transcript_mandarin:text pipisode_overview_french:text pipisode_overview_spanish:text pipisode_overview_mandarin:text pipisode_title_french:string pipisode_title_spanish:string pipisode_title_mandarin:string video_filename_french:string video_filename_spanish:string video_filename_mandarin:string extra_activities:text extra_activities_french:text extra_activities_spanish:text extra_activities_mandarin:text cms_id:integer
+
+rails g scaffold Word word:string startingletter:string cvc:boolean ccvc:boolean diagraph:boolean splitdiagraph:boolean numsyllables:integer numletters:integer numphonemes:integer image:string nonsense:boolean entrypointmodule:integer entrypointunit:integer entrypoint_session:integer highfrequencyword:boolean cvcc:boolean imagepossible:boolean imagerequired:boolean completed:boolean tricky:boolean ordered_phonemes:text perfect:boolean dummyorderedphonemes:text frenchword:string spanishword:string mandarinword:string germanword:string cms_id:integer
+
+rails g scaffold Importantvocab pipisode_id:integer story_id:integer word_id:integer sentence_id:integer cms_id:integer
+
+
+rails g scaffold Quizquestion question:text correctanswer:string dummyanswer1:string dummyanswer2:string pipisode_id:integer programsession_id:integer story_id:integer programmodule_id:integer image:string question_french:text question_spanish:text question_mandarin:text correct_answer_french:string correct_answer_spanish:string correct_answer_mandarin:string dummyanswer1_french:string dummyanswer1_spanish:string dummyanswer1_mandarin:string dummyanswer2_french:string dummyanswer2_spanish:string dummyanswer2_mandarin:string cms_id:integer
+
+rails g scaffold Datasentence question:text correctanswer:string dummyanswer1:string dummyanswer2:string good_sentence:string bad_sentence1:string bad_sentence2:string bad_sentence3:string pipisode_id:integer programsession_id:integer story_id:integer programmodule_id:integer correct_image_name:string correct_image_url:string dummy_image1_name:string dummy_image1_url:string dummy_image2_name:string dummy_image2_url:string correctsentence:boolean correctword:boolean correctimage:boolean quiz:boolean question_french:text question_spanish:text question_mandarin:text correct_answer_french:string dummyanswer1_french:string dummyanswer2_french:string correct_answer_spanish:string dummyanswer1_spanish:string dummyanswer2_spanish:string correct_answer_mandarin:string dummyanswer1_mandarin:string dummyanswer2_mandarin:string good_sentence_french:string bad_sentence1_french:string bad_sentence2_french:string bad_sentence3_french:string good_sentence_spanish:string bad_sentence1_spanish:string bad_sentence2_spanish:string bad_sentence3_spanish:string good_sentence_mandarin:string bad_sentence1_mandarin:string bad_sentenece2_mandarin:string bad_sentence3_mandarin:string
+
+
+
+
+rails g scaffold Sentence name:string image:string description:text programmodule_id:string cms_id:integer
+
+
+rails g scaffold Post title:string url:string video_url:text image_url:string body_text:text posttype:string subject_reading:boolean subject_maths:boolean subject_world:boolean subject_english:boolean priority_level:integer lilac:boolean pink:boolean red:boolean yellow:boolean blue:boolean green:boolean orange:boolean linklabel:string publishable:boolean order_number:integer iphone:string ipad:string android:string mac:string pc:strin
+
+rails g scaffold Stage number:integer age:string description:text video:text colour:string test_url:string
+
+rails g scaffold Correctcaption image:string good_sentence:string bad_sentence1:string bad_sentence2:string bad_sentence3:string bad_sentence4:string programsession_id:integer programmodule_id:integer pipisode_id:integer story_id:integer
+
+
+NOT SURE WHAT THESE ARE
+pipisode_id:integer programsession_id:integer story_id:integer programmodule_id:integer image:string question_french:text question_spanish:text question_mandarin:text correct_answer_french:string correct_answer_spanish:string correct_answer_mandarin:string dummyanswer1_french:string dummyanswer1_spanish:string dummyanswer1_mandarin:string dummyanswer2_french:string dummyanswer2_spanish:string dummyanswer2_mandarin:string cms_id:integer
+
+

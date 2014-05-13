@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>Understand the colour stages and find your child's level</h1>
+	<% @posts.each do |c| %>
+
+		<div class="colourband-container row">
+			<div class="col-md-6">
+				<img src="#">
+			</div>
+			<div class="col-md-6">
+				<h2><%= raw(c.body_text) %></h2>
+			</div>
+		</div>
+		<a href="/<%= c.url %>" target="_blank" class="btn btn-yellow"><%= c.linklabel %></a>
+	<% end %>
+</div>

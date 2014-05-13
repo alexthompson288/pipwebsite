@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @sentence.text %>
+</p>
+
+<p>
+  <strong>Linking index:</strong>
+  <%= @sentence.linking_index %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @sentence.section_id %>
+</p>
+
+<p>
+  <strong>Is target sentence:</strong>
+  <%= @sentence.is_target_sentence %>
+</p>
+
+<p>
+  <strong>Is dummy sentence:</strong>
+  <%= @sentence.is_dummy_sentence %>
+</p>
+
+<p>
+  <strong>Gametype:</strong>
+  <%= @sentence.gametype %>
+</p>
+
+<p>
+  <strong>Programsession:</strong>
+  <%= @sentence.programsession_id %>
+</p>
+
+<p>
+  <strong>Text french:</strong>
+  <%= @sentence.text_french %>
+</p>
+
+<p>
+  <strong>Text spanish:</strong>
+  <%= @sentence.text_spanish %>
+</p>
+
+<p>
+  <strong>Text mandarin:</strong>
+  <%= @sentence.text_mandarin %>
+</p>
+
+<%= link_to 'Edit', edit_sentence_path(@sentence) %> |
+<%= link_to 'Back', sentences_path %>

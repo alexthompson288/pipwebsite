@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  video_filename: MyString
+  image_filename: MyString
+  order_number: 1
+  interactive_video: false
+  pipisode_overview: MyText
+  programmodule_id: 1
+  phonicsset_id: 1
+  pipisode_title: MyString
+  label_text: MyString
+  publishable: false
+  transcript_english: MyText
+  transcript_french: MyText
+  transcript_spanish: MyText
+  transcript_mandarin: MyText
+  pipisode_overview_french: MyText
+
+two:
+  video_filename: MyString
+  image_filename: MyString
+  order_number: 1
+  interactive_video: false
+  pipisode_overview: MyText
+  programmodule_id: 1
+  phonicsset_id: 1
+  pipisode_title: MyString
+  label_text: MyString
+  publishable: false
+  transcript_english: MyText
+  transcript_french: MyText
+  transcript_spanish: MyText
+  transcript_mandarin: MyText
+  pipisode_overview_french: MyText

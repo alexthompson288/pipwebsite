@@ -1,0 +1,197 @@
+<%= form_for(@datasentence) do |f| %>
+  <% if @datasentence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datasentence.errors.count, "error") %> prohibited this datasentence from being saved:</h2>
+
+      <ul>
+      <% @datasentence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question %><br>
+    <%= f.text_area :question %>
+  </div>
+  <div class="field">
+    <%= f.label :correctanswer %><br>
+    <%= f.text_field :correctanswer %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer1 %><br>
+    <%= f.text_field :dummyanswer1 %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer2 %><br>
+    <%= f.text_field :dummyanswer2 %>
+  </div>
+  <div class="field">
+    <%= f.label :good_sentence %><br>
+    <%= f.text_field :good_sentence %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence1 %><br>
+    <%= f.text_field :bad_sentence1 %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence2 %><br>
+    <%= f.text_field :bad_sentence2 %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence3 %><br>
+    <%= f.text_field :bad_sentence3 %>
+  </div>
+  <div class="field">
+    <%= f.label :pipisode_id %><br>
+    <%= f.number_field :pipisode_id %>
+  </div>
+  <div class="field">
+    <%= f.label :programsession_id %><br>
+    <%= f.number_field :programsession_id %>
+  </div>
+  <div class="field">
+    <%= f.label :story_id %><br>
+    <%= f.number_field :story_id %>
+  </div>
+  <div class="field">
+    <%= f.label :programmodule_id %><br>
+    <%= f.number_field :programmodule_id %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_image_name %><br>
+    <%= f.text_field :correct_image_name %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_image_url %><br>
+    <%= f.text_field :correct_image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :dummy_image1_name %><br>
+    <%= f.text_field :dummy_image1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dummy_image1_url %><br>
+    <%= f.text_field :dummy_image1_url %>
+  </div>
+  <div class="field">
+    <%= f.label :dummy_image2_name %><br>
+    <%= f.text_field :dummy_image2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dummy_image2_url %><br>
+    <%= f.text_field :dummy_image2_url %>
+  </div>
+  <div class="field">
+    <%= f.label :correctsentence %><br>
+    <%= f.check_box :correctsentence %>
+  </div>
+  <div class="field">
+    <%= f.label :correctword %><br>
+    <%= f.check_box :correctword %>
+  </div>
+  <div class="field">
+    <%= f.label :correctimage %><br>
+    <%= f.check_box :correctimage %>
+  </div>
+  <div class="field">
+    <%= f.label :question_french %><br>
+    <%= f.text_area :question_french %>
+  </div>
+  <div class="field">
+    <%= f.label :question_spanish %><br>
+    <%= f.text_area :question_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :question_mandarin %><br>
+    <%= f.text_area :question_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_answer_french %><br>
+    <%= f.text_field :correct_answer_french %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer1_french %><br>
+    <%= f.text_field :dummyanswer1_french %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer2_french %><br>
+    <%= f.text_field :dummyanswer2_french %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_answer_spanish %><br>
+    <%= f.text_field :correct_answer_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer1_spanish %><br>
+    <%= f.text_field :dummyanswer1_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer2_spanish %><br>
+    <%= f.text_field :dummyanswer2_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_answer_mandarin %><br>
+    <%= f.text_field :correct_answer_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer1_mandarin %><br>
+    <%= f.text_field :dummyanswer1_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyanswer2_mandarin %><br>
+    <%= f.text_field :dummyanswer2_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :good_sentence_french %><br>
+    <%= f.text_field :good_sentence_french %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence1_french %><br>
+    <%= f.text_field :bad_sentence1_french %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence2_french %><br>
+    <%= f.text_field :bad_sentence2_french %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence3_french %><br>
+    <%= f.text_field :bad_sentence3_french %>
+  </div>
+  <div class="field">
+    <%= f.label :good_sentence_spanish %><br>
+    <%= f.text_field :good_sentence_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence1_spanish %><br>
+    <%= f.text_field :bad_sentence1_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence2_spanish %><br>
+    <%= f.text_field :bad_sentence2_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence3_spanish %><br>
+    <%= f.text_field :bad_sentence3_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :good_sentence_mandarin %><br>
+    <%= f.text_field :good_sentence_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence1_mandarin %><br>
+    <%= f.text_field :bad_sentence1_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentenece2_mandarin %><br>
+    <%= f.text_field :bad_sentenece2_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :bad_sentence3_mandarin %><br>
+    <%= f.text_field :bad_sentence3_mandarin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

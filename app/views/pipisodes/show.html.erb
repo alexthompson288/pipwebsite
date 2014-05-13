@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1><%= @pipisode.pipisode_title %></h1>
+      <p><%= raw(@pipisode.video_filename) %></p>
+    </div>
+    <div class="col-md-6">
+      <h3><%= link_to 'Quiz!', pipisode_path(@pipisode), class: "btn btn-yellow btn-main-homepage" %></h3>
+      <h3><%= link_to 'Words', pipisode_path(@pipisode), class: "btn btn-yellow btn-main-homepage" %></h3>
+      <h3><%= link_to 'Transcript', pipisode_path(@pipisode), class: "btn btn-yellow btn-main-homepage" %></h3>
+    </div>
+  </div>
+  <hr>
+  <h1>Key vocabulary</h1>
+  <% v = Importantvocab.where(:pipisode_id => @pipisode.cms_id) %>
+  <% if v.any? %>
+    <% v.each do |w| %>
+      <% if w.word_id %>
+        <% t = Word.find_by_cms_id(w.word_id) %>
+        <p><%= t.word %></p>
+      <% end %>
+      <% if w.sentence_id %>
+        <% s = Sentence.find_by_cms_id(w.sentence_id) %>
+        <%= s.text %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <hr>
+  <h1>Quiz</h1>
+  <% q = Quizquestion.where(:pipisode_id => @pipisode.cms_id) %>
+    <% if q.any? %>
+      <% q.each do |qs| %>
+        <h3><%= qs.question %></h3>
+      <% end %>
+    <% end %>
+
+  <hr>
+  <h1>Transcript</h1>
+    <p><%= @pipisode.transcript_english %></p>
+</div>

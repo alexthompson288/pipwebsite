@@ -1,0 +1,121 @@
+<%= form_for(@word) do |f| %>
+  <% if @word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+      <% @word.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :word %><br>
+    <%= f.text_field :word %>
+  </div>
+  <div class="field">
+    <%= f.label :startingletter %><br>
+    <%= f.text_field :startingletter %>
+  </div>
+  <div class="field">
+    <%= f.label :cvc %><br>
+    <%= f.check_box :cvc %>
+  </div>
+  <div class="field">
+    <%= f.label :ccvc %><br>
+    <%= f.check_box :ccvc %>
+  </div>
+  <div class="field">
+    <%= f.label :diagraph %><br>
+    <%= f.check_box :diagraph %>
+  </div>
+  <div class="field">
+    <%= f.label :splitdiagraph %><br>
+    <%= f.check_box :splitdiagraph %>
+  </div>
+  <div class="field">
+    <%= f.label :numsyllables %><br>
+    <%= f.number_field :numsyllables %>
+  </div>
+  <div class="field">
+    <%= f.label :numletters %><br>
+    <%= f.number_field :numletters %>
+  </div>
+  <div class="field">
+    <%= f.label :numphonemes %><br>
+    <%= f.number_field :numphonemes %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :nonsense %><br>
+    <%= f.check_box :nonsense %>
+  </div>
+  <div class="field">
+    <%= f.label :entrypointmodule %><br>
+    <%= f.number_field :entrypointmodule %>
+  </div>
+  <div class="field">
+    <%= f.label :entrypointunit %><br>
+    <%= f.number_field :entrypointunit %>
+  </div>
+  <div class="field">
+    <%= f.label :entrypoint_session %><br>
+    <%= f.number_field :entrypoint_session %>
+  </div>
+  <div class="field">
+    <%= f.label :highfrequencyword %><br>
+    <%= f.check_box :highfrequencyword %>
+  </div>
+  <div class="field">
+    <%= f.label :cvcc %><br>
+    <%= f.check_box :cvcc %>
+  </div>
+  <div class="field">
+    <%= f.label :imagepossible %><br>
+    <%= f.check_box :imagepossible %>
+  </div>
+  <div class="field">
+    <%= f.label :imagerequired %><br>
+    <%= f.check_box :imagerequired %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %><br>
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :tricky %><br>
+    <%= f.check_box :tricky %>
+  </div>
+  <div class="field">
+    <%= f.label :ordered_phonemes %><br>
+    <%= f.text_area :ordered_phonemes %>
+  </div>
+  <div class="field">
+    <%= f.label :dummyorderedphonemes %><br>
+    <%= f.text_area :dummyorderedphonemes %>
+  </div>
+  <div class="field">
+    <%= f.label :frenchword %><br>
+    <%= f.text_field :frenchword %>
+  </div>
+  <div class="field">
+    <%= f.label :spanishword %><br>
+    <%= f.text_field :spanishword %>
+  </div>
+  <div class="field">
+    <%= f.label :mandarinword %><br>
+    <%= f.text_field :mandarinword %>
+  </div>
+  <div class="field">
+    <%= f.label :germanword %><br>
+    <%= f.text_field :germanword %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

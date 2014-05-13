@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  linking_index: MyString
+  section_id: 1
+  is_target_sentence: false
+  is_dummy_sentence: false
+  gametype: MyString
+  programsession_id: 1
+  text_french: MyString
+  text_spanish: MyString
+  text_mandarin: MyString
+
+two:
+  text: MyString
+  linking_index: MyString
+  section_id: 1
+  is_target_sentence: false
+  is_dummy_sentence: false
+  gametype: MyString
+  programsession_id: 1
+  text_french: MyString
+  text_spanish: MyString
+  text_mandarin: MyString

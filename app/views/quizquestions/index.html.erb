@@ -1,0 +1,67 @@
+<h1>Listing quizquestions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Correctanswer</th>
+      <th>Dummyanswer1</th>
+      <th>Dummyanswer2</th>
+      <th>Pipisode</th>
+      <th>Programsession</th>
+      <th>Story</th>
+      <th>Porgrammodule</th>
+      <th>Image</th>
+      <th>Question french</th>
+      <th>Question spanish</th>
+      <th>Question mandarin</th>
+      <th>Correct answer french</th>
+      <th>Correct answer spanish</th>
+      <th>Correct answer mandarin</th>
+      <th>Dummyanswer1 french</th>
+      <th>Dummyanswer1 spanish</th>
+      <th>Dummyanswer1 mandarin</th>
+      <th>Dummyanswer2 french</th>
+      <th>Dummyanswer2 spanish</th>
+      <th>Dummyanswer2 mandarin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quizquestions.each do |quizquestion| %>
+      <tr>
+        <td><%= quizquestion.question %></td>
+        <td><%= quizquestion.correctanswer %></td>
+        <td><%= quizquestion.dummyanswer1 %></td>
+        <td><%= quizquestion.dummyanswer2 %></td>
+        <td><%= quizquestion.pipisode_id %></td>
+        <td><%= quizquestion.programsession_id %></td>
+        <td><%= quizquestion.story_id %></td>
+        <td><%= quizquestion.porgrammodule_id %></td>
+        <td><%= quizquestion.image %></td>
+        <td><%= quizquestion.question_french %></td>
+        <td><%= quizquestion.question_spanish %></td>
+        <td><%= quizquestion.question_mandarin %></td>
+        <td><%= quizquestion.correct_answer_french %></td>
+        <td><%= quizquestion.correct_answer_spanish %></td>
+        <td><%= quizquestion.correct_answer_mandarin %></td>
+        <td><%= quizquestion.dummyanswer1_french %></td>
+        <td><%= quizquestion.dummyanswer1_spanish %></td>
+        <td><%= quizquestion.dummyanswer1_mandarin %></td>
+        <td><%= quizquestion.dummyanswer2_french %></td>
+        <td><%= quizquestion.dummyanswer2_spanish %></td>
+        <td><%= quizquestion.dummyanswer2_mandarin %></td>
+        <td><%= link_to 'Show', quizquestion %></td>
+        <td><%= link_to 'Edit', edit_quizquestion_path(quizquestion) %></td>
+        <td><%= link_to 'Destroy', quizquestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quizquestion', new_quizquestion_path %>

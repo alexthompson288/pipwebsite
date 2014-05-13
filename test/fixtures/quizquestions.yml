@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyText
+  correctanswer: MyString
+  dummyanswer1: MyString
+  dummyanswer2: MyString
+  pipisode_id: 1
+  programsession_id: 1
+  story_id: 1
+  porgrammodule_id: 1
+  image: MyString
+  question_french: MyText
+  question_spanish: MyText
+  question_mandarin: MyText
+  correct_answer_french: MyString
+  correct_answer_spanish: MyString
+  correct_answer_mandarin: MyString
+  dummyanswer1_french: MyString
+  dummyanswer1_spanish: MyString
+  dummyanswer1_mandarin: MyString
+  dummyanswer2_french: MyString
+  dummyanswer2_spanish: MyString
+  dummyanswer2_mandarin: MyString
+
+two:
+  question: MyText
+  correctanswer: MyString
+  dummyanswer1: MyString
+  dummyanswer2: MyString
+  pipisode_id: 1
+  programsession_id: 1
+  story_id: 1
+  porgrammodule_id: 1
+  image: MyString
+  question_french: MyText
+  question_spanish: MyText
+  question_mandarin: MyText
+  correct_answer_french: MyString
+  correct_answer_spanish: MyString
+  correct_answer_mandarin: MyString
+  dummyanswer1_french: MyString
+  dummyanswer1_spanish: MyString
+  dummyanswer1_mandarin: MyString
+  dummyanswer2_french: MyString
+  dummyanswer2_spanish: MyString
+  dummyanswer2_mandarin: MyString

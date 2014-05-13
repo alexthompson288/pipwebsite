@@ -82,11 +82,8 @@
     </div>
   <% end %>
 <div class="clear"></div>
-    <div class="field  ">
-      <%= f.label 'Email *', class: 'col-md-3' %>
-      <%= f.text_field :email, class: 'col-md-6' %>
-    </div>
-    <br />
+    
+    
     <br />
     <div class="clear"></div>
     <div class="field  ">
@@ -94,6 +91,7 @@
       <%= f.text_field :first_name, class: 'col-md-6' %>
     </div>
     <br />
+
     <br />
     <div class="clear"></div>
     <div class="field  ">
@@ -101,6 +99,22 @@
       <%= f.country_select("country", [ "United Kingdom", "US", "India" ]) %>
     </div>
     <br />
+     <div class="field  ">
+      <%= f.label 'Email *', class: 'col-md-3' %>
+      <%= f.text_field :email, class: 'col-md-6' %>
+    </div>
+    <br />
+     <div class="field  ">
+      <%= f.label 'Password *', class: 'col-md-3' %>
+      <%= f.password_field :password, class: 'col-md-6' %>
+    </div>
+    <br />
+    <div class="field  ">
+      <%= f.label 'Password *', class: 'col-md-3' %>
+      <%= f.password_field :password_confirmation, class: 'col-md-6' %>
+    </div>
+    <br />
+    
     <%= f.hidden_field :user_type, :value => 'parent' %>
     <%= f.hidden_field :invite_received, :value => false %>
     <%= f.hidden_field :program_requested, :value => true %>

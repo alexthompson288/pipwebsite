@@ -1,6 +1,6 @@
 class Phoneme < ActiveRecord::Base
   attr_accessible :phoneme, :programsession_ids, :section_ids, :word_ids, 
-  :imagepossible, :mneumonic, :mneumonic_two, :completed, :grapheme, :setnumber, :phonemeorder
+  :imagepossible, :mneumonic, :mneumonic_two, :completed, :grapheme, :setnumber, :phonemeorder, :cms_id
 
   has_and_belongs_to_many :words
 

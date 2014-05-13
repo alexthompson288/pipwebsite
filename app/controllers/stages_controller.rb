@@ -1,6 +1,6 @@
 class StagesController < ApplicationController
   before_action :set_stage, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!
+  # before_filter :authenticate_admin!
 
   # GET /stages
   # GET /stages.json
@@ -70,6 +70,6 @@ class StagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stage_params
-      params.require(:stage).permit(:number, :age, :description, :video, :product_ids => [])
+      params.require(:stage).permit(:number, :age, :description, :video, :colour, :test_url, :product_ids => [])
     end
 end

@@ -5,16 +5,10 @@
     </h1>
     <div class="collapse navbar-collapse">
         <ul class="pull-right nav navbar-nav">
-            <li><%= link_to 'HOME', home1_path %></li>
-            <li><%= link_to 'APPS', apps_path %></li>           
-            <li><%= link_to 'PARENT INFO', info_path %></li>
-            
-            <!-- <li><a href="http://blog.learntoreadwithpip.com" target="_blank">BLOG</a></li>
-            <li><a href="http://learn-with-pip.myshopify.com/" target="_blank">SHOP</a></li> -->
+        <li><%= link_to 'Programmes', programmes_path %></li>
+        <li><%= link_to 'Pipisodes', pipisodes_path %></li>
+        <li><%= link_to 'Progress', colourbands_path %></li>
+        <li><%= link_to 'My page', mypage_path %></li>
         </ul>
     </div>
-    <% if admin_signed_in? %>
-      Logged in as <strong><%= current_admin.email %></strong>.
-      <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% end %>
 </div>

@@ -21,7 +21,8 @@
 
 body{
 	padding: 60px 0 0px;
-	background-color: #6cdec4;
+/*	background-color: #6cdec4;
+*/	background-color: #d8f9fe;
 	font-size: 16px;
 	/* light blue background */
 }
@@ -46,9 +47,24 @@ img{
 	max-width: 100%;
 }
 
+
+
 .homepage-title-text{
 	/*font-family: 'lane_-_narrowregular';*/
 	margin-bottom: 25px;
+}
+
+#homepage-container{
+	/*background: url('../assets/forest_bg.jpg') no-repeat center;*/
+	z-index: -999;
+  	min-height: 100%;
+  	min-width: 1024px;
+  	width: 100%;
+  	height: auto;
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+
 }
 
 
@@ -679,4 +695,12 @@ textarea{
 	border: 5px solid rgba(255, 215, 55, 1);
 	border-radius: 2px;
 }
+
+.lilac{background-color:#E3A6EC;}
+.pink{background-color:#ff69b4;}
+.red{background-color:#ee2828;}
+.yellow{background-color:#f8fb2c;}
+.blue{background-color:#6c6cf8;}
+.green{background-color:#008000;}
+.orange{background-color:#ffa500;}
 
