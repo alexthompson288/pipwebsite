@@ -1,40 +1,34 @@
 <!-- <div class="homepage-container"> -->
-    <img src='/assets/forest_bg.jpg' id="homepage-container" />
-    <div class="container text-center">
+<!--     <img src='/assets/forest_bg.jpg' id="homepage-container" />
+ -->    <div class="container text-center homepage">
         <div class="website-home-art-bg">
         
-            <h1 class="text-center">Are you learning with Pip?</h1>
-            <h3 class="text-center">Helping 4-8 year olds learn and master reading at home and at school.</h3>
-            <br />
-            <br />
+            <h1 class="text-center"><span class="light-blue-color">Are</span><span class="orange-color"> you</span><span class="light-blue-color"> learning with Pip?</span></h1>
+            <p class="text-center light-blue-color letter-spacing">Helping 4-8 year olds learn and master reading at home and at school</p>
+           
             <div class="span8 offset2" id='homepage-central'>
 
                 <!-- <a href="#" class="show-homepage-video pip-button">See the video!</a> -->
                 <div class="">
-                    <iframe src="http://player.vimeo.com/video/79302164" width="600" class="yellow-border" height="342" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    <iframe src="http://player.vimeo.com/video/79302164" width="597" class="yellow-border" height="342" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 text-center">
-                    <h3><a href="/findwhichstage" class="btn btn-yellow btn-main-homepage">Find your child's level</a></h3>
+                <div class="col-md-4 text-center  dingleberry">
+                    <h3><a href="/findwhichstage" class="btn btn-large-yellow btn-large btn-main-homepage">Find your child's level</a></h3>
                 </div>
-                <div class="col-md-4 text-center">
-                    <h3><a href="#" class="btn btn-yellow btn-main-homepage">Join the community</a></h3>
+                <div class="col-md-4 text-center dingleberry">
+                    <h3><%= link_to "Join the community", new_user_registration_path, class: 'btn btn-large-blue btn-large btn-main-homepage' %></h3>
                 </div>
-                <div class="col-md-4 text-center">
-                    <h3><a href="programmes" class="btn btn-yellow btn-main-homepage">Try the programme</a></h3>
+                <div class="col-md-4 text-center dingleberry">
+                    <h3><a href="programmes" class="btn btn-large-yellow btn-large btn-main-homepage">Try the programme</a></h3>
                 </div>
                 
             </div>
              <br />
-           
-            
+        
         </div>
         <div class="clear"></div>
-        <div class="col-md-12 text-center">
-            <%= image_tag("website_bg_art_2.png") %>
-        </div>
-        
     </div>
 <!-- </div> -->
 <div class="clearfix"></div>

@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="choose-bank row">
+		<div class="col-md-3"><a href="#" class="letterbank-button btn-large btn-large-blue">Letters and sounds</a></div>
+		<div class="col-md-3"><a href="#" class="alphabetbank-button btn-large btn-large-blue">Alphabet bank</a></div>
+		<div class="col-md-3"><a href="#" class="wordbank-button btn-large btn-large-blue">Word bank</a></div>
+		<div class="col-md-3"><a href="#" class="keywordbank-button btn-large btn-large-blue">Keyword bank</a></div>
+	</div>
+	
+	<div class="letterbank show-page">
+		<h2>Letters and sounds</h2>
+		<div class="row">
+			<% @phonemes.each do |p| %>
+				<div class="col-md-3">
+					<button class="btn-large btn-large-yellow"><img src="https://s3-eu-west-1.amazonaws.com/pipimages/100_<%= p.imagepath %>.png"><%= p.phoneme %></button>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="alphabetbank hide-page text-center">
+		<h2>Alphabet</h2>
+		<span id="dummy" onclick="playSound(this, 'assets/alphabet_song_viv.mp3');">
+					<img src="assets/icon_alphabet_song.png">
+					</span>
+		<div class="row">
+			<% @alphabet.each do |p| %>
+					<div class="col-md-1">
+						<button class="btn-large btn-large-yellow"><%= p.upcase %></button>
+					</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="wordbank hide-page">
+		<h2>Words</h2>
+		<div class="row">
+			<% @words.each do |word| %>
+				<div class="col-md-2">
+					<button class="btn-large btn-large-yellow"><%= word.word %></button>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="keywordbank hide-page">
+		<h2>Keywords</h2>
+		<div class="row">
+			<% @keywords.each do |word| %>
+				<div class="col-md-3">
+					<button class="btn-large btn-large-yellow"><%= word.word %></button>
+				</div>
+			<% end %>
+		</div>
+
+	</div>
+</div>

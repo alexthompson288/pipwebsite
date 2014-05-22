@@ -1,0 +1,30 @@
+<div class="container">
+  <div id="filters" class="button-group colour-select-div">
+    <h2>Select the colourband level you want</h2>
+    <button data-filter="*" class="colourband-circle-large">show all</button>
+    <button data-filter=".pink-item" class="colourband-circle-large pink">Pink</button>
+    <button data-filter=".red-item"  class="colourband-circle-large red">Red</button>
+    <button data-filter=".yellow-item" class="colourband-circle-large yellow">Yellow</button>
+    <button data-filter=".blue-item" class="colourband-circle-large blue">Blue</button>
+    <button data-filter=".green-item" class="colourband-circle-large green">Green</button>
+    <button data-filter=".orange-item" class="colourband-circle-large orange">Orange</button>
+  </div>
+  <div class="clear"></div>
+  <hr>
+  <div class="row margin-top" id="container">
+      <% @stories.each do |story| %>
+        <div class="item col-md-3 story-index-grid <%= story.storytype.downcase %>-item">
+          <h2 class="text-center">
+            <div class="colourband-circle <%=story.storytype.downcase %>"></div>
+            <%= link_to story.title, story %></h2>
+          <div class="story-cover story-cover-<%= story.storytype.downcase %>">
+            <div class="text-center story-cover-image ">
+              <a href="/stories/<%= story.id %>"><img class="thumbnail-image" src="https://s3-eu-west-1.amazonaws.com/pipstorypages/<%= story.storycoverartwork.gsub('_cover','') %>.png"></a>
+            </div>
+          </div>
+          <p><%= story.description %></p>
+        </div>
+      <% end %>
+      <br>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  story_id: 1
+  text: MyText
+  image: MyString
+  audio: MyString
+  pageorder: 1
+  frenchtext: MyText
+  spanishtext: MyText
+  mandarintext: MyText
+  germantext: MyText
+
+two:
+  story_id: 1
+  text: MyText
+  image: MyString
+  audio: MyString
+  pageorder: 1
+  frenchtext: MyText
+  spanishtext: MyText
+  mandarintext: MyText
+  germantext: MyText

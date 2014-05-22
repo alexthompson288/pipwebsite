@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  storycoverartwork: MyString
+  storyset_id: 1
+  programmodule_id: 1
+  author: MyString
+  description: MyText
+  storytype: MyString
+  publishable: false
+  title_french: MyString
+  title_spanish: MyString
+  title_mandarin: MyString
+  description_french: MyText
+  description_spanish: MyText
+  description_mandarin: MyText
+  extra_activities: MyText
+  extra_activities_french: MyText
+  extra_activities_spanish: MyText
+  extra_activities_mandarin: MyText
+  cms_id: 1
+
+two:
+  title: MyString
+  storycoverartwork: MyString
+  storyset_id: 1
+  programmodule_id: 1
+  author: MyString
+  description: MyText
+  storytype: MyString
+  publishable: false
+  title_french: MyString
+  title_spanish: MyString
+  title_mandarin: MyString
+  description_french: MyText
+  description_spanish: MyText
+  description_mandarin: MyText
+  extra_activities: MyText
+  extra_activities_french: MyText
+  extra_activities_spanish: MyText
+  extra_activities_mandarin: MyText
+  cms_id: 1

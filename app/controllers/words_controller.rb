@@ -10,6 +10,11 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.json
   def show
+    @word = Word.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @word }
+    end
   end
 
   # GET /words/new

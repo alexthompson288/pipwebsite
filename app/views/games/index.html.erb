@@ -1,0 +1,45 @@
+<h1>Listing games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gametype</th>
+      <th>Description</th>
+      <th>Skill</th>
+      <th>Overview</th>
+      <th>Multiplayer</th>
+      <th>Labeltext</th>
+      <th>Picture game</th>
+      <th>Label game</th>
+      <th>Cms</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.name %></td>
+        <td><%= game.gametype %></td>
+        <td><%= game.description %></td>
+        <td><%= game.skill %></td>
+        <td><%= game.overview %></td>
+        <td><%= game.multiplayer %></td>
+        <td><%= game.labeltext %></td>
+        <td><%= game.picture_game %></td>
+        <td><%= game.label_game %></td>
+        <td><%= game.cms_id %></td>
+        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Edit', edit_game_path(game) %></td>
+        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>

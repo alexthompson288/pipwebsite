@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513174413) do
+ActiveRecord::Schema.define(version: 20140515174519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,26 @@ ActiveRecord::Schema.define(version: 20140513174413) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+
+  create_table "data_phonemes", force: true do |t|
+    t.integer  "section_id"
+    t.integer  "phoneme_id"
+    t.boolean  "is_target_phoneme"
+    t.boolean  "is_dummy_phoneme"
+    t.integer  "programsession_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "data_words", force: true do |t|
+    t.integer  "section_id"
+    t.integer  "word_id"
+    t.boolean  "is_target_word"
+    t.boolean  "is_dummy_word"
+    t.integer  "programsession_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "datasentences", force: true do |t|
     t.text     "question"
@@ -103,6 +123,21 @@ ActiveRecord::Schema.define(version: 20140513174413) do
     t.string   "bad_sentence1_mandarin"
     t.string   "bad_sentenece2_mandarin"
     t.string   "bad_sentence3_mandarin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", force: true do |t|
+    t.string   "name"
+    t.string   "gametype"
+    t.text     "description"
+    t.string   "skill"
+    t.text     "overview"
+    t.boolean  "multiplayer"
+    t.string   "labeltext"
+    t.boolean  "picture_game"
+    t.boolean  "label_game"
+    t.integer  "cms_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -168,6 +203,24 @@ ActiveRecord::Schema.define(version: 20140513174413) do
     t.datetime "updated_at"
   end
 
+  create_table "models", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "models", ["email"], name: "index_models_on_email", unique: true, using: :btree
+  add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
+
   create_table "phonemes", force: true do |t|
     t.string   "phoneme"
     t.datetime "created_at"
@@ -214,6 +267,30 @@ ActiveRecord::Schema.define(version: 20140513174413) do
     t.text     "extra_activities_mandarin"
     t.integer  "cms_id"
   end
+
+  create_table "pipusers", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "account_username"
+    t.string   "ip_address"
+    t.string   "country"
+    t.string   "postcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+  end
+
+  add_index "pipusers", ["email"], name: "index_pipusers_on_email", unique: true, using: :btree
+  add_index "pipusers", ["reset_password_token"], name: "index_pipusers_on_reset_password_token", unique: true, using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -266,6 +343,30 @@ ActiveRecord::Schema.define(version: 20140513174413) do
   add_index "products_stages", ["product_id"], name: "index_products_stages_on_product_id", using: :btree
   add_index "products_stages", ["stage_id"], name: "index_products_stages_on_stage_id", using: :btree
 
+  create_table "programmodules", force: true do |t|
+    t.integer  "number"
+    t.string   "colour"
+    t.string   "phaselevel"
+    t.string   "programmename"
+    t.integer  "cms_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "programsessions", force: true do |t|
+    t.integer  "number"
+    t.string   "learningobjective"
+    t.integer  "programmodule_id"
+    t.integer  "story_id"
+    t.integer  "pipisode_id"
+    t.boolean  "learningvoyagebool"
+    t.integer  "target_number"
+    t.integer  "highest_number"
+    t.integer  "cms_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "quizquestions", force: true do |t|
     t.text     "question"
     t.string   "correctanswer"
@@ -290,6 +391,17 @@ ActiveRecord::Schema.define(version: 20140513174413) do
     t.string   "dummyanswer2_french"
     t.string   "dummyanswer2_spanish"
     t.string   "dummyanswer2_mandarin"
+  end
+
+  create_table "sections", force: true do |t|
+    t.string   "sectiontype"
+    t.integer  "programsession_id"
+    t.integer  "game_id"
+    t.integer  "number"
+    t.integer  "programmodule_id"
+    t.integer  "cms_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sentences", force: true do |t|
@@ -326,6 +438,44 @@ ActiveRecord::Schema.define(version: 20140513174413) do
     t.text     "video"
     t.string   "colour"
     t.string   "test_url"
+  end
+
+  create_table "stories", force: true do |t|
+    t.string   "title"
+    t.string   "storycoverartwork"
+    t.integer  "storyset_id"
+    t.integer  "programmodule_id"
+    t.string   "author"
+    t.text     "description"
+    t.string   "storytype"
+    t.boolean  "publishable"
+    t.string   "title_french"
+    t.string   "title_spanish"
+    t.string   "title_mandarin"
+    t.text     "description_french"
+    t.text     "description_spanish"
+    t.text     "description_mandarin"
+    t.text     "extra_activities"
+    t.text     "extra_activities_french"
+    t.text     "extra_activities_spanish"
+    t.text     "extra_activities_mandarin"
+    t.integer  "cms_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "storypages", force: true do |t|
+    t.integer  "story_id"
+    t.text     "text"
+    t.string   "image"
+    t.string   "audio"
+    t.integer  "pageorder"
+    t.text     "frenchtext"
+    t.text     "spanishtext"
+    t.text     "mandarintext"
+    t.text     "germantext"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

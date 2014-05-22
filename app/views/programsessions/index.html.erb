@@ -1,0 +1,43 @@
+<h1>Listing programsessions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Learningobjective</th>
+      <th>Programmodule</th>
+      <th>Story</th>
+      <th>Pipisode</th>
+      <th>Learningvoyagebool</th>
+      <th>Target number</th>
+      <th>Highest number</th>
+      <th>Cms</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programsessions.each do |programsession| %>
+      <tr>
+        <td><%= programsession.number %></td>
+        <td><%= programsession.learningobjective %></td>
+        <td><%= programsession.programmodule_id %></td>
+        <td><%= programsession.story_id %></td>
+        <td><%= programsession.pipisode_id %></td>
+        <td><%= programsession.learningvoyagebool %></td>
+        <td><%= programsession.target_number %></td>
+        <td><%= programsession.highest_number %></td>
+        <td><%= programsession.cms_id %></td>
+        <td><%= link_to 'Show', programsession %></td>
+        <td><%= link_to 'Edit', edit_programsession_path(programsession) %></td>
+        <td><%= link_to 'Destroy', programsession, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Programsession', new_programsession_path %>

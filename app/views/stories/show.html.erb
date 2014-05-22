@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1 class="text-center">
+    <div class="colourband-circle <%= @story.storytype.downcase %>">
+    </div>
+    <a href="#" class="info-box-toggle float-right">Info</a>
+    <%= @story.title %> 
+  </h1>
+  <div class="hide-page info-box">
+    <p class="text-center">by <%= @story.author %></p>
+    <p class="text-center"><%= @story.description %></p>
+  </div>
+  
+  <div class="pip-pad"></div>
+  <% startpagenum = 1 %>
+  <% endpagenum = @storypages.count %>
+  <% currentpagenum = 1 %>
+  <div class="storypage-bg">
+    <% @storypages.each do |s| %>
+
+      <div class="row storypage text-center <% if s == @storypages.first %>show-page<% else %>hide-page<% end %>" data-page="<%= currentpagenum %>" >
+        <div class="col-md-10">
+          <h2 class="storypage-text <% if s.text.length < 60 %>large-text<% elsif s.text.length > 200 %>tiny-text<% else %>medium-text<% end %>">
+
+            <% if s %>
+              <% text = s.text.gsub('\n','') %>
+              <% words = text.split(/\W+/) %>
+                <% if words %>
+                  <% words.each do |word| %>
+                      <% searchword = word.downcase %>
+                      <a href="#" class="word-link" 
+                        data-word="<% word_obj = Word.find_by_word(searchword) %>
+                        <% if word_obj %>
+                          <%= word_obj.id %>
+                        <% end %>">
+                        <%= word %></a>
+                    <% end %>
+                  <% end %>
+                
+            <% end %>
+          </h2>
+        </div>
+        <div class="col-md-1 whole-sentence-audio">
+          <span id="dummy" onclick="playSound(this, 'https://s3-eu-west-1.amazonaws.com/pipaudio/<%= s.audio %>.mp3');">
+            <img src="/assets/play_audio.png">
+          </span>
+        </div>
+        
+        <p><img src="https://s3-eu-west-1.amazonaws.com/pipstorypages/<%= s.image %>.jpg"></p>
+        <% if currentpagenum > startpagenum %>
+          <a href="#" data-pagenumber="<%= currentpagenum - 1 %>" class="previous-page-link">Previous</a>
+        <% end %>
+        <% if currentpagenum < endpagenum %>
+          <a href="#" data-pagenumber="<%= currentpagenum + 1 %>" class="next-page-link">Next</a>
+        <% end %>
+
+      </div>
+      <% currentpagenum+= 1 %>
+    <% end %>
+  </div>
+</div>
+

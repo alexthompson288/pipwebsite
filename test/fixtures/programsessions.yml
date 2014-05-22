@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  learningobjective: MyString
+  programmodule_id: 1
+  story_id: 1
+  pipisode_id: 1
+  learningvoyagebool: false
+  target_number: 1
+  highest_number: 1
+  cms_id: 1
+
+two:
+  number: 1
+  learningobjective: MyString
+  programmodule_id: 1
+  story_id: 1
+  pipisode_id: 1
+  learningvoyagebool: false
+  target_number: 1
+  highest_number: 1
+  cms_id: 1

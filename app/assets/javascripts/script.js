@@ -5,6 +5,36 @@ $(document).ready(function(){
   		$(this).tab('show')
 	});
 
+	var $container = $('#container').isotope({
+  		// options
+	});
+		// filter items on button click
+	$('#filters').on( 'click', 'button', function() {
+  		var filterValue = $(this).attr('data-filter');
+  		$container.isotope({ filter: filterValue });
+	});
+
+	$('.close-pip-pad-image').on('click',function(e){
+		e.preventDefault();
+		console.log('closing pip pad');
+		$('.container').find('.pip-pad').hide();
+	});
+
+	$('.correct-answer').on('click',function(e){
+		e.preventDefault();
+		$(this).addClass('correct-answer-bg');
+	});
+
+	$('.incorrect-answer').on('click',function(e){
+		e.preventDefault();
+		$(this).addClass('incorrect-answer-bg');
+	});
+
+	$('.info-box-toggle').on('click',function(e){
+		e.preventDefault();
+		$('.info-box').toggle();
+	})
+
 	$('#parent-choice-button').on('click',function(e){
 		e.preventDefault();
 		$('#parent-form').toggle();

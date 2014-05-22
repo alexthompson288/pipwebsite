@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gametype: MyString
+  description: MyText
+  skill: MyString
+  overview: MyText
+  multiplayer: false
+  labeltext: MyString
+  picture_game: false
+  label_game: false
+  cms_id: 1
+
+two:
+  name: MyString
+  gametype: MyString
+  description: MyText
+  skill: MyString
+  overview: MyText
+  multiplayer: false
+  labeltext: MyString
+  picture_game: false
+  label_game: false
+  cms_id: 1

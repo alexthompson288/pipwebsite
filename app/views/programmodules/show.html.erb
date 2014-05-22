@@ -1,0 +1,25 @@
+<div class="container">  
+  <h1 class="text-center"><%= @programmodule.colour %></h1>
+  <div class="colourband-circle <%= @programmodule.colour.downcase %>"></div>
+  <div class="clear"></div>
+  <div class="row">
+  <% if @programsessions.any? %>
+    <% @programsessions.each do |s| %>
+      <div class="col-md-3">
+        <% label = '' %>
+        <% if DataPhoneme.where(:programsession_id => s.cms_id).any? %>
+          <% DataPhoneme.where(:programsession_id => s.cms_id).each do |data_phoneme| %>
+              <% if data_phoneme.is_target_phoneme %>
+                  <% p = Phoneme.find_by_cms_id(data_phoneme.phoneme_id) %>
+                  <% label = p.phoneme %>
+              <% end %>
+          <% end %>
+        <% end %>
+        <%= link_to label, s, class: 'btn btn-large btn-large-blue large-text' %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+  <%= link_to 'Back', programmodules_path, class: 'btn btn-large btn-large-blue' %>
+
+</div>

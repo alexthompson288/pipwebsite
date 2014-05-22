@@ -1,44 +1,39 @@
-<h1>Listing words</h1>
+<div class="container">
+  <h1>Listing words</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>CMS ID</th>
-      <th>Word</th>
-      <th>Highfrequencyword</th>
-      <th>Tricky</th>
-      <th>Ordered phonemes</th>
-      <th>Frenchword</th>
-      <th>Spanishword</th>
-      <th>Mandarinword</th>
-      <th>Germanword</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @words.each do |word| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= word.id %></td>
-        <td><%= word.cms_id %></td>
-        <td><%= word.word %></td>
-        <td><%= word.highfrequencyword %></td>
-        <td><%= word.tricky %></td>
-        <td><%= word.frenchword %></td>
-        <td><%= word.spanishword %></td>
-        <td><%= word.mandarinword %></td>
-        <td><%= word.germanword %></td>
-        <td><%= link_to 'Show', word %></td>
-        <td><%= link_to 'Edit', edit_word_path(word) %></td>
-        <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>ID</th>
+        <th>CMS ID</th>
+        <th>Word</th>
+        <th>Highfrequencyword</th>
+        <th>Tricky</th>
+        <th>Ordered phonemes</th>
+        
+       
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= word.id %></td>
+          <td><%= word.cms_id %></td>
+          <td><%= word.word %></td>
+          <td><%= word.highfrequencyword %></td>
+          <td><%= word.tricky %></td>
+          <td><% if word.ordered_phonemes %>
+            <% phonemes = word.ordered_phonemes %>
+            <% phonemes.each do |p| %>
+              <%= p['phoneme'] %>
+            <% end %>
+          <% end %></td>
 
-<%= link_to 'New Word', new_word_path %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>

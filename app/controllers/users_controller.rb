@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!, only: [:index, :edit, :destroy, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :create, :new]
+  before_filter :authenticate_admin!, only: [:index]
+  # before_filter :authenticate_user!, only: [:show, :edit]
 
   # GET /users
   # GET /users.json
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -20,6 +22,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to mypage_path
+    end
   end
 
   # POST /users
@@ -57,7 +63,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'user was successfully updated.' }
+        format.html { redirect_to mypage_path, notice: 'user was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

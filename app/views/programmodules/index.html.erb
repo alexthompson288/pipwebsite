@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="text-center margin-top-bottom">Choose a colour band</h2>
+	<div class="row">
+  		<% @programmodules.each do |p| %>
+    		<div class="programmodule-index col-md-2">
+      			<div class="center-colourband <%= p.colour.downcase %>"></div>
+  				<div class="clear"></div>
+      			<h1><%= link_to p.colour, p %></h1>
+    		</div>
+    		
+  		<% end %>
+  	</div>
+</div>

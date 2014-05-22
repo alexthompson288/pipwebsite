@@ -1,5 +1,27 @@
 Pipwebsite::Application.routes.draw do
   
+  resources :data_phonemes
+
+  resources :data_words
+
+  resources :sections
+
+  resources :games
+
+  resources :programmodules
+
+  resources :programsessions
+
+  resources :storypages
+
+  resources :stories
+
+  post "pages/testusername"
+  get "pages/testusername"
+
+  # devise_for :pipusers
+  # resources :pipusers
+
   resources :datasentences
 
   resources :posts
@@ -21,7 +43,10 @@ Pipwebsite::Application.routes.draw do
 
   resources :glossaryterms
 
+  devise_for :users
+
   devise_for :admins
+  
   resources :skills
 
   resources :products
@@ -30,7 +55,7 @@ Pipwebsite::Application.routes.draw do
 
   resources :learninggames
 
-  devise_for :users
+  
   resources :phonemes
   resources :users
   get '/findwhichstage', :to => 'pages#findwhichstage', :as => 'findwhichstage'
@@ -69,6 +94,11 @@ Pipwebsite::Application.routes.draw do
   get '/updatestages', :to => 'pages#update_stages', :as => 'updatestages'
   get '/updateposts', :to => 'pages#update_posts', :as => 'updateposts'
   get '/updatedatasentences', :to => 'pages#update_datasentences', :as => 'updatedatasentences'
+  get '/updatestories', :to => 'pages#update_stories', :as => 'updatestories'
+  get '/updatestorypages', :to => 'pages#update_storypages', :as => 'updatestorypages'
+  get '/updatemodulessessions', :to => 'pages#update_modulessessions', :as => 'updatemodulessessions'
+    get '/updatedata', :to => 'pages#update_data', :as => 'updatedata'
+    get '/banks', :to => 'pages#banks', :as => 'banks'
 
 
 

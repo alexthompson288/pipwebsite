@@ -9,7 +9,11 @@ rails g scaffold Quizquestion question:text correctanswer:string dummyanswer1:st
 
 rails g scaffold Datasentence question:text correctanswer:string dummyanswer1:string dummyanswer2:string good_sentence:string bad_sentence1:string bad_sentence2:string bad_sentence3:string pipisode_id:integer programsession_id:integer story_id:integer programmodule_id:integer correct_image_name:string correct_image_url:string dummy_image1_name:string dummy_image1_url:string dummy_image2_name:string dummy_image2_url:string correctsentence:boolean correctword:boolean correctimage:boolean quiz:boolean question_french:text question_spanish:text question_mandarin:text correct_answer_french:string dummyanswer1_french:string dummyanswer2_french:string correct_answer_spanish:string dummyanswer1_spanish:string dummyanswer2_spanish:string correct_answer_mandarin:string dummyanswer1_mandarin:string dummyanswer2_mandarin:string good_sentence_french:string bad_sentence1_french:string bad_sentence2_french:string bad_sentence3_french:string good_sentence_spanish:string bad_sentence1_spanish:string bad_sentence2_spanish:string bad_sentence3_spanish:string good_sentence_mandarin:string bad_sentence1_mandarin:string bad_sentenece2_mandarin:string bad_sentence3_mandarin:string
 
+rails g scaffold Story title:string storycoverartwork:string storyset_id:integer programmodule_id:integer author:string description:text storytype:string publishable:boolean title_french:string title_spanish:string title_mandarin:string description_french:text description_spanish:text description_mandarin:text extra_activities:text extra_activities_french:text extra_activities_spanish:text extra_activities_mandarin:text cms_id:integer
 
+rails g scaffold Phonicsset 
+
+rails g scaffold Storypage story_id:integer text:text image:string audio:string pageorder:integer frenchtext:text spanishtext:text mandarintext:text germantext:text
 
 
 rails g scaffold Sentence name:string image:string description:text programmodule_id:string cms_id:integer
@@ -20,6 +24,18 @@ rails g scaffold Post title:string url:string video_url:text image_url:string bo
 rails g scaffold Stage number:integer age:string description:text video:text colour:string test_url:string
 
 rails g scaffold Correctcaption image:string good_sentence:string bad_sentence1:string bad_sentence2:string bad_sentence3:string bad_sentence4:string programsession_id:integer programmodule_id:integer pipisode_id:integer story_id:integer
+
+rails g scaffold Programsession number:integer learningobjective:string programmodule_id:integer story_id:integer pipisode_id:integer learningvoyagebool:boolean target_number:integer highest_number:integer cms_id:integer
+
+rails g scaffold Programmodule number:integer colour:string phaselevel:string programmename:string cms_id:integer
+
+rails g scaffold Game name:string gametype:string description:text skill:string overview:text multiplayer:boolean labeltext:string picture_game:boolean label_game:boolean cms_id:integer
+
+rails g scaffold Section sectiontype:string programsession_id:integer game_id:integer number:integer programmodule_id:integer cms_id:integer
+
+rails g scaffold DataWord section_id:integer word_id:integer is_target_word:boolean is_dummy_word:boolean programsession_id:integer
+
+rails g scaffold DataPhoneme section_id:integer phoneme_id:integer is_target_phoneme:boolean is_dummy_phoneme:boolean programsession_id:integer
 
 
 NOT SURE WHAT THESE ARE

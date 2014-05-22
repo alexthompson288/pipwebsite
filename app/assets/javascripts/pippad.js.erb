@@ -1,0 +1,67 @@
+$(document).ready(function(){
+	console.log('Pippad working');
+
+	$('.word-link').on('click',function(e){
+		e.preventDefault();
+		var id = $(this).data('word');
+		id.toString();
+		var string_url = '/words/'+id+'.json';
+
+		$.get(string_url, function( data ) {
+			var htmlstrings = [];
+			if(data['tricky'] == true || data['highfrequency'] == true){
+				var wordstring = data['word'];
+				console.log('wordstring is ' + wordstring);
+				$(".pip-pad").html(wordstring);
+  				$(".pip-pad").toggle();
+			}
+			else{
+	  			var phonemes = [];
+	  			var length = data['ordered_phonemes'].length;
+	  			for(var i = 0; i < length; i ++)
+	  				{
+	  					phonemes.push(data['ordered_phonemes'][i]);
+	  				}
+	  			var glength = phonemes.length;
+	  		// var graphemes = [];
+	  		// var sounds = [];
+	  			
+	  			var htmlstartstring;
+	  			for(var m = 0; m < glength; m++){
+		  			if(phonemes[m]['phoneme'].length == 1){
+		  				htmlstartstring = '<div class="pip-pad-sound single-sound">'
+		  			}
+		  			else if(phonemes[m]['phoneme'].length == 2){
+		  				htmlstartstring = '<div class="pip-pad-sound double-sound">'
+		  			}
+		  			else if(phonemes[m]['phoneme'].length ==3){
+		  				htmlstartstring = '<div class="pip-pad-sound treble-sound">'
+		  			}
+		  			else{
+
+		  			}
+		  			
+
+	  				var audioString = '<span id="dummy" onclick="playSound(this, \'/assets/' + phonemes[m]['grapheme'] + '.mp3\');">'
+	  				var htmlstring = audioString + htmlstartstring  + phonemes[m]['phoneme'] + '</div></span>'
+
+	  			// graphemes.push(phonemes[m]['phoneme']);
+	  			// sounds.push(phonemes[m]['grapheme']);
+	  				htmlstrings.push(htmlstring);
+	  			// end of for loop
+  				}
+  				htmlstrings.push('<a href="#" class="close-pip-pad"><img src="/assets/pip_pippad_close.png" class="close-pip-pad-image"></a>');
+
+  				$(".pip-pad").html(htmlstrings);
+  				$(".pip-pad").toggle();
+  			// end of tricky/high frequency else loop	
+  			}
+
+		 // end of get request for word
+		 });
+
+  		// end of word link click function	
+	});
+
+
+});

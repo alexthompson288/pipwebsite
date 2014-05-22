@@ -3,6 +3,7 @@ class Phoneme < ActiveRecord::Base
   :imagepossible, :mneumonic, :mneumonic_two, :completed, :grapheme, :setnumber, :phonemeorder, :cms_id
 
   has_and_belongs_to_many :words
+  has_many :data_phonemes
 
 
   	def totalname
@@ -14,9 +15,15 @@ class Phoneme < ActiveRecord::Base
 		[self.grapheme,self.phoneme].join"_"
 	end
 
+	def imagepath
+		[self.phoneme,self.mnemonicname].join"_"
+	end
+
 	def mnemonicname
 		self.mneumonic.gsub(" ","_")
 	end
+
+
 
 	
 end

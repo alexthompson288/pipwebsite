@@ -1,0 +1,93 @@
+<%= form_for(@story) do |f| %>
+  <% if @story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+      <% @story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :storycoverartwork %><br>
+    <%= f.text_field :storycoverartwork %>
+  </div>
+  <div class="field">
+    <%= f.label :storyset_id %><br>
+    <%= f.number_field :storyset_id %>
+  </div>
+  <div class="field">
+    <%= f.label :programmodule_id %><br>
+    <%= f.number_field :programmodule_id %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :storytype %><br>
+    <%= f.text_field :storytype %>
+  </div>
+  <div class="field">
+    <%= f.label :publishable %><br>
+    <%= f.check_box :publishable %>
+  </div>
+  <div class="field">
+    <%= f.label :title_french %><br>
+    <%= f.text_field :title_french %>
+  </div>
+  <div class="field">
+    <%= f.label :title_spanish %><br>
+    <%= f.text_field :title_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :title_mandarin %><br>
+    <%= f.text_field :title_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :description_french %><br>
+    <%= f.text_area :description_french %>
+  </div>
+  <div class="field">
+    <%= f.label :description_spanish %><br>
+    <%= f.text_area :description_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :description_mandarin %><br>
+    <%= f.text_area :description_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_activities %><br>
+    <%= f.text_area :extra_activities %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_activities_french %><br>
+    <%= f.text_area :extra_activities_french %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_activities_spanish %><br>
+    <%= f.text_area :extra_activities_spanish %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_activities_mandarin %><br>
+    <%= f.text_area :extra_activities_mandarin %>
+  </div>
+  <div class="field">
+    <%= f.label :cms_id %><br>
+    <%= f.number_field :cms_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

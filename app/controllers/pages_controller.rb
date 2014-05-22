@@ -76,7 +76,8 @@ class PagesController < ApplicationController
         :spanishword => w['spanishword'],
         :mandarinword => w['mandarinword'],
         :germanword => w['germanword'],
-        :cms_id => w['id']
+        :cms_id => w['id'],
+        :ordered_phonemes => w['ordered_phonemes']
         );
     end
   end
@@ -97,6 +98,13 @@ class PagesController < ApplicationController
         :cms_id => w['id']
         );
     end
+  end
+
+  def banks
+    @phonemes = Phoneme.where(:completed => true)
+    @alphabet = ('a'..'z').to_a
+    @keywords = Word.where(:tricky => true)
+    @words = Word.where(:completed => true)
   end
 
   def update_pipisodes
@@ -289,6 +297,140 @@ class PagesController < ApplicationController
     end
   end
 
+  def update_storypages
+    Storypage.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/storypages.json").read)
+    json_object.each do |w|
+      Storypage.create!( 
+        :story_id => w['story_id'],      
+        :text => w['text'], 
+        :image => w['backgroundart'],
+        :audio => w['audio'],
+        :pageorder => w['pageorder'],
+        :frenchtext => w['frenchtext'],
+        :spanishtext => w['spanishtext'],
+        :mandarintext => w['mandarintext'],
+        :germantext => w['germantext']
+        );
+    end
+  end
+
+  def update_stories
+    Story.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/stories.json").read)
+    json_object.each do |w|
+      Story.create!( 
+        :title => w['title'],      
+        :storycoverartwork => w['storycoverartwork'], 
+        :storyset_id => w['storyset_id'],
+        :programmodule_id => w['programmodule_id'],
+        :author => w['author'],
+        :description => w['description'],
+        :storytype => w['storytype'],
+        :publishable => w['publishable'],
+        :title_french => w['title_french'],
+        :title_spanish => w['title_spanish'],
+        :title_mandarin => w['title_mandarin'],
+        :description_french => w['description_french'],
+        :description_spanish => w['description_spanish'],
+        :description_mandarin => w['description_mandarin'],
+        :extra_activities => w['extra_activities'],
+        :extra_activities_french => w['extra_activities_french'],
+        :extra_activities_spanish => w['extra_activities_spanish'],
+        :extra_activities_mandarin => w['extra_activities_mandarin'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_modulessessions
+    Programsession.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/programsessions.json").read)
+    json_object.each do |w|
+      Programsession.create!( 
+        :number => w['number'],      
+        :learningobjective => w['learningobjective'], 
+        :programmodule_id => w['programmodule_id'],
+        :story_id => w['story_id'],
+        :pipisode_id => w['pipisode_id'],
+        :learningvoyagebool => w['learningvoyagebool'],
+        :target_number => w['target_number'],
+        :highest_number => w['highest_number'],
+        :cms_id => w['id']
+        );
+    end
+
+    Programmodule.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/programmodules.json").read)
+    json_object.each do |w|
+      Programmodule.create!( 
+        :number => w['number'],      
+        :colour => w['colour'], 
+        :phaselevel => w['phaselevel'],
+        :programmename => w['programmename'],
+        :cms_id => w['id']
+        );
+    end
+
+    Section.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/sections.json").read)
+    json_object.each do |w|
+      Section.create!( 
+        :number => w['number'],      
+        :sectiontype => w['sectiontype'], 
+        :programsession_id => w['programsession_id'],
+        :game_id => w['game_id'],
+        :cms_id => w['id'],
+        :programmodule_id => w['programmodule_id']
+        );
+    end
+
+    Game.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/games.json").read)
+    json_object.each do |w|
+      Game.create!( 
+        :name => w['name'],      
+        :gametype => w['gametype'], 
+        :description => w['description'],
+        :skill => w['skill'],
+        :overview => w['overview'],
+        :multiplayer => w['multiplayer'],      
+        :labeltext => w['labeltext'], 
+        :picture_game => w['picture_game'],
+        :label_game => w['label_game'],
+        :cms_id => w['id']
+        );
+    end
+  end
+
+  def update_data
+    DataPhoneme.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/data_phonemes.json").read)
+    json_object.each do |w|
+      DataPhoneme.create!( 
+        :section_id => w['section_id'],      
+        :phoneme_id => w['phoneme_id'], 
+        :is_target_phoneme => w['is_target_phoneme'],
+        :is_dummy_phoneme => w['is_dummy_phoneme'],
+        :programsession_id => w['programsession_id']
+        );
+    end
+
+    DataWord.delete_all
+    json_object = JSON.parse(open("http://pipcms.herokuapp.com/data_words.json").read)
+    json_object.each do |w|
+      DataWord.create!( 
+        :section_id => w['section_id'],      
+        :word_id => w['word_id'], 
+        :is_target_word => w['is_target_word'],
+        :is_dummy_word => w['is_dummy_word'],
+        :programsession_id => w['programsession_id']
+        );
+    end
+  end
+
+  
+
   def about
   end
 
@@ -367,6 +509,27 @@ class PagesController < ApplicationController
   def allgames
     @learninggames = Learninggame.all
   end
+
+  # def testusername
+  #   @params = params
+    
+  #   @email = @params['email']
+  #   password = @params['password']
+  #   user = User.find_by_email(@email)
+  #   if user
+  #     if user.password == password
+  #       return true
+  #       respond_to do |format|
+  #         format.html # index.html.erb
+          
+  #       end
+  #     else
+  #       return false
+  #     end
+  #   else
+  #     return false
+  #   end
+  # end
 
   def lettersounds 
     @alphabeticphonemes = Phoneme.where("setnumber < 8").order(:phoneme)

@@ -1,0 +1,37 @@
+<%= form_for(@programmodule) do |f| %>
+  <% if @programmodule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@programmodule.errors.count, "error") %> prohibited this programmodule from being saved:</h2>
+
+      <ul>
+      <% @programmodule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :colour %><br>
+    <%= f.text_field :colour %>
+  </div>
+  <div class="field">
+    <%= f.label :phaselevel %><br>
+    <%= f.text_field :phaselevel %>
+  </div>
+  <div class="field">
+    <%= f.label :programmename %><br>
+    <%= f.text_field :programmename %>
+  </div>
+  <div class="field">
+    <%= f.label :cms_id %><br>
+    <%= f.number_field :cms_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

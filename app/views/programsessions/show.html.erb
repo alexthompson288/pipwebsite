@@ -1,0 +1,40 @@
+<div class="container">
+  <%= link_to 'Back', programmodule_path(@programmodule), class: 'btn btn-large btn-large-yellow' %>
+  <h2><strong>Learning objective:</strong></h2>  
+  <p><%= @programsession.learningobjective %></p>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="text-center"><%= link_to @story.title, story_path(@story) %></h2>
+      <div class="text-center">
+        <a href="/stories/<%= @story.id %>"><img class="thumbnail-image" src="https://s3-eu-west-1.amazonaws.com/pipstorypages/<%= @story.storycoverartwork.gsub('_cover','') %>.png"></a>
+      </div>
+      <p><%= @story.description %></p>
+      <p><%= @story.storytype %></p>
+    </div>
+
+    <% if @pipisode %>
+      <div class="col-md-3">
+        <h2 class="text-center">
+            <%= link_to @pipisode.pipisode_title, pipisode_path(@pipisode) %>
+        </h2>
+        <div class="text-center">
+          <a href="/pipisodes/<%= @pipisode.id %>"><img class="thumbnail-image" src="https://s3-eu-west-1.amazonaws.com/pipstorypages/<%= @pipisode.image_filename %>.jpg"></a>
+        </div>
+        <p><%= @pipisode.pipisode_overview %></p>
+      </div>
+     <% end %>
+
+     <div class="col-md-4">
+        <h2>Games</h2>
+        <ul>
+        <% @sections.each do |section| %>
+          <% game = Game.find_by_cms_id(section.game_id) %>
+          <% if game %>
+            <li><%= link_to game.name, game_path(game) , class: 'btn btn-large-yellow btn-large' %></li>
+          <% end %>
+        <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

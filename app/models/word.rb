@@ -22,6 +22,10 @@ class Word < ActiveRecord::Base
   # this line of code for phonics year 1 test game
   #scope :with_dummyorderedphonemes, where("dummyorderedphonemes is not null")
 
+  # def ordered_phonemes
+  #   read_attribute(:ordered_phonemes).map{|id| Phoneme.find(id)}
+  # end
+
   def startingLetter
   	self.startingletter = self.word[0]
   end

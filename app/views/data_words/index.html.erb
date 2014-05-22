@@ -1,0 +1,35 @@
+<h1>Listing data_words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Word</th>
+      <th>Is target word</th>
+      <th>Is dummy word</th>
+      <th>Programsession</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_words.each do |data_word| %>
+      <tr>
+        <td><%= data_word.section_id %></td>
+        <td><%= data_word.word_id %></td>
+        <td><%= data_word.is_target_word %></td>
+        <td><%= data_word.is_dummy_word %></td>
+        <td><%= data_word.programsession_id %></td>
+        <td><%= link_to 'Show', data_word %></td>
+        <td><%= link_to 'Edit', edit_data_word_path(data_word) %></td>
+        <td><%= link_to 'Destroy', data_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data word', new_data_word_path %>

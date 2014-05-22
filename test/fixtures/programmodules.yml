@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  colour: MyString
+  phaselevel: MyString
+  programmename: MyString
+  cms_id: 1
+
+two:
+  number: 1
+  colour: MyString
+  phaselevel: MyString
+  programmename: MyString
+  cms_id: 1

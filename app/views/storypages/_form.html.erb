@@ -1,0 +1,53 @@
+<%= form_for(@storypage) do |f| %>
+  <% if @storypage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@storypage.errors.count, "error") %> prohibited this storypage from being saved:</h2>
+
+      <ul>
+      <% @storypage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :story_id %><br>
+    <%= f.number_field :story_id %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :audio %><br>
+    <%= f.text_field :audio %>
+  </div>
+  <div class="field">
+    <%= f.label :pageorder %><br>
+    <%= f.number_field :pageorder %>
+  </div>
+  <div class="field">
+    <%= f.label :frenchtext %><br>
+    <%= f.text_area :frenchtext %>
+  </div>
+  <div class="field">
+    <%= f.label :spanishtext %><br>
+    <%= f.text_area :spanishtext %>
+  </div>
+  <div class="field">
+    <%= f.label :mandarintext %><br>
+    <%= f.text_area :mandarintext %>
+  </div>
+  <div class="field">
+    <%= f.label :germantext %><br>
+    <%= f.text_area :germantext %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

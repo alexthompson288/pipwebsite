@@ -17,10 +17,19 @@
   <% v = Importantvocab.where(:pipisode_id => @pipisode.cms_id) %>
   <% if v.any? %>
     <% v.each do |w| %>
-      <% if w.word_id %>
-        <% t = Word.find_by_cms_id(w.word_id) %>
-        <p><%= t.word %></p>
-      <% end %>
+      <div class="row">
+        <div class="col-md-6">
+          <% if w.word_id %>
+            <% t = Word.find_by_cms_id(w.word_id) %>
+            <div class="thin-border text-center">
+              <% if t.completed %>
+                <img class="thumbnail-image" src="https://s3-eu-west-1.amazonaws.com/pipimages/_<%= t.word %>.png">
+              <% end %>
+              <h2><%= t.word %></h2>
+            </div>
+          <% end %>
+        </div>
+      </div>
       <% if w.sentence_id %>
         <% s = Sentence.find_by_cms_id(w.sentence_id) %>
         <%= s.text %>
@@ -28,15 +37,21 @@
     <% end %>
   <% end %>
   <hr>
-  <h1>Quiz</h1>
-  <% q = Quizquestion.where(:pipisode_id => @pipisode.cms_id) %>
+  <div class="quiz-div">
+    <h1>Quiz</h1>
+    <% q = Datasentence.where(:quiz => true).where(:pipisode_id => @pipisode.cms_id) %>
     <% if q.any? %>
       <% q.each do |qs| %>
         <h3><%= qs.question %></h3>
+        <ul>
+          <a href="#" class="correct-answer btn"><li class=""><%= qs.correctanswer %></li></a>
+          <a href="#" class="incorrect-answer btn"><li class=""><%= qs.dummyanswer1 %></li></a>
+          <a href="#" class="incorrect-answer btn"><li class=""><%= qs.dummyanswer2 %></li></a>
+        </ul>
       <% end %>
     <% end %>
-
+  </div>
   <hr>
   <h1>Transcript</h1>
-    <p><%= @pipisode.transcript_english %></p>
+    <p><%= raw(@pipisode.transcript_english) %></p>
 </div>

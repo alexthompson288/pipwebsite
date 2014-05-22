@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @data_phoneme.section_id %>
+</p>
+
+<p>
+  <strong>Phoneme:</strong>
+  <%= @data_phoneme.phoneme_id %>
+</p>
+
+<p>
+  <strong>Is target phoneme:</strong>
+  <%= @data_phoneme.is_target_phoneme %>
+</p>
+
+<p>
+  <strong>Is dummy phoneme:</strong>
+  <%= @data_phoneme.is_dummy_phoneme %>
+</p>
+
+<p>
+  <strong>Programsession:</strong>
+  <%= @data_phoneme.programsession_id %>
+</p>
+
+<%= link_to 'Edit', edit_data_phoneme_path(@data_phoneme) %> |
+<%= link_to 'Back', data_phonemes_path %>

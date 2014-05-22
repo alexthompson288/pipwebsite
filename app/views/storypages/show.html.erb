@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @storypage.story_id %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @storypage.text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @storypage.image %>
+</p>
+
+<p>
+  <strong>Audio:</strong>
+  <%= @storypage.audio %>
+</p>
+
+<p>
+  <strong>Pageorder:</strong>
+  <%= @storypage.pageorder %>
+</p>
+
+<p>
+  <strong>Frenchtext:</strong>
+  <%= @storypage.frenchtext %>
+</p>
+
+<p>
+  <strong>Spanishtext:</strong>
+  <%= @storypage.spanishtext %>
+</p>
+
+<p>
+  <strong>Mandarintext:</strong>
+  <%= @storypage.mandarintext %>
+</p>
+
+<p>
+  <strong>Germantext:</strong>
+  <%= @storypage.germantext %>
+</p>
+
+<%= link_to 'Edit', edit_storypage_path(@storypage) %> |
+<%= link_to 'Back', storypages_path %>
