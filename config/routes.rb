@@ -1,63 +1,18 @@
 Pipwebsite::Application.routes.draw do
-  
-  resources :data_phonemes
-
-  resources :data_words
-
-  resources :sections
-
-  resources :games
-
-  resources :programmodules
-
-  resources :programsessions
-
-  resources :storypages
-
-  resources :stories
-
-  post "pages/testusername"
-  get "pages/testusername"
-
-  # devise_for :pipusers
-  # resources :pipusers
-
-  resources :datasentences
-
-  resources :posts
-
-  resources :importantvocabs
-
-  resources :sentences
-
-  resources :quizquestions
-
-  resources :pipisodes
-
-  resources :words
-
-
-  resources :activities
-
-  resources :learningsessions
-
-  resources :glossaryterms
-
   devise_for :users
-
   devise_for :admins
-  
-  resources :skills
 
-  resources :products
-
-  resources :stages
-
-  resources :learninggames
-
-  
-  resources :phonemes
+  resources :pipisodes, only: [:index, :show]
+  resources :posts, only: :show
+  resources :products, only: :show
+  resources :programmodules, only: [:index, :show]
+  resources :programsessions, only: :show
+  resources :stages, only: :show
+  resources :stories, only: [:index, :show]
   resources :users
+  resources :words, only: :show
+
+
   get '/findwhichstage', :to => 'pages#findwhichstage', :as => 'findwhichstage'
   get '/programmes', :to => 'pages#programmes', :as => 'programmes'
   get '/mypage', :to => 'pages#mypage', :as => 'mypage'
@@ -69,7 +24,6 @@ Pipwebsite::Application.routes.draw do
   get '/info', :to => 'pages#info', :as => 'info'
   get '/curriculum', :to => 'pages#curriculum', :as => 'curriculum'
   get '/videos', :to => 'pages#videos', :as => 'videos'
-  # get '/learninggames', :to => 'pages#learninggames', :as => 'learninggames'
   get '/lettersounds', :to => 'pages#lettersounds', :as => 'lettersounds'
   get '/privacy', :to => 'pages#privacy', :as => 'privacy'
   get '/terms', :to => 'pages#terms', :as => 'terms'
@@ -97,66 +51,8 @@ Pipwebsite::Application.routes.draw do
   get '/updatestories', :to => 'pages#update_stories', :as => 'updatestories'
   get '/updatestorypages', :to => 'pages#update_storypages', :as => 'updatestorypages'
   get '/updatemodulessessions', :to => 'pages#update_modulessessions', :as => 'updatemodulessessions'
-    get '/updatedata', :to => 'pages#update_data', :as => 'updatedata'
-    get '/banks', :to => 'pages#banks', :as => 'banks'
+  get '/updatedata', :to => 'pages#update_data', :as => 'updatedata'
+  get '/banks', :to => 'pages#banks', :as => 'banks'
 
-
-
-
-
-  
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-   root 'pages#home1'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  root 'pages#home1'
 end
