@@ -1,12 +1,9 @@
 class PagesController < ApplicationController
-  
   require 'json'
   require 'open-uri'
 
   def home
   end
-
-
 
   def colourbands
     @colourposts = Post.where(:posttype => 'stage').order(:priority_level)
@@ -509,27 +506,6 @@ class PagesController < ApplicationController
   def allgames
     @learninggames = Learninggame.all
   end
-
-  # def testusername
-  #   @params = params
-    
-  #   @email = @params['email']
-  #   password = @params['password']
-  #   user = User.find_by_email(@email)
-  #   if user
-  #     if user.password == password
-  #       return true
-  #       respond_to do |format|
-  #         format.html # index.html.erb
-          
-  #       end
-  #     else
-  #       return false
-  #     end
-  #   else
-  #     return false
-  #   end
-  # end
 
   def lettersounds 
     @alphabeticphonemes = Phoneme.where("setnumber < 8").order(:phoneme)
