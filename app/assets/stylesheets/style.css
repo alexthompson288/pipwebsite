@@ -54,7 +54,7 @@ h1,h2,h3,h4{
 }
 
 .homepage h1, .homepage h2, .homepage h3, .homepage h4, .navbar h2{
-	font-family: 'goodgirl';
+	/*font-family: 'goodgirl';*/
 }
 
 .homepage h1{
@@ -62,18 +62,18 @@ h1,h2,h3,h4{
 }
 
 .homepage p{
-	font-family: 'dingleberrysolid';
+	/*font-family: 'dingleberrysolid';*/
 }
 
 .navbar h2{
 	padding: 0 20px;
 	margin: 0;
 	font-size: 16px;
-	font-family: 'dingleberrysolid';
+	/*font-family: 'dingleberrysolid';*/
 }
 
 .dingleberry, .dingleberry h3{
-	font-family: 'dingleberrysolid';
+	/*font-family: 'dingleberrysolid';*/
 }
 
 button{
