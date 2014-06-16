@@ -11,32 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515174519) do
+ActiveRecord::Schema.define(version: 20140524113334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "activities", force: true do |t|
-    t.string   "account_username"
-    t.string   "child_name"
-    t.integer  "has_completed"
-    t.datetime "start"
-    t.datetime "end"
-    t.string   "core_skill"
-    t.string   "session_identifier"
-    t.string   "scene"
-    t.integer  "set_num"
-    t.integer  "section_id"
-    t.integer  "num_answers"
-    t.string   "phoneme_ids"
-    t.string   "incorrect_phoneme_ids"
-    t.string   "word_ids"
-    t.string   "incorrect_word_ids"
-    t.integer  "story_id"
-    t.string   "pip_pad_calls"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -181,46 +159,6 @@ ActiveRecord::Schema.define(version: 20140515174519) do
   add_index "learninggames_stages", ["learninggame_id"], name: "index_learninggames_stages_on_learninggame_id", using: :btree
   add_index "learninggames_stages", ["stage_id"], name: "index_learninggames_stages_on_stage_id", using: :btree
 
-  create_table "learningsessions", force: true do |t|
-    t.string   "account_username"
-    t.string   "child_name"
-    t.integer  "has_completed"
-    t.datetime "start"
-    t.datetime "end"
-    t.string   "session_identifier"
-    t.string   "session_name"
-    t.integer  "session_id"
-    t.integer  "session_number"
-    t.string   "session_type"
-    t.string   "scenes"
-    t.string   "phoneme_ids"
-    t.integer  "target_phoneme_id"
-    t.string   "word_ids"
-    t.integer  "target_word_id"
-    t.string   "keyword_ids"
-    t.integer  "target_keyword_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "models", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "models", ["email"], name: "index_models_on_email", unique: true, using: :btree
-  add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
-
   create_table "phonemes", force: true do |t|
     t.string   "phoneme"
     t.datetime "created_at"
@@ -267,30 +205,6 @@ ActiveRecord::Schema.define(version: 20140515174519) do
     t.text     "extra_activities_mandarin"
     t.integer  "cms_id"
   end
-
-  create_table "pipusers", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "account_username"
-    t.string   "ip_address"
-    t.string   "country"
-    t.string   "postcode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-  end
-
-  add_index "pipusers", ["email"], name: "index_pipusers_on_email", unique: true, using: :btree
-  add_index "pipusers", ["reset_password_token"], name: "index_pipusers_on_reset_password_token", unique: true, using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -418,15 +332,6 @@ ActiveRecord::Schema.define(version: 20140515174519) do
     t.string   "text_spanish"
     t.string   "text_mandarin"
     t.integer  "cms_id"
-  end
-
-  create_table "skills", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.text     "video"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "stage_id"
   end
 
   create_table "stages", force: true do |t|
