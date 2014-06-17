@@ -42,7 +42,7 @@
 
 
 body{
-	padding: 60px 0 0px;
+	padding: 0px 0 0px;
 /*	background-color: #6cdec4;
 */	/*background-color: #d8f9fe;*/
 	font-size: 16px;
@@ -54,15 +54,16 @@ h1,h2,h3,h4{
 }
 
 .homepage h1, .homepage h2, .homepage h3, .homepage h4, .navbar h2{
-	/*font-family: 'goodgirl';*/
+	font-family: 'goodgirl';
 }
 
 .homepage h1{
-	margin-top: 40px;
+	margin: 40px;
+	font-size: 26pt;
 }
 
 .homepage p{
-	/*font-family: 'dingleberrysolid';*/
+	font-size: 16pt;
 }
 
 .navbar h2{
@@ -72,8 +73,16 @@ h1,h2,h3,h4{
 	/*font-family: 'dingleberrysolid';*/
 }
 
+.homepage input{
+	width: 30%;
+}
+
 .dingleberry, .dingleberry h3{
-	/*font-family: 'dingleberrysolid';*/
+	font-family: 'dingleberrysolid';
+}
+
+.email-bit{
+	padding: 40px 0 0;
 }
 
 button{

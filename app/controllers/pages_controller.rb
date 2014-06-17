@@ -35,8 +35,7 @@ class PagesController < ApplicationController
   end
 
   def home1
-    @stages = Stage.order(:number)
-    @products = Product.all
+    @user = User.new
   end
 
   def banks
@@ -49,23 +48,11 @@ class PagesController < ApplicationController
   def about
   end
 
-  def pippad  
-  end
-
-  def pricing 
-  end
-
-  def fullappdownload 
-  end
-
   def coming
   end
 
   def apps
     @products = Product.all
-  end
-
-  def info
   end
 
   def videos
@@ -77,17 +64,14 @@ class PagesController < ApplicationController
   def glossary
     @glossaryterms = Glossaryterm.all
   end
-  
-  def learninggames
-  end
 
   def curriculum
   end
 
-  def payment
+  def jobs
   end
 
-  def jobs
+  def payment
   end
 
   def payment1
@@ -134,10 +118,6 @@ class PagesController < ApplicationController
     @setfivephonemes = Phoneme.where(:setnumber => '5').order(:phonemeorder)
     @setsixphonemes = Phoneme.where(:setnumber => '6').order(:phonemeorder)
     @setsevenphonemes = Phoneme.where(:setnumber => '7').order(:phonemeorder)
-  end
-
-  def teacherdownload
-  
   end
 
 end

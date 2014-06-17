@@ -1,31 +1,48 @@
-<!-- <div class="homepage-container"> -->
-<!--     <img src='/assets/forest_bg.jpg' id="homepage-container" />
- -->    <div class="container text-center homepage">
-        <div class="website-home-art-bg">
-        
-            <!-- <h1 class="text-center"><span class="light-blue-color">Are</span><span class="orange-color"> you</span><span class="light-blue-color"> learning with Pip?</span></h1> -->
-            <p class="text-center light-blue-color">Pip helps parents and teachers inspire their 4-7 year olds <br /> to master reading and basic maths at school and at home</p>
-            <p class="text-center light-blue-color">Give your child the best possible start and try learning with Pip</p>
-           
-            <div class="span8 offset2" id='homepage-central'>
+ <div class="navbar homepage text-center">
+    <h1>PIP IS COMING THIS AUGUST!</h1>
+</div>
+<div class="container text-center homepage">
 
-                <!-- <a href="#" class="show-homepage-video pip-button">See the video!</a> -->
-                <div class="">
-                    <iframe src="http://player.vimeo.com/video/79302164" width="597" class="yellow-border" height="342" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                </div>
-            </div>
+            <p class="text-center light-blue-color">Pip helps parents and teachers inspire their 4-7 year olds to master reading and basic maths at school and at home</p>
+            <p class="text-center light-blue-color">Give your child the best possible start and try learning with Pip</p>
+
             <div class="row">
-                
-                <div class=" text-center dingleberry">
-                    <h3><%= link_to "Join the community - It's totally free!", new_user_registration_path, class: 'btn btn-large-blue btn-large btn-main-homepage' %></h3>
+                <div class="col-md-2">
+                    <%= image_tag('pip_jump.png') %>
                 </div>
-                
-                
+                <div class="col-md-8" id='homepage-central'>
+                    <div class="">
+                        <iframe src="http://player.vimeo.com/video/79302164" width="597" class="yellow-border" height="342" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <%= image_tag('pip_laugh.png') %>
+                </div>
+                <br />
+             </div>
+             <%= form_for(@user) do |f| %>
+              <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                  <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            <div class="clear"></div>
+            <div class="text-center email-bit light-blue-color">
+                    <p>Enter your email and you and your child will be the first to know when we're ready!</p>
             </div>
-             <br />
-        
-        </div>
+             <div class="field  ">
+                  <%= f.text_field :email, class: 'text-center' %><br />
+                  <%= f.submit 'Submit', :class => 'btn-large btn-large-yellow text-center' %>
+              </div>
+            <% end %>
+            </div>
+
         <div class="clear"></div>
     </div>
-<!-- </div> -->
 <div class="clearfix"></div>
